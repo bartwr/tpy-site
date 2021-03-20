@@ -166,7 +166,10 @@ class Navigation extends Component {
     return <header className={'Navigation' + (this.state.showNav ? ' is-active' : '')}>
       <div className="max-width">
         <Link prefetch href="/">
-          <div style={{cursor: 'pointer', height: '72px', display: 'inline-block'}} title="Back to home">
+          <div style={{
+            cursor: 'pointer',
+            display: 'inline-block'
+        }} title="Back to home">
             <Logo style={{
               zIndex: 1
             }} />
@@ -217,7 +220,7 @@ class Navigation extends Component {
           </ul>
         </nav>
         <div
-          className="toggle-nav"
+          className="toggle-nav flex justify-center flex-col h-full"
           onClick={() => this.clickToggleButton()}
           >
           <span className={'icon-' + (this.state.showNav ? 'close' : 'hamburger')}></span>
@@ -231,6 +234,9 @@ class Navigation extends Component {
           width: 100%;
           padding: 1rem 18px;
           z-index: 10;
+        }
+        .Navigation > .max-width {
+          height: 32px;
         }
         @media(max-width: 1100px) {
           .Navigation {
@@ -486,16 +492,15 @@ class Navigation extends Component {
           flex-direction: column;
 
           position: fixed;
-          top: 10px;
+          top: 1rem;
           right: 0;
-          height: 5rem;
+          height: 32px;
           z-index: 1;
           padding: 0 18px;
         }
         .icon-close,
         .icon-hamburger {
           width: 18px;
-          height: 18px;
           display: block;
           background: center center no-repeat;
           background-size: contain;
@@ -505,6 +510,7 @@ class Navigation extends Component {
           background-image: url(/static/components/navigation/close.svg);
         }
         .icon-hamburger {
+          height: 100%;
           background-size: 18px;
           background-image: url(/static/components/navigation/hamburger.svg);
         }

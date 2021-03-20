@@ -41,11 +41,11 @@ class Slide extends Component {
           margin: 2rem auto;
           transition: transform 0.3s;
           text-align: center;
-          color: #0F2247;
+          color: #144372;
           font-family: "Maison Neue", sans-serif;
-          font-size: 17px;
           font-weight: 500;
-          line-height: 22.4px;
+          font-size: 18px;
+          line-height: 24px;
           text-align: center;
           padding: 0 24px;
         }
@@ -54,8 +54,8 @@ class Slide extends Component {
             flex: 1;
           }
           .Slide-title {
-            font-size: 24px;
-            line-height: 32px;
+            font-size: 18px;
+            line-height: 24px;
           }
           .Slide img {
             transition: transform 0.3s;

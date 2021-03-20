@@ -6,42 +6,35 @@ class Footer extends Component {
   render() {
     return <div className="Footer">
       <div className="max-width flex">
-        <nav className="social-icons">
-          <a href="https://www.facebook.com/thehaguetech/" target="_blank" title="">
-            <img src="/static/components/footer/facebook-icon.svg" alt="Facebook" />
-          </a>
-          <a href="https://www.twitter.com/The_Hague_Tech" target="_blank">
-            <img src="/static/components/footer/twitter-icon.svg" alt="Twitter" />
-          </a>
-          <a href="https://www.linkedin.com/company/thehaguetech" target="_blank">
-            <img src="/static/components/footer/linkedin-icon.svg" alt="LinkedIn" />
-          </a>
-          <a href="https://www.instagram.com/thehaguetech/" target="_blank">
-            <img src="/static/components/footer/instagram-icon.png" alt="Instagram" />
-          </a>
-        </nav>
+        <div>
+          <nav className="social-icons">
+            <a href="https://www.facebook.com/thehaguetech/" target="_blank" title="">
+              <img src="/static/components/footer/facebook-icon.svg" alt="Facebook" />
+            </a>
+            <a href="https://www.twitter.com/The_Hague_Tech" target="_blank">
+              <img src="/static/components/footer/twitter-icon.svg" alt="Twitter" />
+            </a>
+            <a href="https://www.linkedin.com/company/thehaguetech" target="_blank">
+              <img src="/static/components/footer/linkedin-icon.svg" alt="LinkedIn" />
+            </a>
+            <a href="https://www.instagram.com/thehaguetech/" target="_blank">
+              <img src="/static/components/footer/instagram-icon.png" alt="Instagram" />
+            </a>
+          </nav>
+        </div>
         <nav className="footer-nav">
           <Link prefetch href="/contact">
             <a className="nav-link">Contact</a>
           </Link>
           <Link prefetch href="/privacy-policy">
-            <a className="nav-link">Privacy</a>
-          </Link>
-          <Link prefetch href="/code-of-conduct">
-            <a className="nav-link">Code of Conduct</a>
-          </Link>
-          <Link prefetch href="/pet-policy">
-            <a className="nav-link">Pet Policy</a>
-          </Link>
-          <Link href="https://github.com/thehaguetech/thehaguetech-site#thehaguetech-site">
-            <a className="nav-link" target="_blank">GitHub</a>
+            <a className="nav-link">Privacy Policy</a>
           </Link>
         </nav>
       </div>
       <style jsx>{`
         .Footer {
           padding: 3rem 1rem;
-          background-color: #000;
+          background-color: #0E2F50;
           color: #fff;
           font-size: 17px;
           line-height: 48px;
@@ -50,6 +43,7 @@ class Footer extends Component {
           display: block;
         }
         .social-icons {
+          max-width: 12rem;
           justify-content: space-between;
         }
         .social-icons img {
@@ -58,7 +52,7 @@ class Footer extends Component {
         }
         @media(min-width: 1024px) {
           .Footer {
-            background-color: #000;
+            background-color: #0E2F50;
             padding: 1rem 1rem;
           }
           .flex {
@@ -75,7 +69,6 @@ class Footer extends Component {
         }
         .social-icons {
           display: flex;
-          max-width: 12rem;
         }
         .social-icons a {
           padding: 0 12px;
@@ -91,26 +84,30 @@ class Footer extends Component {
           margin: 0.5rem 0;
         }
         .footer-nav {
+          width: 464px;
+          max-width: 100%;
           padding: 0 12px;
         }
         @media(min-width: 1024px) {
           .footer-nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             padding: 0 0;
             margin: 0 auto;
-            width: auto !important;
+            width: 100% !important;
+            max-width: 464px;
           }
           .footer-nav .nav-link {
             margin-right: 10px;
             margin-left: 10px;
           }
           .social-icons {
+            flex: 1;
             justify-content: space-around;
           }
           .max-width {
             margin: 0 auto;
-            width: 80%;
+            width: 1032px;
             max-width: 100%;
           }
         }

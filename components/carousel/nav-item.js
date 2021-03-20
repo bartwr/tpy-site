@@ -15,12 +15,12 @@ class NavItem extends Component {
             border-radius: 10px;
             cursor: pointer;
             background-color: #fff;
-            border: solid 1px #1126a9;
+            border: solid 1px #144372;
             display: block;
             margin: 0 4px;
           }
           .Carousel-nav-bullet.active {
-            background-color: #1126a9;
+            background-color: #144372;
           }
        `}</style>
       </div>

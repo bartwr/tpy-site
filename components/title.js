@@ -27,20 +27,21 @@ class Title extends Component {
       {this.props.children}
       <style jsx>{`
         .Title {
-          color: #0F2247;
-          font-family: "Noe Display",serif;
-          font-weight: bold;
-          font-size: 28px;
-          line-height: 32px;
+          color: #144372;
           margin: 0 0;
-          padding: 0 0;
           overflow: ellipsis;
           overflow-x: hidden;
           overflow-y: hidden;
           word-break: break-word;
 
-          font-size: 11vw;
-          line-height: 11vw;
+          font-size: 36px;
+          line-height: 40px;
+
+          font-family: Montserrat, sans-serif;
+          font-style: normal;
+          font-weight: 600;
+
+          letter-spacing: -0.005em;
         }
         .Title > :global(a),
         .Title > :global(a:visited) {
@@ -48,8 +49,12 @@ class Title extends Component {
           border-bottom: none;
           text-decoration: none;
         }
+        .large {
+          font-size: 27px;
+          line-height: 32px;
+        }
         .small {
-          font-size: 28px;
+          font-size: 27px;
           line-height: 32px;
         }
         .xsmall {
@@ -58,13 +63,17 @@ class Title extends Component {
         }
         @media(min-width: 480px) {
           .Title {
-            font-size: 64px;
-            line-height: 64px;
+            font-size: 56px;
+            line-height: 72px;
             font-weight: 700;
+          }
+          .large {
+            font-size: 48px;
+            line-height: 56px;
           }
           .small {
             font-size: 48px;
-            line-height: 54px;
+            line-height: 56px;
           }
           .xsmall {
             font-size: 17px;

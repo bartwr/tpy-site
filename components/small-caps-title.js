@@ -14,18 +14,18 @@ class SmallCapsTitle extends Component {
           .SmallCapsTitle {
             font-family: "Maison Neue", sans-serif;
             text-transform: uppercase;
-            font-size: 4vw;
-            line-height: 7vw;
+            font-size: 11px;
+            line-height: 16px;
+            color: #FF8850;
           }
           @media(min-width: 480px) {
             .SmallCapsTitle {
-              font-size: 15px;
-              line-height: 20px;
+              font-size: 18px;
+              line-height: 24px;
             }
           }
           .SmallCapsTitle.small {
             line-height: 12px;
-            color: #0f2247;
             font-family: "Maison Neue Bold", sans-serif;
             font-size: 10px;
             font-weight: 700;

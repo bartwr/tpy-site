@@ -9,7 +9,7 @@ const Title = dynamic(() => import('../components/title.js'));
 const Carousel = dynamic(() => import('../components/carousel/carousel.js'));
 const TextAndImage = dynamic(() => import('../components/text-and-image.js'));
 const BookATourBanner = dynamic(() => import('../components/book-a-tour-banner.js'));
-const YellowBanner = dynamic(() => import('../components/yellow-banner.js'));
+const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
 const Footer = dynamic(() => import('../components/footer.js'));
 const NewsletterSubscribe = dynamic(() => import('../components/newsletter-subscribe.js'));
 
@@ -18,37 +18,37 @@ const slides = [
   {
     title: 'community',
     href: '#community',
-    image: '/static/components/carousel/tht-icon-community.svg',
+    image: '/static/components/carousel/tpy-icon-community.svg',
     imageHeight: 106
   },
   {
-    title: 'co-working',
-    href: '#coworking',
-    image: '/static/components/carousel/tht-icon-coworking.svg',
+    title: 'campus',
+    href: '#campus',
+    image: '/static/components/carousel/tpy-icon-campus.svg',
     imageHeight: 104
   },
-  // {
-  //   title: 'meeting center',
-  //   href: '#meeting-center',
-  //   image: '/static/components/carousel/tht-icon-coworking.svg',
-  //   imageHeight: 104
-  // },
   {
-    title: 'events & labs',
-    href: '#meetings-events-labs',
-    image: '/static/components/carousel/tht-icon-events.svg',
+    title: 'academy',
+    href: '#academy',
+    image: '/static/components/carousel/tpy-icon-academy.svg',
+    imageHeight: 104
+  },
+  {
+    title: 'acceleration',
+    href: '#acceleration',
+    image: '/static/components/carousel/tpy-icon-acceleration.svg',
     imageHeight: 90
   },
   {
-    title: 'international business',
-    href: '#international-business',
-    image: '/static/components/carousel/tht-icon-business.svg',
+    title: 'softlanding',
+    href: '#softlanding',
+    image: '/static/components/carousel/tpy-icon-softlanding.svg',
     imageHeight: 108
   },
   {
     title: 'co-creation',
     href: '#co-creation',
-    image: '/static/components/carousel/tht-icon-cocreate.svg',
+    image: '/static/components/carousel/tpy-icon-co-creation.svg',
     imageHeight: 118
   },
 ]
@@ -56,18 +56,25 @@ const slides = [
 function App() {
   return <div className="root">
     <Head>
-      <title>The Hague Tech</title>
+      <title>Technology Park Ypenburg</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
       <link href="/static/favicon.ico" rel="icon" type="image/x-icon" />
     </Head>
     <Navigation />
     <VideoBanner />
     <IntroText>
-      The Hague Tech is a hub with a diverse and forward-thinking Community and a platform for innovation.
+      <p>
+        <b>
+          Within our sustainable environment our open community thrives to connect with the best of the best. Together we focus on developing innovative solutions in the field of high-tech manufacturing. 
+        </b>
+      </p>
+      <p>
+        By sharing know-how, network and capital equipment we help each other flourish. We provide this through work space, events, networks and access to testing and inspection tooling. Whether you are a start up, scale up or a mature business, we can’t wait for you to join our growing community. 
+      </p>
     </IntroText>
     <div>
       <div>
-        <Title align="center" size="small">
+        <Title align="center" style={{padding: '0 30px'}}>
           What we can offer you
         </Title>
       </div>
@@ -75,23 +82,33 @@ function App() {
         <Carousel slides={slides} />
       </div>
       <TextAndImage
-        image="/static/pages/index/community.jpg"
+        image="https://loremflickr.com/1200/800"
         category="community"
-        title="Join a vibrant and exciting community of doers"
-        text="A collection of highly talented people is the indispensable basis of our ecosystem. Passionate and driven individuals should be facilitated in meeting each other easily and frequently. We provide this through the work space in the heart of our ecosystem. Together as a community we welcome in new members based on core values such as proactiveness, professionalism, and an openness to work and achieve together. "
-        buttonText="learn more"
+        title="Header"
+        text="The tight network of TPY consists of startups, scale-ups, schools, entrepreneurs, developers, universities and institutes, all cooperating. We’re always seeking to evolve, remain valued and innovate for today’s technology. Grow your business while working with awesome collaborators."
+        buttonText="read more"
         buttonLink="/community"
         anchorName="community"
         />
       <TextAndImage
-        image="/static/pages/index/coworking.jpg"
+        image="https://loremflickr.com/1200/800"
         imagePosition="right"
-        category="co-working"
-        title="Find your new workspace or office best fit for your needs"
-        text="We offer workspaces in fixed or flexible options in the general working areas or in closed areas. Our packages range from 1 day per week up to 24/7 access. Renting a desk will provide you with everything the ecosystem has to offer, our mission to provide hyper-location-as-a-service. "
-        buttonText="learn more"
-        buttonLink="/coworking"
-        anchorName="coworking"
+        category="campus"
+        title="Header"
+        text="The goal of our TPY Campus is to offer facilities and events to support all your needs. Whether you’re a start up, scale up, a mature business or an international company. Come visit our vibrant campus and see it for yourself. "
+        buttonText="read more"
+        buttonLink="/campus"
+        anchorName="campus"
+        />
+      <TextAndImage
+        image="https://loremflickr.com/1200/800"
+        imagePosition="left"
+        category="academy"
+        title="Header"
+        text="Our Prototyping Centre is a maker space to try out your ideas. It provides access to further High-Tech manufacturing, testing and inspection tooling. We utilise in-house professional expertise, which can help you with your ideas or brainstorms. "
+        buttonText="read more"
+        buttonLink="/academy"
+        anchorName="academy"
         />
     </div>
     <div>
@@ -101,42 +118,42 @@ function App() {
     <br />
     <div>
       <TextAndImage
-        image="/static/pages/index/meetings.jpg"
+        image="https://loremflickr.com/1200/800"
         imagePosition="right"
-        category="meetings / events / labs"
-        title="Book a meetup, host an event, or join one of our cutting edge labs"
-        text="Success in business is a combination of hard work and luck. Luck can be engineered and we believe encouraging encounters is the best way to stimulate success and luck. Workshops, Meetups, festivals, and get-togethers around what our members in The Hague Tech are involved with leads to new connections and new entrepreneurial opportunities. "
-        buttonText="learn more"
-        buttonLink="/meetings-events-labs"
-        anchorName="meetings-events-labs"
+        category="Acceleration & incubation"
+        title="Header"
+        text="Ready to enhance your business development and scale-up? Our Innovation Centre is the ideal next phase location to fulfil the following steps in your business. Set up to foster a competitive and collaborative environment for mature Start Ups and Scale Ups. We pride ourselves with our in-house experts, who are eager to assist you and have a strong knowledge in High-Tech manufacturing. "
+        buttonText="read more"
+        buttonLink="/acceleration"
+        anchorName="acceleration"
         />
     </div>
     <div>
       <TextAndImage
-        image="/static/pages/index/international-business.jpg"
-        category="international business"
-        title="Set up your business in the innovative heart of The Netherlands"
-        text="Is your business looking to enter the Dutch market or set up a base of operations here in Holland? The Hague Tech is an internationally focused organization with a local presence and knowledge base. With partnerships in Brazil, Silicon Valley, South Africa, and around the world, The Hague Tech is at the heart of globalization and internationalization while still understanding the need for local infrastructure and communities."
-        buttonText="learn more"
-        buttonLink="/international-business"
-        anchorName="international-business"
+        image="https://loremflickr.com/1200/800"
+        category="soft-landing"
+        title="Header"
+        text="Considering establishing your business in the heart of high tech? TPY offers a solution to help you set up your business in the Netherlands and our softlanding programme to access the Netherlands and European markets. We’ll introduce you to key stakeholders and connect you with experts in setting up legal entities. "
+        buttonText="read more"
+        buttonLink="/soft-landing"
+        anchorName="soft-landing"
         />
     </div>
     <div>
       <TextAndImage
-        image="/static/pages/index/cocreation.jpg"
+        image="https://loremflickr.com/1200/800"
         imagePosition="right"
         category="co-creation"
-        title="Co-create and innovate with our multi-talented community"
-        text="The Hague Tech is an inspiring place to collaborate with talented individuals and innovative companies. But we strive to be and do more, to nurture an environment of co-creation. Co-creation means working together to create prototypes, products, technological solutions and beyond by activating the talent within The Hague Tech. Our community is filled with talented members looking to work together on new and exciting challenges. "
-        buttonText="learn more"
+        title="Header"
+        text="At TPY we work together on challenges, innovations and support to establish funding initiatives. We facilitate the processes of companies to connect to work together on common challenges, student hackathons/makeathons, set up innovation projects for products and processes and help find the appropriate local, regional, national and european funding initiatives to help accelerate your development."
+        buttonText="read more"
         buttonLink="/co-creation"
         anchorName="co-creation"
         />
     </div>
     <div>
-      <YellowBanner
-        title="Come and see for your self what The Hague Tech has to offer you!"
+      <FooterBanner
+        title="Come and see for your self what TPY has to offer you!"
         buttonText="book a tour"
         buttonLink="https://outlook.office365.com/owa/calendar/TheHagueTech@jongensvantechniek.nl/bookings/"
         target="_blank"

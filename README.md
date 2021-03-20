@@ -1,6 +1,6 @@
-# thehaguetech-site
+# tpy-site
 
-The website of [The Hague Tech](https://www.thehaguetech.com/).
+The website of [Technology Park Ypenburg](https://technologyparkypenburg.nl/).
 
 ## Project overview
 
@@ -22,14 +22,14 @@ Examples of contributions you could think of:
 - Textual updates
 - Improving this README
 
-An easy way to start contributing is by creating a so called 'issue' with your feature request, idea or bug report. [Start here](https://github.com/thehaguetech/thehaguetech-site/issues/new).
+An easy way to start contributing is by creating a so called 'issue' with your feature request, idea or bug report. [Start here](https://github.com/bartwr/tpy-site/issues/new).
 
 ## Getting started
 
 ### 1. First time use
 
-    git clone git@github.com:bartwr/thehaguetech-site.git
-    cd thehaguetech-site
+    git clone git@github.com:bartwr/tpy-site.git
+    cd tpy-site
     npm install
 
 ### 2. Running the app
@@ -43,9 +43,19 @@ SENDGRID_API_KEY='SENDGRIDAPIKEY'
 MAILCHIMP_ID='XXXX-us15'
 ```
 
-2. `npm run dev`
+2. Start the app
 
-Need help? [Create an issue](https://github.com/thehaguetech/thehaguetech-site/issues).
+With server:
+
+        npm run dev
+
+UI only:
+
+        npm run dev-without-server
+
+Now open your favorite browser and go to http://localhost:3000
+
+Need help? [Create an issue](https://github.com/thehaguetech/tpy-site/issues).
 
 ### 3. gitmoji for git commits
 
@@ -93,12 +103,12 @@ Running production on Windows?
 
 Running production on Linux?
 
-    export CONTENTFUL_SPACE_ID=orgovvkppcys
-    export CONTENTFUL_ACCESS_TOKEN=3caa6c37abedc9556a200ad30ce2c59938a2bae6ec1b3b30a16c90d0f5fb9c77
+    export CONTENTFUL_SPACE_ID=THE_SPACE_ID
+    export CONTENTFUL_ACCESS_TOKEN=THE_ACCESS_TOKEN
     export PORT=3000
-    export SENDGRID_API_KEY='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'
+    export SENDGRID_API_KEY='SG.THE_SENDGRID_API_KEY'
   
-    export MAILCHIMP_ID='f49378b026862af74390f89fa6b820c0-us15'
+    export MAILCHIMP_ID='THE_MAILCHIMP_ID-us15'
     export SENDGRID_API_KEY=apikey
     export NODE_ENV=production
     node api/server.js
@@ -107,11 +117,10 @@ Running production on Linux?
 
 - [bartwr](https://github.com/bartwr/) (Code)
 - Hans Pols (Graphic Design)
-- Peter Hofman (Server Management)
-- Charles Weiler-Ulin (Concept, Content)
-- Ali (Concept, Content)
+- Olga (project management)
+- Sophie (project management)
+- Stephen (project management)
 
 ## NOTES on Design
 
-- 12px grid horizontally
--  8px grid vertically (1rem - 8px)
+- ...

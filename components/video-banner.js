@@ -6,30 +6,24 @@ const Button = dynamic(() => import('../components/button.js'));
 
 function VideoBanner() {
   const images = [
-    '2019_THT-OPENING-EN-HACKATON_sacha grootjans-188.jpg',
-    '2019_THT-OPENING-EN-HACKATON FIXED_sacha grootjans-126.jpg',
-    '2019_THT-OPENING-EN-HACKATON_sacha grootjans-01-LOW-RESOLUTION-1200px.jpg',
-    '2019_THT-OPENING-EN-HACKATON_sacha grootjans-40.jpg',
-    '2019_THT-OPENING-EN-HACKATON_sacha grootjans-87.jpg',
-    '2019_THT-OPENING-EN-HACKATON_sacha grootjans-174.jpg',
-    '2019_THT-OPENING-EN-HACKATON_sacha grootjans-180.jpg',
-    '2019_THT-OPENING-EN-HACKATON_sacha grootjans-191.jpg',
-    '2019_THT-OPENING-EN-HACKATON_sacha grootjans-203.jpg'
   ]
   const randomFromArray = (items) => items[Math.floor(Math.random()*items.length)]
   return <div className="VideoBanner">
-    {/*<video className="video" autoPlay loop muted poster="/static/components/video-banner/madagascar3.jpg" src="static/components/video-banner/madagascar3.mp4">*/}
-    <video className="video" autoPlay loop muted poster={`/static/components/index-slider/${randomFromArray(images)}`}></video>
+    <img className="video" src={`/static/components/video-banner/tpy-hero.png`} />
     <div className="overlay">
       <Title color="#fff">
-        Innovate faster. Better. Together.
+        Join the best of our industry
       </Title>
       <div>
         <div className="subtitle">
           Collaborate with our community to bring your tech ideas to life.
         </div>
         <div className="button-wrapper">
-          <Button href="https://outlook.office365.com/owa/calendar/TheHagueTech@jongensvantechniek.nl/bookings/" target="_blank">
+          <Button
+            href="https://www.bartroorda.nl"
+            target="_blank"
+            style={{margin: '0 auto'}}
+          >
             Book a tour
           </Button>
         </div>
@@ -59,7 +53,7 @@ function VideoBanner() {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        background: rgba(0,0,0,0.4);
+        background: rgba(0,0,0,0.2);
         text-align: center;
         font-size: 3rem;
       }
@@ -73,19 +67,19 @@ function VideoBanner() {
         margin: 24px 0;
         min-height: 26px;
         color: #FFFFFF;
-        font-family: "Maison Neue", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 500;
-        font-size: 0.4em;
-        line-height: 1.5em;
+        font-size: 16px;
+        line-height: 24px;
         padding: 0 10%;
       }
       @media(min-width: 480px) {
         .Title {
           text-shadow: 0 2px 17px rgba(0, 0, 0, 0.5);
         }
-        .subtile {
-          font-size: 11px;
-          line-height: 28pxp;
+        .subtitle {
+          font-size: 22px;
+          line-height: 32px;
         }
       }
       .button-wrapper {

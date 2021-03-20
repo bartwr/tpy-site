@@ -6,9 +6,9 @@ import $ from 'jquery';
 const Title = dynamic(() => import('./title.js'));
 const Button = dynamic(() => import('./button.js'));
 
-class YellowBanner extends Component {
+class FooterBanner extends Component {
   componentDidMount() {
-    this.initTransition();
+    // this.initTransition();
   }
 
   initTransition() {
@@ -19,14 +19,14 @@ class YellowBanner extends Component {
       const percentageSeen = self.percentageSeen();
       const backgroundColorOpacity = Math.min(100, Math.floor((100 - percentageSeen) / 100 * 255))
       const textAndImageOpacity = 100 - backgroundColorOpacity;
-      $('.YellowBanner').css('background-color', `rgba(255, 240, 0, ${backgroundColorOpacity / 100})`)
+      $('.FooterBanner').css('background-color', `rgba(255, 240, 0, ${backgroundColorOpacity / 100})`)
       $('.TextAndImage, .StoryOverview').css('opacity', `${(textAndImageOpacity + 0) / 100}`)
     })
   }
 
   percentageSeen () {
     let $win = $(window),
-        $element = $('.YellowBanner'),
+        $element = $('.FooterBanner'),
         viewportHeight = $win.height(),
         scrollTop = $win.scrollTop(),
         elementOffsetTop = $element.offset().top,
@@ -40,64 +40,50 @@ class YellowBanner extends Component {
   }
 
   componentWillUnmount() {
-    $('body').css('background-color', `transparent`)
-    $('.TextAndImage, .StoryOverview').css('opacity', 1)
-    $(window).off('scroll');
+    // $('body').css('background-color', `transparent`)
+    // $('.TextAndImage, .StoryOverview').css('opacity', 1)
+    // $(window).off('scroll');
   }
 
   render() {
-    return <div className="YellowBanner">
+    return <div className="FooterBanner">
       <div className="max-width">
         <Title size="large" style={{
-          fontSize: '36px',
-          lineHeight: '36px'
+          textAlign: 'center'
         }}>
           {this.props.title}
         </Title>
-        <Button href={this.props.buttonLink || '/contact'} target={this.props.target} style={{
-          marginTop: '36px',
-          background: '#071124',
-          borderColor: '#071124',
-          color: '#fff',
-        }}>
+        <Button
+          href={this.props.buttonLink || '/contact'}
+          target={this.props.target}
+          style={{
+            display: 'block',
+            marginRight: 'auto',
+            marginTop: '40px',
+            marginLeft: 'auto',
+            width: '148px'
+          }}
+        >
           {this.props.buttonText}
         </Button>
       </div>
-      <style global jsx>{`
-        body {
-          transition: background-color 1000ms;   
-        }
-        body.yellow-banner {
-          transition: background-color 1000ms 200ms;   
-          background-color: #fff000;
-        }
-        body.yellow-banner .YellowBanner::before {
-          opacity: 1;
-          margin-top: -4rem;
-          z-index: -1;
-        }
-      `}</style>
       <style jsx>{`
-        .YellowBanner {
+        .FooterBanner {
           position: relative;
           text-align: left;
-          background: url('/static/components/yellow-banner/tht-particals-03-rev.png') center top no-repeat;
+          background: url('/static/components/footer-banner/tpy-banner-background-mobile.png') center top no-repeat;
           background-size: cover;
           min-height: 624px;
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           flex-direction: column;
+          padding-top: 74px;
         }
-        .YellowBanner::before {
-          opacity: 0;
-          top: 0;
-          transition: margin-top 500ms linear;
-          content: "";
-          position: absolute;
-          display: block;
-          height: 4rem;
-          width: 100%;
-          background-image: linear-gradient(0deg, #fff000, transparent);
+        @media(min-width: 480px) {
+          .FooterBanner {
+            padding-top: 82px;
+            background-image: url('/static/components/footer-banner/tpy-banner-background.png');
+          }
         }
         .max-width {
           margin: 0 auto;
@@ -110,4 +96,4 @@ class YellowBanner extends Component {
   }
 }
 
-export default YellowBanner;
+export default FooterBanner;

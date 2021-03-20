@@ -1,13 +1,13 @@
 {
-  "name": "thehaguetech-site",
+  "name": "tpy-site",
   "version": "0.1.0",
-  "description": "The Hague Tech on the Web",
+  "description": "Technology Park Ypenburg on the Web",
   "main": "index.js",
   "scripts": {
     "dev-without-server": "next",
     "dev": "export $(cat .env | xargs) && node api/server.js",
     "start": "npm install && NODE_ENV=production node api/server.js",
-    "build": "next build",
+    "build": "./node_modules/next/dist/bin/next build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "next build && next export",
     "serve": "next build && node api/server.js"
@@ -22,17 +22,17 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thehaguetech/thehaguetech-site.git"
+    "url": "git+https://github.com/bartwr/tpy-site.git"
   },
   "keywords": [
-    "thehaguetech"
+    "tpy"
   ],
   "author": "bartwr",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/thehaguetech/thehaguetech-site/issues"
+    "url": "https://github.com/bartwr/tpy-site/issues"
   },
-  "homepage": "https://github.com/thehaguetech/thehaguetech-site#readme",
+  "homepage": "https://github.com/bartwr/tpy-site#readme",
   "dependencies": {
     "@sendgrid/mail": "6.4.0",
     "chalk": "1.1.3",

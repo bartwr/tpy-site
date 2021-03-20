@@ -15,22 +15,22 @@ function BookATourBanner() {
     </div>
     <div className="text-wrapper">
       <Title color="#fff">
-        "The Hague Tech is a place for everyone. Book a tour with me and find out yourself."
+        "Team up and share your knowledge with like-minded technology peers."
       </Title>
       <div style={{ margin: '1rem 0' }}>
         <SmallCapsTitle>
-          Olga Wielders | Community Manager
+          Sophie Kochen  |  Community Manager
         </SmallCapsTitle>
       </div>
       <br /><br />
-      <Button buttonLink="https://outlook.office365.com/owa/calendar/bookings@thehaguetech.com/bookings/" target="_blank">
+      <Button buttonLink="https://www.bartroorda.nl" target="_blank">
         Book a tour
       </Button>
     </div>
     <style jsx>{`
       .BookATourBanner {
         background: #000 center left no-repeat;
-        background-image: url('/static/components/book-a-tour-banner/olga.jpg');
+        background-image: url('/static/components/book-a-tour-banner/banner.jpg');
         background-size: auto 100%;
         background-position: -198px 50%;
         position: relative;

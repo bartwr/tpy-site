@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 class Text extends Component {
   render() {
-    return <div className="Text" style={{
+    return <div className="Text" style={Object.assign({}, {
       color: this.props.color == 'white' ? '#fff' : '#0F2247'
-    }}>
+    }, this.props.style)}>
       {this.props.children}
       <style jsx>{`
         .Text {

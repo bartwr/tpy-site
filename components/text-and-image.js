@@ -84,7 +84,7 @@ class TextAndImage extends Component {
           padding: 2rem 16px 6rem;
         }
         .text {
-          margin: 2rem 0 3rem 0;
+          margin: 8px 0 24px 0;
           font-size: 17px;
           line-height: 24px;
         }
@@ -113,6 +113,7 @@ class TextAndImage extends Component {
             padding: 0 114px;
           }
           .text {
+            margin: 16px 0 56px 0;
             font-size: 19px;
             line-height: 32px;
           }
