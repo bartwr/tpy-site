@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import sal from 'sal.js'
 
 class IntroText extends Component {
+  componentDidMount() {
+    sal();
+  }
   render() {
-    return <div className="IntroText">
+    return <div className="IntroText" data-sal={this.props['data-sal']}>
       {this.props.children}
       <style jsx>{`
         .IntroText {

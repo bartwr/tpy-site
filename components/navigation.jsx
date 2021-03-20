@@ -111,48 +111,16 @@ class Navigation extends Component {
   render() {
     let navigation = [
       {
-        title: 'What we do',
-        items: [{
-          title: 'International Business',
-          href: '/international-business',
-          image: '/static/components/carousel/tht-icon-business.svg'
-        }, {
-          title: 'Co-creation',
-          href: '/co-creation',
-          image: '/static/components/carousel/tht-icon-cocreate.svg'
-        }, {
-          title: 'Community',
-          href: '/community',
-          image: '/static/components/carousel/tht-icon-community.svg'
-        }, {
-          title: 'Events & Labs',
-          href: '/meetings-events-labs',
-          image: '/static/components/carousel/tht-icon-events.svg',
-          imageHeight: '36px'
-        }, {
-          title: 'Co-working',
-          href: '/coworking',
-          image: '/static/components/carousel/tht-icon-coworking.svg',
-          imageHeight: '36px'
-        }, {
-          title: 'Meeting Spaces',
-          href: '/meeting-spaces',
-          image: '/static/components/navigation/tht-icon-meeting-spaces.svg'
-        }]
+        title: 'Home',
+        href: '/'
       },
       {
-        title: 'What is happening',
-        items: [{
-          title: 'Events',
-          href: '/events',
-          image: '/static/components/navigation/tht-icon-events.svg',//tht-icon-stories.svg
-          imageHeight: '36px'
-        }, {
-          title: 'Stories',
-          href: '/stories',
-          image: '/static/components/navigation/tht-icon-stories.svg',
-          imageHeight: '38px'
-        }]
+        title: 'What we offer',
+        href: '/1'
+      },
+      {
+        title: 'What is happening?',
+        href: '/2'
       },
       {
         title: 'Pricing',
@@ -175,9 +143,6 @@ class Navigation extends Component {
             }} />
           </div>
         </Link>
-        <div className="white-background main only-on-desktop"></div>
-        <div className="white-background sub only-on-desktop"></div>
-        <div className="black-background only-on-desktop" onClick={() => this.setState({ showNav: false, activePrimaryNav: null })}></div>
         <nav className="main-nav">
           <ul>
             {R.map((item) => {
@@ -198,23 +163,6 @@ class Navigation extends Component {
                       {item.title}
                     </a>
                 }
-                <nav className={'secundary-nav' + (item.items ? ' has-subnav' : '')}>
-                  <ul>
-                    {item.items && R.map((item) => {
-                      return <li className="secundary-nav-item" key={item.title}>
-                        <Link prefetch href={item.href}>
-                          <div className="icon" style={{backgroundImage: `url(${item.image})`, backgroundSize: `auto ${item.imageHeight}`}} />
-                        </Link>
-                        <div style={{flex: 1, alignSelf: 'center'}}>
-                          <Link prefetch href={item.href}>
-                            <a className={'secundary-nav-link' + (this.state.path == item.href ? ' is-active' : '')}>{item.title}</a>
-                          </Link>
-                        </div>
-                      </li>
-                    }, item.items)}
-                  </ul>
-                  <NextEvent />
-                </nav>
               </li>
             }, navigation)}
           </ul>
@@ -234,9 +182,9 @@ class Navigation extends Component {
           width: 100%;
           padding: 1rem 18px;
           z-index: 10;
+          background: #fff;
         }
         .Navigation > .max-width {
-          height: 32px;
         }
         @media(max-width: 1100px) {
           .Navigation {
@@ -284,7 +232,7 @@ class Navigation extends Component {
             width: 1327px;
             max-width: 100%;
             margin: 0 auto;
-            padding: 18px 24px;
+            padding: 40px 24px;
             display: flex;
             justify-content: flex-start;
           }
@@ -310,12 +258,13 @@ class Navigation extends Component {
         }
         .main-nav > ul {
           position: relative;
+          justify-content: flex-start;
         }
         @media(min-width: 1100px) {
           .main-nav {
             display: flex;
             margin-top: 0;
-            margin-left: 238px;
+            margin-left: 164px;
             padding-top: 0;
           }
         }
@@ -394,6 +343,7 @@ class Navigation extends Component {
           nav a.primary-nav-link {
             padding: 10px 0;
             min-width: unset;
+            white-space: nowrap;
             border-bottom: solid transparent 9px;
             max-width: 9999px;
             max-height: 9999px;
@@ -438,7 +388,6 @@ class Navigation extends Component {
             flex-direction: column;
             top: 10px;
             margin: 0 1rem;
-            height: 71px;
           }
           .secundary-nav > ul {
             min-width: 204px;
@@ -455,7 +404,7 @@ class Navigation extends Component {
         nav a:active,
         .primary-nav-item.is-active > a,
         .secundary-nav-link.is-active {
-          background: #feef00;
+          background: #FF8850;
         }
         @media(min-width: 1100px) {
           nav .primary-nav-link:hover,
@@ -463,7 +412,7 @@ class Navigation extends Component {
           nav .primary-nav-link:active,
           nav .primary-nav-item.is-active > a {
             background: transparent;
-            border-bottom: solid #feef00 9px;
+            border-bottom: solid #FF8850 9px;
           }
         }
         nav {
@@ -514,11 +463,6 @@ class Navigation extends Component {
           background-size: 18px;
           background-image: url(/static/components/navigation/hamburger.svg);
         }
-        header.is-active {
-          display: block;
-          height: 100vh;
-          overflow-y: auto;
-        }
         @media(min-width: 1100px) {
           .toggle-nav {
             display: none;
@@ -543,15 +487,10 @@ class Navigation extends Component {
             padding-left: 8px;
             padding-left: 0;
           }
-          header.is-active {
-            height: auto;
-            min-height: 524px;
-            display: flex;
-          }
           header .white-background.main {
             background: rgba(255,255,255,0.95);
             width: 100%;
-            height: 110px;
+            height: 122px;
             position: absolute;
             width: 100%;
             left: 0;
@@ -571,7 +510,7 @@ class Navigation extends Component {
             background: #fff;
             width: 100%;
             left: 0;
-            top: 110px;
+            top: 122px;
           }
           @keyframes fadein {
               from { opacity: 0; }
@@ -631,8 +570,6 @@ class Navigation extends Component {
 
         @media(min-width: 1100px) {
           .primary-nav-item {
-            margin-right: 48px;
-            margin-left: 48px;
           }
           .secundary-nav-link {
             width: fit-content;

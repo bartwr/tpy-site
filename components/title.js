@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import sal from 'sal.js'
 
 class Title extends Component {
+  componentDidMount() {
+    sal();
+  }
   render() {
     // Get length of title
     const lengthOfTitle = this.props.children.length;

@@ -22,6 +22,12 @@ class Logo extends Component {
           max-width: unset;
           position: relative;
         }
+        @media (min-width: 480px) {
+          .logo {
+            width: 242px;
+            height: 48px;
+          }
+        }
       `}</style>
     </div>
   }

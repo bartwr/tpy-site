@@ -7,6 +7,8 @@ import React from 'react';
 import App, { Container } from 'next/app';
 const contentful = require('contentful');
 
+import './_app.css';
+
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
