@@ -5,7 +5,7 @@ import Head from 'next/head';
 const Navigation = dynamic(() => import('../components/navigation.jsx'));
 const IntroText = dynamic(() => import('../components/intro-text.js'));
 const Title = dynamic(() => import('../components/title.js'));
-const YellowBanner = dynamic(() => import('../components/yellow-banner.js'));
+const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
 const PageHeader = dynamic(() => import('../components/page-header.js'));
 const Footer = dynamic(() => import('../components/footer.js'));
 const EventOverview = dynamic(() => import('../components/event-overview.js'));

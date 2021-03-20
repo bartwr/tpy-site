@@ -8,10 +8,15 @@ class Slide extends Component {
       <a href={this.props.data.href}>
         <div>
           <div className="image-wrapper">
-            <img height={this.props.data.imageHeight} src={this.props.data.image} style={{
-              position: 'relative',
-              top: (this.props.data.title == 'co-creation' ? '5px' : 0)
-            }}/>
+            <img
+              width={this.props.data.imageHeight}
+              height={this.props.data.imageHeight}
+              src={this.props.data.image}
+              style={{
+                position: 'relative',
+                top: (this.props.data.title == 'co-creation' ? '5px' : 0)
+              }}
+            />
           </div>
           <div className="Slide-title">
             {this.props.data.title}

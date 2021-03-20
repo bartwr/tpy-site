@@ -9,7 +9,7 @@ const IntroText = dynamic(() => import('../components/intro-text.js'));
 const Title = dynamic(() => import('../components/title.js'));
 const TextAndImage = dynamic(() => import('../components/text-and-image.js'));
 const BookATourBanner = dynamic(() => import('../components/book-a-tour-banner.js'));
-const YellowBanner = dynamic(() => import('../components/yellow-banner.js'));
+const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
 const Footer = dynamic(() => import('../components/footer.js'));
 const NewsletterSubscribe = dynamic(() => import('../components/newsletter-subscribe.js'));
 

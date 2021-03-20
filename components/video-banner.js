@@ -71,8 +71,9 @@ class VideoBanner extends Component {
         }
         @media (min-width: 480px) {
           .overlay {
-            justify-content: center;
+            justify-content: flex-end;
             padding-top: 102px 10% 0 10%;
+            padding-bottom: 74px;
           }
         }
         .subtitle {
