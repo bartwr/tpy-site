@@ -28,7 +28,7 @@ class VideoBanner extends Component {
             data-sal-delay="600"
             data-sal-easing="ease-out-bounce"
             >
-            Collaborate with our community to bring your tech ideas to life.
+            Team up and share your knowledge with like-minded technology peers
           </div>
           <div className="button-wrapper">
             <Button

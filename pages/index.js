@@ -71,7 +71,7 @@ class App extends Component {
       <IntroText data-sal="fade">
         <p>
           <b>
-            Within our sustainable environment our open community thrives to connect with the best of the best. Together we focus on developing innovative solutions in the field of high-tech manufacturing. 
+            Within our sustainable environment our open community thrives to connect with the best of the best. Together we focus on developing innovative solutions in the field of high-tech manufacturing.
           </b>
         </p>
         <p>
@@ -104,7 +104,7 @@ class App extends Component {
           imagePosition="right"
           category="campus"
           title="Header"
-          text="The goal of our TPY Campus is to offer facilities and events to support all your needs. Whether you’re a start up, scale up, a mature business or an international company. Come visit our vibrant campus and see it for yourself. "
+          text="The goal of our TPY Campus is to offer facilities and events to support all your needs. Whether you’re a start up, scale up, a mature business or an international company. Our hub is located at a strong central position, in the middle of the ‘Maakindustrie’ in The Hague. Come visit our vibrant campus and see it for yourself. "
           buttonText="read more"
           buttonLink="/campus"
           anchorName="campus"
@@ -114,7 +114,7 @@ class App extends Component {
           imagePosition="left"
           category="academy"
           title="Header"
-          text="Our Prototyping Centre is a maker space to try out your ideas. It provides access to further High-Tech manufacturing, testing and inspection tooling. We utilise in-house professional expertise, which can help you with your ideas or brainstorms. "
+          text="Our virtual TPY Academy functions as a bridge between tech experts and learners. TPY partnered up with the local schools and universities, such as Delft University of Technology and University of Applied Sciences InHolland Composites, located less than 10 km away from our Campus."
           buttonText="read more"
           buttonLink="/academy"
           anchorName="academy"
@@ -131,7 +131,7 @@ class App extends Component {
           imagePosition="right"
           category="Acceleration & incubation"
           title="Header"
-          text="Ready to enhance your business development and scale-up? Our Innovation Centre is the ideal next phase location to fulfil the following steps in your business. Set up to foster a competitive and collaborative environment for mature Start Ups and Scale Ups. We pride ourselves with our in-house experts, who are eager to assist you and have a strong knowledge in High-Tech manufacturing. "
+          text="Grow by Start-up or Scale-up working closely together and by cooperating with universities, knowledge institutes and government. TPY is the international hotspot for the development and manufacturing of products based on high-tech materials: composite and hybrid components in The Hague."
           buttonText="read more"
           buttonLink="/acceleration"
           anchorName="acceleration"
@@ -140,12 +140,12 @@ class App extends Component {
       <div>
         <TextAndImage
           image="https://loremflickr.com/1200/800"
-          category="soft-landing"
+          category="softlanding"
           title="Header"
           text="Considering establishing your business in the heart of high tech? TPY offers a solution to help you set up your business in the Netherlands and our softlanding programme to access the Netherlands and European markets. We’ll introduce you to key stakeholders and connect you with experts in setting up legal entities. "
           buttonText="read more"
-          buttonLink="/soft-landing"
-          anchorName="soft-landing"
+          buttonLink="/softlanding"
+          anchorName="softlanding"
           />
       </div>
       <div>
