@@ -80,8 +80,8 @@ function Campus() {
 
     <div>
       <FooterBanner
-        title="Interested?"
-        buttonText="send us a message"
+        title="Join us!"
+        buttonText="book a tour"
         buttonLink="/contact"
         />
     </div>
