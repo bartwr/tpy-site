@@ -15,7 +15,7 @@ class PageHeader extends Component {
         <div className="black-overlay" />
       </div>
       <div className="max-width" style={{marginTop: '4rem'}}>
-        <SmallCapsTitle>
+        <SmallCapsTitle color={this.props.smallCapsTitleColor}>
           {this.props.smallCapsTitle}
         </SmallCapsTitle>
         <Title color="#fff">

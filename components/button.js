@@ -19,7 +19,7 @@ class Button extends Component {
 
             position: static;
             min-width: 148px;
-            height: 56px;
+            min-height: 56px;
             left: 0px;
             top: 0px;
 

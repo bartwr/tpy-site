@@ -47,7 +47,7 @@ class FooterBanner extends Component {
 
   render() {
     return <div className="FooterBanner">
-      <div className="max-width">
+      <div className="max-width text-center">
         <Title size="large" style={{
           textAlign: 'center'
         }}>
@@ -57,11 +57,12 @@ class FooterBanner extends Component {
           href={this.props.buttonLink || '/contact'}
           target={this.props.target}
           style={{
-            display: 'block',
+            display: 'inline-block',
             marginRight: 'auto',
             marginTop: '40px',
             marginLeft: 'auto',
-            width: '148px'
+            minwidth: '148px',
+            whiteSpace: 'nowrap'
           }}
         >
           {this.props.buttonText}
@@ -70,7 +71,6 @@ class FooterBanner extends Component {
       <style jsx>{`
         .FooterBanner {
           position: relative;
-          text-align: left;
           background: url('/static/components/footer-banner/tpy-banner-background-mobile.png') center top no-repeat;
           background-size: cover;
           min-height: 624px;

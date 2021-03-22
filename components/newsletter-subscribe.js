@@ -10,7 +10,7 @@ const Text = dynamic(() => import('../components/text.js'));
 class NewsletterSubscribe extends Component {
   render() {
     return <div className="NewsletterSubscribe">
-      <div className="flex max-width">
+      <div className="flex max-width px-4">
         <div className="logo-wrapper">
           <Logo color="white" style={{
             width: '100%',

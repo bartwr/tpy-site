@@ -241,6 +241,9 @@ class MyApp extends App {
           p > :global(a:visited) {
             color: #0f2247;
           }
+          .text-center { text-align: center; }
+          .px-2 { padding-right: 0.5rem; padding-left: 0.5rem; }
+          .px-4 { padding-right: 1rem; padding-left: 1rem; }
           .flex {
             display: flex;
             justify-content: space-between;
