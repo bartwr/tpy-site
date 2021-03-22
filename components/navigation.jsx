@@ -116,7 +116,33 @@ class Navigation extends Component {
       },
       {
         title: 'What we offer',
-        href: '/1'
+        items: [{
+          title: 'Community',
+          href: '/community',
+          image: '/static/components/carousel/tht-icon-community.svg'
+        }, {
+          title: 'Campus',
+          href: '/campus',
+          image: '/static/components/carousel/tht-icon-community.svg'
+        }, {
+          title: 'Academy',
+          href: '/academy',
+          image: '/static/components/carousel/tht-icon-community.svg'
+        }, {
+          title: 'Acceleration & incubation',
+          href: '/meetings-events-labs',
+          image: '/static/components/carousel/tht-icon-community.svg',
+          imageHeight: '36px'
+        }, {
+          title: 'Softlanding',
+          href: '/softlanding',
+          image: '/static/components/carousel/tht-icon-community.svg',
+          imageHeight: '36px'
+        }, {
+          title: 'Co-creation',
+          href: '/co-creation',
+          image: '/static/components/carousel/tht-icon-community.svg'
+        }]
       },
       {
         title: 'What is happening?',
@@ -143,6 +169,9 @@ class Navigation extends Component {
             }} />
           </div>
         </Link>
+        <div className="white-background main only-on-desktop"></div>
+        <div className="white-background sub only-on-desktop"></div>
+        <div className="black-background only-on-desktop" onClick={() => this.setState({ showNav: false, activePrimaryNav: null })}></div>
         <nav className="main-nav">
           <ul>
             {R.map((item) => {
@@ -163,6 +192,22 @@ class Navigation extends Component {
                       {item.title}
                     </a>
                 }
+                <nav className={'secundary-nav' + (item.items ? ' has-subnav' : '')}>
+                  <ul>
+                    {item.items && R.map((item) => {
+                      return <li className="secundary-nav-item" key={item.title}>
+                        <Link prefetch href={item.href}>
+                          <div className="icon" style={{backgroundImage: `url(${item.image})`, backgroundSize: `auto ${item.imageHeight}`}} />
+                        </Link>
+                        <div style={{flex: 1, alignSelf: 'center'}}>
+                          <Link prefetch href={item.href}>
+                            <a className={'secundary-nav-link' + (this.state.path == item.href ? ' is-active' : '')}>{item.title}</a>
+                          </Link>
+                        </div>
+                      </li>
+                    }, item.items)}
+                  </ul>
+                </nav>
               </li>
             }, navigation)}
           </ul>
@@ -505,7 +550,7 @@ class Navigation extends Component {
           header.is-active .white-background.sub {
             transition: background .36s cubic-bezier(0.32, 0.08, 0.24, 1), max-height .56s cubic-bezier(0.52, 0.16, 0.24, 1);
             position: absolute;
-            height: 24rem;
+            height: 26rem;
             max-height: 405px;
             background: #fff;
             width: 100%;
