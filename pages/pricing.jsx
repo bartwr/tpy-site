@@ -26,8 +26,9 @@ function Community() {
     <Navigation />
     <PageHeader
       smallCapsTitle="Become a member"
-      title="Become a member of The Hague Tech"
-      image="/static/pages/pricing/featured.jpg"
+      smallCapsTitleColor="white"
+      title="Become a member of Technology Park Ypenburg"
+      image="https://loremflickr.com/1920/1280"
       style={{backgroundPosition: 'center top'}}
       />
     <div>
