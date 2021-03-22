@@ -130,7 +130,7 @@ class Navigation extends Component {
           image: '/static/components/carousel/tht-icon-community.svg'
         }, {
           title: 'Acceleration & incubation',
-          href: '/meetings-events-labs',
+          href: '/acceleration',
           image: '/static/components/carousel/tht-icon-community.svg',
           imageHeight: '36px'
         }, {
