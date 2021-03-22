@@ -43,18 +43,6 @@ class Button extends Component {
             cursor: pointer;
             text-transform: lowercase;
 
-            // min-width: 164px;
-            // max-width: 100%;
-            // line-height: 56px;
-            // background-color: #feef00;
-            // padding:0 20px;
-            // border: solid #feef00 1px;
-            // box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
-
-            // color: #071124;
-            // font-family: "Maison Neue", sans-serif;
-            // font-size: 16px;
-            // font-weight: 300;
             transition: all 0.2s;
           }
           .Button:hover {
@@ -74,22 +62,40 @@ class Button extends Component {
         </button>
         <style jsx>{`
           .Button {
-            display: inline-block;
-            min-width: 164px;
-            max-width: 100%;
-            line-height: 56px;
-            background-color: #feef00;
-            border: solid #feef00 1px;
-            box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
-            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 16px 32px;
 
-            color: #071124;
-            font-family: "Maison Neue", sans-serif;
+            position: static;
+            min-width: 148px;
+            min-height: 56px;
+            left: 0px;
+            top: 0px;
+
+            /* call to action */
+
+            background: #FF8850;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 28px;
+
+            font-family: Montserrat, sans-serif;
+            font-style: normal;
+            font-weight: normal;
             font-size: 16px;
-            font-weight: 300;
+            line-height: 24px;
+
             text-align: center;
+            color: #fff;
             text-decoration: none;
+
+            display: inline-block;
+            cursor: pointer;
             text-transform: lowercase;
+
+            transition: all 0.2s;
+            box-shadow: 0;
+            border: 0;
           }
           .Button:hover {
             box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.19);

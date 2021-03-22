@@ -6,6 +6,7 @@ import * as R from 'ramda';
 // Load components
 const IntroText = dynamic(() => import('../components/intro-text.js'));
 const Button = dynamic(() => import('../components/button.js'));
+const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
 
 class PricingBlock extends Component {
   constructor(props) {
@@ -422,6 +423,14 @@ class Pricing extends Component {
       </IntroText>
       <div className="pricing-blocks-wrapper">
         {R.map((membershipPart1) => <PricingBlock handleIsActive={this.handleIsActive} key={membershipPart1.name} data={membershipPart1} />, membershipsPart1)}
+      </div>
+      <div>
+        <FooterBanner
+          title="Come and see for your self what TPY has to offer you!"
+          buttonText="book a tour"
+          buttonLink="https://outlook.office365.com/owa/calendar/TheHagueTech@jongensvantechniek.nl/bookings/"
+          target="_blank"
+          />
       </div>
       <style jsx>{`
       .pricing-blocks-wrapper {

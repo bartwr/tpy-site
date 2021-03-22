@@ -132,15 +132,21 @@ class ContactForm extends Component {
         </div>}
         {pageConfig.showMap && <div>
           <p className="paragraph">
-            The Hague Tech<br />
-            <a href="https://goo.gl/maps/ZRQgWox2CKuWvuYV8" target="_blank" rel="external noopener">Wilhelmina van Pruisenweg 35</a><br />
-            2595 AN The Hague<br />
+            Technology Park Ypenburg<br />
+            <a href="https://www.openstreetmap.org/node/2599747462" target="_blank" rel="external noopener">Laan van Ypenburg 108</a><br />
+            2497 GC The Hague<br />
             The Netherlands
           </p>
-          <p className="paragraph">
-            <a href="tel:+31702060030">+31 (0)70 206 00 30</a>
-          </p>
         </div>}
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
       <style jsx>{`
         .ContactForm {
