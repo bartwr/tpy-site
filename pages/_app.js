@@ -74,9 +74,10 @@ class MyApp extends App {
 
     // Set default meta tags
     let meta = {
-      imageUrl: 'https://www.thehaguetech.com/static/pages/index/meta.jpg',
-      title: 'Technology Park Ypenburg',
-      description: 'tagline',
+      imageUrl: 'https://tpy-site.herokuapp.com/static/og-image.jpg',
+      title: 'Join Technology Park Ypenburg',
+      description: 'Team up and share your knowledge with like-minded technology peers in The Hague.',
+      url: 'https://www.technologyparkypenburg.nl/',
     };
 
     // If this is a story, set story meta tags
@@ -178,6 +179,12 @@ class MyApp extends App {
             key="og:image"
             property="og:image"
             content={meta.imageUrl}
+          />
+
+          <meta
+            key="og:url"
+            property="og:url"
+            content={meta.url}
           />
 
           <meta
