@@ -27,14 +27,31 @@ class TextAndImage extends Component {
   }
 
   render() {
-    return <div className="TextAndImage" data-title={this.props.title} id={this.props.anchorName}>
-      <div className="image-wrapper" style={{
-        backgroundImage: `url(${this.props.image})`,
-        order: this.props.imagePosition  == 'right' ? 1 : 0
-      }}>
+    return <div
+      className="TextAndImage"
+      id={this.props.anchorName}
+      data-title={this.props.title}
+    >
+      <div 
+        className="image-wrapper"
+        style={{
+          backgroundImage: `url(${this.props.image})`,
+          order: this.props.imagePosition  == 'right' ? 1 : 0
+        }}
+        data-sal={`slide-${this.props.imagePosition == 'right' ? 'left' : 'right'}`}
+        data-sal-duration="300"
+        data-sal-delay="300"
+        data-sal-easing="ease-out-bounce"
+      >
         <img src={this.props.image} className="image" />
       </div>
-      <div className="text-wrapper">
+      <div
+        className="text-wrapper"
+        data-sal={`slide-${this.props.imagePosition == 'right' ? 'right' : 'left'}`}
+        data-sal-duration="300"
+        data-sal-delay="300"
+        data-sal-easing="ease-out-bounce"
+      >
 
         <SmallCapsTitle>
           {this.props.category}

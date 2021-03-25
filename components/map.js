@@ -7,7 +7,7 @@ class Marker extends Component {
   render() {
     return (
       <div>
-        <img src="/static/components/map/tht-marker.svg" style={{
+        <img src="/static/components/map/tpy-marker.png" style={{
           marginLeft: '-34px',
           marginTop: '-100px',
           height: '100px'
@@ -20,10 +20,10 @@ class Marker extends Component {
 class Map extends Component {
   static defaultProps = {
     center: {
-      lat: 52.0792334,
-      lng: 4.3418724
+      lat: 52.044453,
+      lng: 4.3540451
     },
-    zoom: 14
+    zoom: 15
   };
 
   render() {
@@ -35,9 +35,9 @@ class Map extends Component {
           defaultZoom={this.props.zoom}
         >
           <Marker
-            lat={52.079144}
-            lng={4.3418880}
-            text="The Hague Tech"
+            lat={52.044453}
+            lng={4.3540451}
+            text="Technology Park Ypenburg"
           />
         </GoogleMapReact>
         <style jsx>{`

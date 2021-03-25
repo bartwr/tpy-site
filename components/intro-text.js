@@ -6,7 +6,13 @@ class IntroText extends Component {
     sal();
   }
   render() {
-    return <div className="IntroText" data-sal={this.props['data-sal']}>
+    return <div
+      className="IntroText"
+      data-sal={this.props['data-sal']}
+      data-sal-duration={this.props['data-sal-duration']}
+      data-sal-delay={this.props['data-sal-delay']}
+      data-sal-easing={this.props['data-sal-easing']}
+    >
       {this.props.children}
       <style jsx>{`
         .IntroText {

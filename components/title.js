@@ -23,6 +23,10 @@ class Title extends Component {
           // By default: show small title is text length < 40 characters
           'Title ' + size
         }
+        data-sal-duration={this.props['data-sal-duration']}
+        data-sal={this.props['data-sal']}
+        data-sal-delay={this.props['data-sal-delay']}
+        data-sal-easing={this.props['data-sal-easing']}
         style={Object.assign({
           color: this.props.color,
           textAlign: this.props.align

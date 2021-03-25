@@ -121,7 +121,8 @@ Running production on Linux?
 - Sophie (project management)
 - Stephen (project management)
 - Bonneke Weber, Airborne (domeinbeheer)
+- Nathalie en Sophie (Sophie writes, Nathalie posts using Contentful)
 
 ## NOTES on Design
 
-- ...
+- Original design: https://www.figma.com/file/e9qEYHkXEPHLkSTZbeaDWt/tpy-website-corporate-2021?node-id=0%3A1

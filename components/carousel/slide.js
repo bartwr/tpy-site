@@ -1,17 +1,41 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import * as R from 'ramda';
+import sal from 'sal.js'
+import $ from 'jquery';
 
 class Slide extends Component {
+  componentDidMount() {
+    sal();
+  }
+  slideTo(anchor) {
+    if(! anchor) return;
+
+    console.log($(anchor))
+    $('html, body').animate({
+      'scrollTop': $(anchor).offset().top - (window.innerWidth > 480 ? 50 : 0)
+    }, 500);
+  }
   render() {
     return <div className="Slide">
-      <a href={this.props.data.href}>
+      <a
+        href={this.props.data.href}
+        onClick={(e) => {
+          e.preventDefault();
+
+          this.slideTo(this.props.data.href)
+        }}
+      >
         <div>
           <div className="image-wrapper">
             <img
               width={this.props.data.imageHeight}
               height={this.props.data.imageHeight}
               src={this.props.data.image}
+              data-sal-duration="400"
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-easing="ease-out-bounce"
               style={{
                 position: 'relative',
                 top: (this.props.data.title == 'co-creation' ? '5px' : 0)
@@ -42,6 +66,9 @@ class Slide extends Component {
           margin: 0 auto;
           vertical-align: middle;
         }
+        .Slide:focus img {
+          animation: rotation 2s linear infinite;
+        }
         .Slide-title {
           margin: 2rem auto;
           transition: transform 0.3s;
@@ -70,6 +97,28 @@ class Slide extends Component {
             transition: transform 0.2s;
           }
         }
+
+        .rotate {
+           animation: rotation 2s;
+        }
+
+        .linear {
+          animation-timing-function: linear;
+        }
+
+        .infinite {
+          animation-iteration-count: infinite;
+        }
+        
+        @keyframes rotation {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(359deg);
+          }
+        }
+
       `}</style>
     </div>
   }

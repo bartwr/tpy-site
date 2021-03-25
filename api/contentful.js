@@ -157,6 +157,28 @@ function fetchStory (query) {
     .catch(console.error)
 }
 
+function fetchNews () {
+  return client.getEntries({
+      content_type: 'news',
+      limit: 100,
+      order: '-fields.publishDate'
+    })
+  .then((response) => response.items)
+  .catch((error) => {
+    console.log(chalk.red(`\nError occurred while fetching Entries for news:`));
+    console.error(error)
+  })
+}
+function fetchNewsItem (query) {
+  return client.getEntries({
+    content_type: query.content_type || 'news',
+    'fields.slug': query.slug,
+    limit: 1
+  })
+    .then((entry) => entry.items[0])
+    .catch(console.error)
+}
+
 module.exports = {
   fetchEntriesForContentType,
   fetchEntry,

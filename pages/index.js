@@ -68,7 +68,12 @@ class App extends Component {
       </Head>
       <Navigation />
       <VideoBanner />
-      <IntroText data-sal="fade">
+      <IntroText
+        data-sal-duration="300"
+        data-sal="slide-down"
+        data-sal-delay="300"
+        data-sal-easing="ease-out-bounce"
+      >
         <p>
           <b>
             Within our sustainable environment our open community thrives to connect with the best of the best. Together we focus on developing innovative solutions in the field of high-tech manufacturing.
@@ -83,6 +88,10 @@ class App extends Component {
           <Title
             align="center"
             style={{padding: '0 30px'}}
+            data-sal-duration="400"
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-easing="ease-out-bounce"
           >
             What we can offer you
           </Title>

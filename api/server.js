@@ -16,7 +16,16 @@ const config = require('../next.config');
 const app = next(config, { dev });
 const handle = app.getRequestHandler();
 
-const {fetchEntriesForContentType, fetchEntry, fetchStories, fetchStory, fetchLandingPages, fetchLandingPage} = require('./contentful.js');
+const {
+  fetchEntriesForContentType,
+  fetchEntry,
+  fetchNews,
+  fetchNewsItem,
+  fetchStories,
+  fetchStory,
+  fetchLandingPages,
+  fetchLandingPage
+} = require('./contentful.js');
 const {sendMail} = require('./email.js');
 const {newsletterAdd} = require('./newsletter.js');
 const {populateSitemap} = require('./sitemap.js');
@@ -106,6 +115,21 @@ app.prepare().then(() => {
     else if (pathname.indexOf('/landing/') === 0) {
       const slug = pathname.split('/landing/')[1];
       app.render(req, res, '/landing-page', { slug: slug });
+    }
+    // API: News
+    else if (pathname === '/api/news' || pathname.indexOf('/api/news?') === 0 ) {
+      let news = await fetchNews();
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+      res.end(JSON.stringify(news, null, 3));
+    }
+    // API: News item
+    else if (pathname.indexOf('/api/news/') === 0) {
+      const slug = pathname.split('/news/')[1];
+      let newsItem = await fetchNewsItem({ slug: slug });
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+      res.end(JSON.stringify(newsItem, null, 3));
     }
     // API: Stories
     else if (pathname === '/api/stories' || pathname.indexOf('/api/stories?') === 0 ) {

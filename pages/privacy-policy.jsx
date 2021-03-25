@@ -14,7 +14,7 @@ const Footer = dynamic(() => import('../components/footer.js'));
 function Community() {
   return <div className="root">
     <Head>
-      <title>Privacy policy - The Hague Tech</title>
+      <title>Privacy policy - TPY</title>
     </Head>
 
     <Navigation />
@@ -40,10 +40,6 @@ function Community() {
 
       <p>
         Google, as a third party vendor, uses cookies so that we can analyse the way visitors use our site.
-      </p>
-
-      <p>
-        HotJar, as a third party vendor, doesn't store cookies, though they get your IP address. HotJar is used for collecting feedback (the widget in the right bottom of the site).
       </p>
 
       <p>

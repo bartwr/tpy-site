@@ -17,7 +17,13 @@ class VideoBanner extends Component {
     return <div className="VideoBanner">
       <img className="video" src={`/static/components/video-banner/tpy-hero.png`} />
       <div className="overlay">
-        <Title color="#fff">
+        <Title
+          color="#fff"
+          data-sal-duration="400"
+          data-sal="slide-up"
+          data-sal-delay="300"
+          data-sal-easing="ease-out-bounce"
+        >
           Join the best of our industry
         </Title>
         <div>
@@ -30,7 +36,13 @@ class VideoBanner extends Component {
             >
             Team up and share your knowledge with like-minded technology peers
           </div>
-          <div className="button-wrapper">
+          <div
+            className="button-wrapper"
+            data-sal-duration="300"
+            data-sal="fade"
+            data-sal-delay="300"
+            data-sal-easing="ease-out-bounce"
+          >
             <Button
               href="https://www.bartroorda.nl"
               target="_blank"

@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
+import sal from 'sal.js'
 
 // Load components
 const Navigation = dynamic(() => import('../components/navigation.jsx'));
@@ -30,9 +31,6 @@ function Contact() {
       <Title size="small">
         Join our community
       </Title>
-      <p>
-         The Hague Tech is a grand base to work from. Our building is situated in the heart of The Hague, at walking distance from Laan van NOI and next to the highway A12. The city centre of The Hague is close by, but you can also reach Delft, Amsterdam, Rotterdam and Utrecht in no time. 
-      </p>
       <ContactForm type="join-community" />
     </div>
     <BookATourBanner />

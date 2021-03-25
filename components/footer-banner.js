@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import React, { Component } from 'react';
 import $ from 'jquery';
+import sal from 'sal.js'
 
 // Load components
 const Title = dynamic(() => import('./title.js'));
@@ -8,7 +9,7 @@ const Button = dynamic(() => import('./button.js'));
 
 class FooterBanner extends Component {
   componentDidMount() {
-    // this.initTransition();
+    sal();
   }
 
   initTransition() {
@@ -48,25 +49,38 @@ class FooterBanner extends Component {
   render() {
     return <div className="FooterBanner">
       <div className="max-width text-center">
-        <Title size="large" style={{
-          textAlign: 'center'
-        }}>
+        <Title 
+          size="large"
+          data-sal="slide-up"
+          data-sal-duration="300"
+          data-sal-delay="300"
+          data-sal-easing="ease-out-bounce"
+          style={{
+            textAlign: 'center'
+          }}>
           {this.props.title}
         </Title>
-        <Button
-          href={this.props.buttonLink || '/contact'}
-          target={this.props.target}
-          style={{
-            display: 'inline-block',
-            marginRight: 'auto',
-            marginTop: '40px',
-            marginLeft: 'auto',
-            minwidth: '148px',
-            whiteSpace: 'nowrap'
-          }}
+        <div
+          data-sal-duration="300"
+          data-sal="fade"
+          data-sal-delay="300"
+          data-sal-easing="ease-out-bounce"
         >
-          {this.props.buttonText}
-        </Button>
+          <Button
+            href={this.props.buttonLink || '/contact'}
+            target={this.props.target}
+            style={{
+              display: 'inline-block',
+              marginRight: 'auto',
+              marginTop: '40px',
+              marginLeft: 'auto',
+              minwidth: '148px',
+              whiteSpace: 'nowrap'
+            }}
+          >
+            {this.props.buttonText}
+          </Button>
+        </div>
       </div>
       <style jsx>{`
         .FooterBanner {

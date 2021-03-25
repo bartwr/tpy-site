@@ -132,12 +132,10 @@ class Navigation extends Component {
           title: 'Acceleration & incubation',
           href: '/acceleration',
           image: '/static/components/carousel/tht-icon-community.svg',
-          imageHeight: '36px'
         }, {
           title: 'Softlanding',
           href: '/softlanding',
           image: '/static/components/carousel/tht-icon-community.svg',
-          imageHeight: '36px'
         }, {
           title: 'Co-creation',
           href: '/co-creation',
@@ -146,7 +144,7 @@ class Navigation extends Component {
       },
       {
         title: 'What is happening?',
-        href: '/2'
+        href: '/happening'
       },
       {
         title: 'Pricing',
@@ -228,6 +226,14 @@ class Navigation extends Component {
           padding: 1rem 18px;
           z-index: 10;
           background: #fff;
+        }
+        .Navigation.is-active {
+          bottom: 0;
+        }
+        @media(min-width: 480px) {
+          .Navigation.is-active {
+            bottom: none;
+          }
         }
         .Navigation > .max-width {
         }
@@ -495,6 +501,7 @@ class Navigation extends Component {
         .icon-close,
         .icon-hamburger {
           width: 18px;
+          height: 18px;
           display: block;
           background: center center no-repeat;
           background-size: contain;
