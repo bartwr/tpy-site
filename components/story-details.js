@@ -40,7 +40,7 @@ class StoryInfoBlock extends Component {
           padding: 28px 32px;
 
           color: #071124;
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 17px;
           font-weight: 300;
           line-height: 24px;
@@ -48,7 +48,7 @@ class StoryInfoBlock extends Component {
         }
         h2 {
           color: #ff3e6c;
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 17px;
           font-weight: 300;
           text-transform: uppercase;
@@ -145,14 +145,14 @@ class StoryDetails extends Component {
         }
         .introText {
           color: #0f2247;
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 24px;
           font-weight: 500;
           line-height: 32px;
         }
         .detailedText {
           color: #0f2247;
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 19px;
           font-weight: 300;
           line-height: 32px;

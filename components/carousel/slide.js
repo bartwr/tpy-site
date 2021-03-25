@@ -17,6 +17,13 @@ class Slide extends Component {
     }, 500);
   }
   render() {
+    let top = 0;
+    if(this.props.data.title == 'co-creation') {
+      top = '5px';
+    } else if(this.props.data.title == 'acceleration') {
+      top = '12px';
+    }
+    console.log(top)
     return <div className="Slide">
       <a
         href={this.props.data.href}
@@ -35,10 +42,10 @@ class Slide extends Component {
               data-sal-duration="400"
               data-sal="slide-up"
               data-sal-delay="300"
-              data-sal-easing="ease-out-bounce"
+              data-sal-easing="ease-in-out"
               style={{
                 position: 'relative',
-                top: (this.props.data.title == 'co-creation' ? '5px' : 0)
+                top: top
               }}
             />
           </div>
@@ -70,14 +77,16 @@ class Slide extends Component {
           animation: rotation 2s linear infinite;
         }
         .Slide-title {
+          text-transform: uppercase;
           margin: 2rem auto;
           transition: transform 0.3s;
           text-align: center;
           color: #144372;
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-weight: 500;
           font-size: 18px;
           line-height: 24px;
+          letter-spacing: 1px;
           text-align: center;
           padding: 0 24px;
         }

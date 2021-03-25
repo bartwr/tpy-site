@@ -8,7 +8,7 @@ class Text extends Component {
       {this.props.children}
       <style jsx>{`
         .Text {
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 1.2rem;
           font-weight: 500;
           line-height: 2rem;

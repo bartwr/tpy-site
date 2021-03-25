@@ -7,8 +7,7 @@ import moment from 'moment';
 import {getNews, getNewsItem} from '../helpers/localStorage.js';
 
 // Import components
-const EventBlock = dynamic(() => import('./event-block.js'));
-const StoryBlock = dynamic(() => import('./story-block.jsx'));
+const NewsBlock = dynamic(() => import('./news-block.jsx'));
 
 class HappeningOverview extends Component {
   constructor(props) {
@@ -44,7 +43,6 @@ class HappeningOverview extends Component {
     return items;
   }
   render() {
-    console.log('Test');
     if(! this.state.items) return <div style={{minHeight: '800px'}} />
     return <div className="HappeningOverview">
       <nav className="filters" hidden>
@@ -53,7 +51,7 @@ class HappeningOverview extends Component {
       <div className="items">
         {R.map((idx) => {
           const item = this.state.items[idx];
-          return <StoryBlock key={idx} event={item} />
+          return <NewsBlock key={idx} event={item} />
         }, Object.keys(this.state.items))}
       </div>
       <style jsx>{`

@@ -20,7 +20,7 @@ class FullWidthImage extends Component {
           justify-content: center;
           flex-direction: column;
           color: #fff;
-          background: #1126a9 center center / cover no-repeat;
+          background: #0E2F50 center center / cover no-repeat;
           position: relative;
           overflow: hidden;
           margin: 15px 0;

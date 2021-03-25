@@ -26,34 +26,33 @@ class MyApp extends App {
       const splittedSlug = pageProps.slug ? pageProps.slug.split('/') : null;
 
       if (splittedSlug && splittedSlug.length > 1) {
-
         // Get event based on slug
-        event = await client.getEntries({
-          content_type: 'event',
-          'fields.slug': splittedSlug[1],
-          limit: 1
-        })
-          .then((entry) => entry.items[0])
-          .catch(console.error);
+        // event = await client.getEntries({
+        //   content_type: 'event',
+        //   'fields.slug': splittedSlug[1],
+        //   limit: 1
+        // })
+        //   .then((entry) => entry.items[0])
+        //   .catch(console.error);
       }
 
       // Get story based on slug
-      story = await client.getEntries({
-        content_type: 'story',
-        'fields.slug': pageProps.slug,
-        limit: 1
-      })
-        .then((entry) => entry.items[0])
-        .catch(console.error);
+      // story = await client.getEntries({
+      //   content_type: 'story',
+      //   'fields.slug': pageProps.slug,
+      //   limit: 1
+      // })
+      //   .then((entry) => entry.items[0])
+      //   .catch(console.error);
 
       // Get landing page based on slug
-      landingPage = await client.getEntries({
-        content_type: 'landingpage',
-        'fields.slug': pageProps.slug,
-        limit: 1
-      })
-        .then((entry) => entry.items[0])
-        .catch(console.error);
+      // landingPage = await client.getEntries({
+      //   content_type: 'landingpage',
+      //   'fields.slug': pageProps.slug,
+      //   limit: 1
+      // })
+      //   .then((entry) => entry.items[0])
+      //   .catch(console.error);
     }
 
     return { pageProps, story, event, landingPage }
@@ -236,11 +235,18 @@ class MyApp extends App {
           li {
             font-family: "Montserrat", sans-serif;
             max-width: 100%;
-            font-size: 22px;
-            line-height: 32px;
+            font-size: 16px;
+            line-height: 24px;
+          }
+          @media(min-width: 480px) {
+            p,
+            li {
+              font-size: 22px;
+              line-height: 32px;
+            }
           }
           p > :global(a) {
-            color: #1126a9;
+            color: #0E2F50;
             padding-bottom: 0;
             border-bottom: 1px solid rgba(15, 34, 72, 0.3);
             text-decoration: none;
@@ -308,7 +314,7 @@ class MyApp extends App {
               font-style: normal;
               font-display: fallback;
           }
-          /* Maison Neue */
+          /* Montserrat */
           @font-face {
               font-family: 'maison_neuebook_italic';
               src: url('/static/fonts/maison-neue/maisonneuebookitalic-webfont.woff2') format('woff2'),
@@ -334,7 +340,7 @@ class MyApp extends App {
               font-display: fallback;
           }
           @font-face {
-              font-family: 'Maison Neue';
+              font-family: 'Montserrat';
               src: url('/static/fonts/maison-neue/maisonneuebook-webfont.woff2') format('woff2'),
                    url('/static/fonts/maison-neue/maisonneuebook-webfont.woff') format('woff');
               font-weight: normal;

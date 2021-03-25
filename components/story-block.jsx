@@ -62,7 +62,7 @@ class StoryBlock extends Component {
             font-size: 14px;
             font-weight: 300;
             line-height: 24px;
-            font-family: "Maison Neue", sans-serif;
+            font-family: "Montserrat", sans-serif;
           }
           .gradient {
             position: absolute;

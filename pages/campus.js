@@ -30,7 +30,6 @@ function Campus() {
       title="TPY Campus"
       imageBk="/static/pages/community/community.jpg"
       image="https://loremflickr.com/1920/1280"
-      style={{backgroundPosition: 'center top'}}
       />
     <IntroText>
       <p>

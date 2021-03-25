@@ -12,7 +12,7 @@ class SmallCapsTitle extends Component {
         {this.props.children}
         <style jsx>{`
           .SmallCapsTitle {
-            font-family: "Maison Neue", sans-serif;
+            font-family: "Montserrat", sans-serif;
             text-transform: uppercase;
             font-size: 11px;
             line-height: 16px;
@@ -26,7 +26,7 @@ class SmallCapsTitle extends Component {
           }
           .SmallCapsTitle.small {
             line-height: 12px;
-            font-family: "Maison Neue Bold", sans-serif;
+            font-family: "Montserrat Bold", sans-serif;
             font-size: 10px;
             font-weight: 700;
             letter-spacing: 2px;

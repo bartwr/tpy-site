@@ -32,7 +32,7 @@ class DateCircle extends Component {
         .date-month {
           height: 14px;
           color: #ffffff;
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 12px;
           font-weight: 300;
           text-transform: uppercase;
@@ -40,7 +40,7 @@ class DateCircle extends Component {
         }
         .date-number {
           color: #ffffff;
-          font-family: "Maison Neue Bold", sans-serif;
+          font-family: "Montserrat Bold", sans-serif;
           font-size: 22px;
           font-weight: 700;
           text-transform: uppercase;

@@ -33,19 +33,19 @@ const slides = [
     title: 'academy',
     href: '#academy',
     image: '/static/components/carousel/tpy-icon-academy.svg',
-    imageHeight: 104
+    imageHeight: 106
   },
   {
     title: 'acceleration',
     href: '#acceleration',
     image: '/static/components/carousel/tpy-icon-acceleration.svg',
-    imageHeight: 90
+    imageHeight: 120
   },
   {
     title: 'softlanding',
     href: '#softlanding',
     image: '/static/components/carousel/tpy-icon-softlanding.svg',
-    imageHeight: 108
+    imageHeight: 110
   },
   {
     title: 'co-creation',
@@ -72,7 +72,7 @@ class App extends Component {
         data-sal-duration="300"
         data-sal="slide-down"
         data-sal-delay="300"
-        data-sal-easing="ease-out-bounce"
+        data-sal-easing="ease-in-out"
       >
         <p>
           <b>
@@ -91,7 +91,7 @@ class App extends Component {
             data-sal-duration="400"
             data-sal="slide-up"
             data-sal-delay="300"
-            data-sal-easing="ease-out-bounce"
+            data-sal-easing="ease-in-out"
           >
             What we can offer you
           </Title>

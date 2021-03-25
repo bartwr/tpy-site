@@ -99,6 +99,7 @@ class PricingBlock extends Component {
          
          .PricingBlock .title {
             font-size: 24px;
+            padding-bottom: 42px;
          }
        }
        
@@ -178,7 +179,7 @@ class PricingBlock extends Component {
           text-transform: uppercase;
         }
         .pricing-wrapper {
-          margin: 37px 0 24px 0;
+          margin: 24px 0 24px 0;
           text-align: center;
         }
         .price-in-euros {
@@ -194,16 +195,16 @@ class PricingBlock extends Component {
         }
         .price-in-euros sup {
           position: absolute;
-          left: -20px;
-          font-size: 24px;
-          font-weight: 300;
-          top: 12px;
+          left: -17px;
+          font-size: 22px;
+          font-weight: 500;
+          top: -16px;
         }
         .pricing-wrapper small {
           display: block;
           color: #144372;
           font-family: "Montserrat", sans-serif;
-          font-size: 15px;
+          font-size: 16px;
           font-weight: 300;
         }
         hr {

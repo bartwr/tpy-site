@@ -45,6 +45,7 @@ class Footer extends Component {
         .social-icons {
           max-width: 12rem;
           justify-content: space-between;
+          visibility: hidden;
         }
         .social-icons img {
           width: 18px;
@@ -77,7 +78,7 @@ class Footer extends Component {
           opacity: 0.8;
         }
         nav a {
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           display: block;
           text-decoration: none;
           color: #fff;

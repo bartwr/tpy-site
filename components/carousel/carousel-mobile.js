@@ -75,7 +75,7 @@ class CarouselMobile extends Component {
         .Carousel {
           margin: 2rem 0 4rem 0;
           color: #0F2247;
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 1.2rem;
           font-weight: 500;
           line-height: 2rem;

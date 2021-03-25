@@ -22,7 +22,7 @@ class VideoBanner extends Component {
           data-sal-duration="400"
           data-sal="slide-up"
           data-sal-delay="300"
-          data-sal-easing="ease-out-bounce"
+          data-sal-easing="ease-in-out"
         >
           Join the best of our industry
         </Title>
@@ -32,7 +32,7 @@ class VideoBanner extends Component {
             data-sal-duration="400"
             data-sal="slide-up"
             data-sal-delay="600"
-            data-sal-easing="ease-out-bounce"
+            data-sal-easing="ease-in-out"
             >
             Team up and share your knowledge with like-minded technology peers
           </div>
@@ -41,7 +41,7 @@ class VideoBanner extends Component {
             data-sal-duration="300"
             data-sal="fade"
             data-sal-delay="300"
-            data-sal-easing="ease-out-bounce"
+            data-sal-easing="ease-in-out"
           >
             <Button
               href="https://www.bartroorda.nl"

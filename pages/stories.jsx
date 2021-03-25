@@ -105,7 +105,7 @@ function Stories() {
           font-weight: normal;
           font-style: normal;
       }
-      /* Maison Neue */
+      /* Montserrat */
       @font-face {
           font-family: 'maison_neuebook_italic';
           src: url('/static/fonts/maison-neue/maisonneuebookitalic-webfont.woff2') format('woff2'),
@@ -128,7 +128,7 @@ function Stories() {
           font-style: normal;
       }
       @font-face {
-          font-family: 'Maison Neue';
+          font-family: 'Montserrat';
           src: url('/static/fonts/maison-neue/maisonneuebook-webfont.woff2') format('woff2'),
                url('/static/fonts/maison-neue/maisonneuebook-webfont.woff') format('woff');
           font-weight: normal;

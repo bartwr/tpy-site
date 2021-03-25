@@ -41,7 +41,7 @@ class TextAndImage extends Component {
         data-sal={`slide-${this.props.imagePosition == 'right' ? 'left' : 'right'}`}
         data-sal-duration="300"
         data-sal-delay="300"
-        data-sal-easing="ease-out-bounce"
+        data-sal-easing="ease-in-out"
       >
         <img src={this.props.image} className="image" />
       </div>
@@ -50,7 +50,7 @@ class TextAndImage extends Component {
         data-sal={`slide-${this.props.imagePosition == 'right' ? 'right' : 'left'}`}
         data-sal-duration="300"
         data-sal-delay="300"
-        data-sal-easing="ease-out-bounce"
+        data-sal-easing="ease-in-out"
       >
 
         <SmallCapsTitle>
@@ -74,7 +74,7 @@ class TextAndImage extends Component {
       <style jsx>{`
         .TextAndImage {
           color: #0F2247;
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 1.2rem;
           font-weight: 500;
           line-height: 2rem;
@@ -121,6 +121,7 @@ class TextAndImage extends Component {
           .image-wrapper {
             background-image: none;
             background-size: cover;
+            background-repeat: no-repeat;
             background-position: center center;
           }
           .image {

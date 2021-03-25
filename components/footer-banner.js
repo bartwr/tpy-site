@@ -54,7 +54,7 @@ class FooterBanner extends Component {
           data-sal="slide-up"
           data-sal-duration="300"
           data-sal-delay="300"
-          data-sal-easing="ease-out-bounce"
+          data-sal-easing="ease-in-out"
           style={{
             textAlign: 'center'
           }}>
@@ -64,7 +64,7 @@ class FooterBanner extends Component {
           data-sal-duration="300"
           data-sal="fade"
           data-sal-delay="300"
-          data-sal-easing="ease-out-bounce"
+          data-sal-easing="ease-in-out"
         >
           <Button
             href={this.props.buttonLink || '/contact'}

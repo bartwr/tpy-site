@@ -119,27 +119,27 @@ class Navigation extends Component {
         items: [{
           title: 'Community',
           href: '/community',
-          image: '/static/components/carousel/tht-icon-community.svg'
+          image: '/static/components/carousel/tpy-icon-community.svg'
         }, {
           title: 'Campus',
           href: '/campus',
-          image: '/static/components/carousel/tht-icon-community.svg'
+          image: '/static/components/carousel/tpy-icon-campus.svg'
         }, {
           title: 'Academy',
           href: '/academy',
-          image: '/static/components/carousel/tht-icon-community.svg'
+          image: '/static/components/carousel/tpy-icon-academy.svg'
         }, {
           title: 'Acceleration & incubation',
           href: '/acceleration',
-          image: '/static/components/carousel/tht-icon-community.svg',
+          image: '/static/components/carousel/tpy-icon-acceleration.svg',
         }, {
           title: 'Softlanding',
           href: '/softlanding',
-          image: '/static/components/carousel/tht-icon-community.svg',
+          image: '/static/components/carousel/tpy-icon-softlanding.svg',
         }, {
           title: 'Co-creation',
           href: '/co-creation',
-          image: '/static/components/carousel/tht-icon-community.svg'
+          image: '/static/components/carousel/tpy-icon-co-creation.svg'
         }]
       },
       {
@@ -353,7 +353,7 @@ class Navigation extends Component {
           text-decoration: none;
           line-height: 44px;
           color: #0F2247;
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 17px;
           line-height: 22px;
           font-weight: 300;
@@ -485,7 +485,7 @@ class Navigation extends Component {
         /* Toggle Nav */
         .toggle-nav {
           cursor: pointer;
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 2rem;
           display: flex;
           justify-content: center;

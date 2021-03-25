@@ -153,14 +153,14 @@ class ContactForm extends Component {
         }
         .ContactForm p {
           color: #0f2247;
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 24px;
           font-weight: 500;
           line-height: 32px;
         }
         .intro-text {
           color: #0f2247;
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 24px;
           font-weight: 500;
           line-height: 32px;
@@ -188,7 +188,7 @@ class ContactForm extends Component {
         }
         .form label {
           color: #0f2247;
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 19px;
           font-weight: 300;
           line-height: 32px;
@@ -200,7 +200,7 @@ class ContactForm extends Component {
         .ContactForm select,
         .ContactForm textarea {
           color: #0f2247;
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 19px;
           font-weight: 300;
           line-height: 40px;
@@ -218,7 +218,7 @@ class ContactForm extends Component {
         }
         .address .paragraph {
           color: #0f2247;
-          font-family: "Maison Neue", sans-serif;
+          font-family: "Montserrat", sans-serif;
           font-size: 19px;
           font-weight: 300;
           line-height: 32px;

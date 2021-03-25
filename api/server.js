@@ -22,9 +22,7 @@ const {
   fetchNews,
   fetchNewsItem,
   fetchStories,
-  fetchStory,
-  fetchLandingPages,
-  fetchLandingPage
+  fetchStory
 } = require('./contentful.js');
 const {sendMail} = require('./email.js');
 const {newsletterAdd} = require('./newsletter.js');
@@ -98,24 +96,6 @@ app.prepare().then(() => {
       res.setHeader('content-type', 'text/javascript');
       createReadStream('./offline/serviceWorker.js').pipe(res);
     }
-    // Redirect old newsletter subscribe URL
-    if (pathname === '/contact/subscribe/') {
-      res.redirect('/newsletter');
-    }
-    // Make it possible to link to events
-    else if (pathname.indexOf('/events/') === 0) {
-      const slug = pathname.split('/events/')[1];
-      app.render(req, res, '/event', { slug: slug });
-    }
-    // Make it possible to link to stories
-    else if (pathname.indexOf('/stories/') === 0) {
-      const slug = pathname.split('/stories/')[1];
-      app.render(req, res, '/story', { slug: slug });
-    }
-    else if (pathname.indexOf('/landing/') === 0) {
-      const slug = pathname.split('/landing/')[1];
-      app.render(req, res, '/landing-page', { slug: slug });
-    }
     // API: News
     else if (pathname === '/api/news' || pathname.indexOf('/api/news?') === 0 ) {
       let news = await fetchNews();
@@ -130,59 +110,6 @@ app.prepare().then(() => {
       res.setHeader('Content-Type', 'application/json');
       res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
       res.end(JSON.stringify(newsItem, null, 3));
-    }
-    // API: Stories
-    else if (pathname === '/api/stories' || pathname.indexOf('/api/stories?') === 0 ) {
-      let stories = await fetchStories();
-      res.setHeader('Content-Type', 'application/json');
-      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-      res.end(JSON.stringify(stories, null, 3));
-    }
-    // API: Story
-    else if (pathname.indexOf('/api/stories/') === 0) {
-      const slug = pathname.split('/stories/')[1];
-      let story = await fetchStory({ slug: slug });
-      res.setHeader('Content-Type', 'application/json');
-      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-      res.end(JSON.stringify(story, null, 3));
-    }
-    // API: Events
-    else if (pathname === '/api/events' || pathname.indexOf('/api/events?') === 0 ) {
-      let entries = await fetchEntriesForContentType('event', {
-        query: query
-      });
-      res.setHeader('Content-Type', 'application/json');
-      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-      res.end(JSON.stringify(entries, null, 3));
-    }
-    // API: Event
-    else if (pathname.indexOf('/api/events/') === 0) {
-      const slugFullPath = pathname.split('/events/')[1];
-      const date = slugFullPath.split('/')[0];
-      const slug = slugFullPath.split('/')[1];
-      let entry = await fetchEntry({
-        content_type: 'event',
-        slug: slug,
-        date: date
-      });
-      res.setHeader('Content-Type', 'application/json');
-      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-      res.end(JSON.stringify(entry, null, 3));
-    }
-    // API: Landing-pages
-    else if (pathname === '/api/landing-pages' || pathname.indexOf('/api/landing-pages?') === 0 ) {
-      let landingPages = await fetchLandingPages();
-      res.setHeader('Content-Type', 'application/json');
-      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-      res.end(JSON.stringify(landingPages, null, 3));
-    }
-    // API: Landing-page
-    else if (pathname.indexOf('/api/landing-pages/') === 0) {
-      const slug = pathname.split('/landing-pages/')[1];
-      let landingPage = await fetchLandingPage({ slug: slug });
-      res.setHeader('Content-Type', 'application/json');
-      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-      res.end(JSON.stringify(landingPage, null, 3));
     }
     else {
       return handle(req, res, parsedUrl);
