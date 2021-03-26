@@ -57,7 +57,7 @@ class TextAndImage extends Component {
           {this.props.category}
         </SmallCapsTitle>
 
-        <Title size="small">
+        <Title size="large">
           {this.props.title}
         </Title>
 
