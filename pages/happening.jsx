@@ -15,7 +15,7 @@ function Happening() {
   return <div className="HappeningPage">
     <Head>
 
-      <title key="title">Happening | The Hague Tech</title>
+      <title key="title">Happening | TPY</title>
 
       <meta key="og:title" property="og:title" content="Happening | The Hague Tech" />
       <meta key="og:image" property="og:image" content="https://www.thehaguetech.com/static/pages/events/meta.jpg" />
@@ -31,13 +31,25 @@ function Happening() {
         smallCapsTitleColor="white"
         title="Everyday is full of great oppertunities"
         />
-      <IntroText>
-        The Hague Tech is the premier home in The Hague for tech and business related events and meetups.
-      </IntroText>
-      <div style={{marginBottom: '2rem'}}>
-        <Title align="center" size="small">
-          Happening at The Hague Tech
-        </Title>
+      {/*<IntroText>
+      </IntroText>*/}
+      <div className="flex flex-wrap" style={{
+        width: '1000px',
+        maxWidth: '100%',
+        margin: '0px auto 48px',
+      }}>
+        <div style={{
+          width: '300px',
+          maxWidth: '100%'
+        }} className="show-on-desktop-only" />
+        <div className="flex flex-1" style={{
+          marginLeft: '20px',
+          marginTop: '112px'
+        }}>
+          <Title>
+            What is happening?
+          </Title>
+        </div>
       </div>
       <HappeningOverview />
     </div>

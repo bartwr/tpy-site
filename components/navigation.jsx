@@ -157,7 +157,7 @@ class Navigation extends Component {
     ]
     return <header className={'Navigation' + (this.state.showNav ? ' is-active' : '')}>
       <div className="max-width">
-        <Link prefetch href="/">
+        <Link href="/">
           <div style={{
             cursor: 'pointer',
             display: 'inline-block'
@@ -175,7 +175,7 @@ class Navigation extends Component {
             {R.map((item) => {
               return <li key={item.title} className={'primary-nav-item' + (this.state.activePrimaryNav == item.title ? ' is-active' : '')}>
                 {item.href
-                  ? <Link prefetch href={item.href}>
+                  ? <Link href={item.href}>
                       <a
                         onClick={() => this.setState({ showNav: false, activePrimaryNav: item.title })}
                         className={'primary-nav-link' + (this.state.path == item.href ? ' is-active' : '')}
@@ -194,11 +194,11 @@ class Navigation extends Component {
                   <ul>
                     {item.items && R.map((item) => {
                       return <li className="secundary-nav-item" key={item.title}>
-                        <Link prefetch href={item.href}>
+                        <Link href={item.href}>
                           <div className="icon" style={{backgroundImage: `url(${item.image})`, backgroundSize: `auto ${item.imageHeight}`}} />
                         </Link>
                         <div style={{flex: 1, alignSelf: 'center'}}>
-                          <Link prefetch href={item.href}>
+                          <Link href={item.href}>
                             <a className={'secundary-nav-link' + (this.state.path == item.href ? ' is-active' : '')}>{item.title}</a>
                           </Link>
                         </div>
@@ -497,6 +497,11 @@ class Navigation extends Component {
           height: 32px;
           z-index: 1;
           padding: 0 18px;
+        }
+        @media(min-width: 480px) {
+          .toggle-nav {
+            height: 50px;
+          }
         }
         .icon-close,
         .icon-hamburger {

@@ -96,6 +96,11 @@ app.prepare().then(() => {
       res.setHeader('content-type', 'text/javascript');
       createReadStream('./offline/serviceWorker.js').pipe(res);
     }
+    // Make it possible to link to stories
+    else if (pathname.indexOf('/happening/') === 0) {
+      const slug = pathname.split('/happening/')[1];
+      app.render(req, res, '/happening-item', { slug: slug });
+    }
     // API: News
     else if (pathname === '/api/news' || pathname.indexOf('/api/news?') === 0 ) {
       let news = await fetchNews();

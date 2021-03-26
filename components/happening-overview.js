@@ -44,9 +44,22 @@ class HappeningOverview extends Component {
   }
   render() {
     if(! this.state.items) return <div style={{minHeight: '800px'}} />
-    return <div className="HappeningOverview">
-      <nav className="filters" hidden>
-        Filters
+    return <div className="HappeningOverview flex flex-wrap flex-start">
+      <nav className="filters show-on-desktop-only">
+        <ul>
+          <li className="is-active">
+            <a>All</a>
+          </li>
+          {/*<li>
+            <a href="#">News from TPY</a>
+          </li>
+          <li>
+            <a href="#">Programmes & Events</a>
+          </li>
+          <li>
+            <a href="#">Academy & Jobs</a>
+          </li>*/}
+        </ul>
       </nav>
       <div className="items">
         {R.map((idx) => {
@@ -62,8 +75,39 @@ class HappeningOverview extends Component {
         }
         .items {
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           flex-wrap: wrap;
+          flex: 1;
+        }
+        .filters {
+          width: 300px;
+          max-width: 100%;
+          margin-top: 20px;
+          padding: 0 18px;
+        }
+        .filters ul, .filters li {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        .filters li {
+          margin: 10px 0;
+        }
+        .filters a {
+          font-family: Montserrat, sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0.5px;
+          text-decoration: none;
+          color: rgba(20, 67, 114, 0.5);
+        }
+        .filters li.is-active a {
+          color: #144372;
+          display: inline-block;
+          padding-bottom: 6px;
+          border-bottom: solid #FF8850 8px;
         }
       `}</style>
     </div>

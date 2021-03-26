@@ -23,10 +23,10 @@ class Footer extends Component {
           </nav>
         </div>
         <nav className="footer-nav">
-          <Link prefetch href="/contact">
+          <Link href="/contact">
             <a className="nav-link">Contact</a>
           </Link>
-          <Link prefetch href="/privacy-policy">
+          <Link href="/privacy-policy">
             <a className="nav-link">Privacy Policy</a>
           </Link>
         </nav>

@@ -125,7 +125,7 @@ function EventsAndLabs() {
     </div>
     <div style={{marginBottom: '2rem'}}>
       <Title align="center">
-        <Link prefetch href="/events">
+        <Link href="/events">
           Our upcoming events
         </Link>
       </Title>

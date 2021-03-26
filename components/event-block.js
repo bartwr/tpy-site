@@ -12,7 +12,7 @@ class EventBlock extends Component {
   render() {
     const slug = this.props.event.datetime.split('T')[0] + '/' + this.props.event.slug
     const introText = this.props.event.introText.length <= 10 ? marked(this.props.event.detailedText).replace(/<\/?[^>]+(>|$)/g, '').substring(0, 200) : this.props.event.introText;
-    return <Link prefetch href={`/event?slug=${slug}`} as={`/events/${slug}`}>
+    return <Link href={`/event?slug=${slug}`} as={`/events/${slug}`}>
       <div className="EventBlock">
         <header style={{
           backgroundImage: `url( ${this.props.event.smallImage.fields.file.url} )`

@@ -18,7 +18,7 @@ class PageHeader extends Component {
         <SmallCapsTitle color={this.props.smallCapsTitleColor}>
           {this.props.smallCapsTitle}
         </SmallCapsTitle>
-        <Title color="#fff">
+        <Title size="large" color="#fff">
           {this.props.title}
         </Title>
       </div>

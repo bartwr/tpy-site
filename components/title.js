@@ -62,8 +62,10 @@ class Title extends Component {
           line-height: 32px;
         }
         .small {
-          font-size: 27px;
-          line-height: 32px;
+          font-weight: 600;
+          font-size: 22px;
+          line-height: 24px;
+          color: #144372;
         }
         .xsmall {
           font-size: 13px;
@@ -80,8 +82,8 @@ class Title extends Component {
             line-height: 56px;
           }
           .small {
-            font-size: 48px;
-            line-height: 56px;
+            font-size: 22px;
+            line-height: 24px;
           }
           .xsmall {
             font-size: 17px;

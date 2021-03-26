@@ -14,7 +14,7 @@ function BookATourBanner() {
       &nbsp;
     </div>
     <div className="text-wrapper">
-      <Title color="#fff">
+      <Title size="large" color="#fff">
         "Team up and share your knowledge with like-minded technology peers."
       </Title>
       <div style={{ margin: '1rem 0' }}>

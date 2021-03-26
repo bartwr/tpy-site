@@ -10,27 +10,30 @@ const DateCircle = dynamic(() => import('./date-circle.js'));
 
 class NewsBlock extends Component {
   render() {
-    console.log('this.props', this.props)
     const slug = this.props.event.slug
     const introText = this.props.event.introText.length <= 10 ? marked(this.props.event.longText).replace(/<\/?[^>]+(>|$)/g, '').substring(0, 200) : this.props.event.introText;
-    return <Link prefetch href={`/story?slug=${slug}`} as={`/stories/${slug}`}>
+    return <Link href={`/happening-item?slug=${slug}`} as={`/happening/${slug}`}>
       <div className="NewsBlock">
         <header style={{
-          backgroundImage: `url( ${this.props.event.smallImage.fields.file.url} )`
+          backgroundImage: `url( ${this.props.event.smallImage ? this.props.event.smallImage.fields.file.url : ''} )`
         }} />
         <DateCircle date={this.props.event.datetime} />
         <div className="info">
-          {/*<SmallCapsTitle size="small">
-            {this.props.event.category || 'design'}
-          </SmallCapsTitle>*/}
+          <div style={{
+            display: 'none',
+            marginBottom: '10px'
+          }}>
+            <SmallCapsTitle>
+              {this.props.event.category || 'design'}
+            </SmallCapsTitle>
+          </div>
           <Title size="small" style={{
-            fontSize: '30px',
-            fontWeight: '700',
-            lineHeight: '32px'
           }}>
             {this.props.event.title}
           </Title>
-          <p>
+          <p style={{
+            color: '#0F2247'
+          }}>
             {introText}        
           </p>
         </div>
@@ -45,6 +48,7 @@ class NewsBlock extends Component {
             position: relative;
             cursor: pointer;
             transition: box-shadow 0.3s;
+            width: 100%;
           }
           .NewsBlock:hover {
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -52,8 +56,12 @@ class NewsBlock extends Component {
           }
           @media(min-width: 480px) {
             .NewsBlock {
-              width: 285px;
+              width: 306px;
             }
+          }
+          .NewsBlock p {
+            font-size: 16px;
+            line-height: 24px;
           }
           header {
             background: center center / cover no-repeat;

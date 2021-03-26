@@ -18,11 +18,12 @@ class DateCircle extends Component {
           position: relative;
         }
         .date {
-          width: 57px;
-          height: 57px;
-          background-color: #ff3e6c;
+          width: 56px;
+          height: 56px;
+          background-color: #19baa2;
+          background: url('/static/components/date-circle/date-background-oval.png') no-repeat center center / contain;
           margin: -28px auto 0;
-          border-radius: 57px;
+          border-radius: 56px;
           color: #fff;
           text-align: center;
           display: flex;
@@ -34,7 +35,7 @@ class DateCircle extends Component {
           color: #ffffff;
           font-family: "Montserrat", sans-serif;
           font-size: 12px;
-          font-weight: 300;
+          font-weight: 600;
           text-transform: uppercase;
           text-align: center;
         }
@@ -42,7 +43,7 @@ class DateCircle extends Component {
           color: #ffffff;
           font-family: "Montserrat Bold", sans-serif;
           font-size: 22px;
-          font-weight: 700;
+          font-weight: 500;
           text-transform: uppercase;
         }
       `}</style>

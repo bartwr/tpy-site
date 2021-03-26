@@ -53,7 +53,7 @@ class NextEvent extends Component {
     if(! this.state.event) return <div />
     const slug = this.state.event.datetime.split('T')[0] + '/' + this.state.event.slug
     const introText = this.state.event.introText.length <= 10 ? marked(this.state.event.detailedText).replace(/<\/?[^>]+(>|$)/g, '').substring(0, 200) : this.state.event.introText;
-    return <Link prefetch href={`/event?slug=${slug}`} as={`/events/${slug}`}>
+    return <Link href={`/event?slug=${slug}`} as={`/events/${slug}`}>
       <div className="NextEvent">
         <h1>
           What is happening?

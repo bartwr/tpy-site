@@ -266,6 +266,7 @@ class MyApp extends App {
           .flex-col { flex-direction: column; }
           .show-on-mobile-only { display: block }
           @media(min-width: 480px) { .show-on-mobile-only { display: none } }
+          @media(max-width: 480px) { .show-on-desktop-only { display: none; }
           /* Noe Display */
           @font-face {
               font-family: 'Noe Display';

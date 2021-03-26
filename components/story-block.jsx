@@ -11,7 +11,7 @@ class StoryBlock extends Component {
   render() {
     const slug = this.props.event.slug
     const introText = this.props.event.introText2.length <= 10 ? marked(this.props.event.longText).replace(/<\/?[^>]+(>|$)/g, '').substring(0, 200) : this.props.event.introText2;
-    return <Link prefetch href={`/story?slug=${slug}`} as={`/stories/${slug}`}>
+    return <Link href={`/story?slug=${slug}`} as={`/stories/${slug}`}>
       <div className="StoryBlock">
         <header style={{
           backgroundImage: `url( ${this.props.event.smallImage.fields.file.url} )`
