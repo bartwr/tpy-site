@@ -53,9 +53,13 @@ class TextAndImage extends Component {
         data-sal-easing="ease-in-out"
       >
 
-        <SmallCapsTitle>
-          {this.props.category}
-        </SmallCapsTitle>
+        <div style={{
+          marginBottom: '6px'
+        }}>
+          <SmallCapsTitle>
+            {this.props.category}
+          </SmallCapsTitle>
+        </div>
 
         <Title size="large">
           {this.props.title}

@@ -18,7 +18,7 @@ function BookATourBanner() {
         "Team up and share your knowledge with like-minded technology peers."
       </Title>
       <div style={{ margin: '1rem 0' }}>
-        <SmallCapsTitle>
+        <SmallCapsTitle color="#fff">
           Sophie Kochen  |  Community Manager
         </SmallCapsTitle>
       </div>

@@ -25,9 +25,9 @@ class IntroText extends Component {
 
           font-family: Montserrat, sans-serif;
           font-style: normal;
-          font-weight: 500;
           font-size: 16px;
           line-height: 24px;
+          font-weight: 400;
         }
         @media(min-width: 480px) {
           .IntroText {

@@ -74,10 +74,10 @@ class App extends Component {
         data-sal-delay="300"
         data-sal-easing="ease-in-out"
       >
-        <p>
-          <b>
-            Within our sustainable environment our open community thrives to connect with the best of the best. Together we focus on developing innovative solutions in the field of high-tech manufacturing.
-          </b>
+        <p style={{
+          fontWeight: '500'
+        }}>
+          Within our sustainable environment our open community thrives to connect with the best of the best. Together we focus on developing innovative solutions in the field of high-tech manufacturing.
         </p>
         <p>
           By sharing know-how, network and capital equipment we help each other flourish. We provide this through work space, events, networks and access to testing and inspection tooling. Whether you are a start up, scale up or a mature business, we can’t wait for you to join our growing community. 

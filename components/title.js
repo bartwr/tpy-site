@@ -75,7 +75,7 @@ class Title extends Component {
           .Title {
             font-size: 56px;
             line-height: 72px;
-            font-weight: 700;
+            font-weight: 600;
           }
           .large {
             font-size: 48px;
