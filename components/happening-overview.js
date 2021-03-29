@@ -43,6 +43,12 @@ class HappeningOverview extends Component {
     return items;
   }
   render() {
+    const itemsToShow = R.filter((item) => {
+      // Return if on overview page OR if item is not the active detail page
+      return item.slug ==  '/happening' || document.location.pathname.indexOf(item.slug) <= -1;
+    }, this.state.items || {});
+
+
     if(! this.state.items) return <div style={{minHeight: '800px'}} />
     return <div className="HappeningOverview flex flex-wrap flex-start">
       <nav className="filters show-on-desktop-only">
@@ -65,7 +71,7 @@ class HappeningOverview extends Component {
         {R.map((idx) => {
           const item = this.state.items[idx];
           return <NewsBlock key={idx} event={item} />
-        }, Object.keys(this.state.items))}
+        }, Object.keys(itemsToShow))}
       </div>
       <style jsx>{`
         .HappeningOverview {

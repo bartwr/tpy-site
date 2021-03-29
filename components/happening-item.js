@@ -13,7 +13,7 @@ const Title = dynamic(() => import('../components/title.js'));
 const SmallCapsTitle = dynamic(() => import('../components/small-caps-title.js'));
 const DateCircle = dynamic(() => import('./date-circle.js'));
 const Button = dynamic(() => import('./button.js'));
-const StoryOverview = dynamic(() => import('./story-overview.jsx'));
+const HappeningOverview = dynamic(() => import('./happening-overview.js'));
 
 class HappeningItemInfoBlock extends Component {
   render() {
@@ -110,8 +110,10 @@ class HappeningItem extends Component {
             <DateCircle date={this.state.event.datetime} />
           </div>
           {/*<SmallCapsTitle></SmallCapsTitle>*/}
-          <div style={{marginTop: '12px'}}>
-            <Title>{this.state.event.title}</Title>
+          <div style={{marginTop: '12px', marginBottom: '12px'}}>
+            <Title size="large" style={{color: '#071124'}}>
+              {this.state.event.title}
+            </Title>
           </div>
         </div>
         <div className="flex-1" />
@@ -129,12 +131,12 @@ class HappeningItem extends Component {
           </div>
         </div>
       </div>
-      {/*<Title size="small" align="center" style={{
+      <Title size="small" align="center" style={{
         marginTop: 'calc(212px - 50px)'
       }}>
-        Other stories
+        More articles
       </Title>
-      <StoryOverview limit="3" />*/}
+      <HappeningOverview limit="3" />
       <style jsx>{`
         .HappeningItem {
           width: 1245px;
