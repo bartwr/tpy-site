@@ -17,10 +17,10 @@ function Happening() {
 
       <title key="title">Happening | TPY</title>
 
-      <meta key="og:title" property="og:title" content="Happening | The Hague Tech" />
+      <meta key="og:title" property="og:title" content="Happening | Technology Park Ypenburg" />
       <meta key="og:image" property="og:image" content="https://www.thehaguetech.com/static/pages/events/meta.jpg" />
-      <meta key="og:description" property="og:description" content="We are the top location for tech events in the Hague, from workshops to Meetups to festivals to hackathons and more! Join an event or host your own in a lively and fun atmosphere at The Hague Tech." />
-      <meta key="description" name="description" content="We are the top location for tech events in the Hague, from workshops to Meetups to festivals to hackathons and more! Join an event or host your own in a lively and fun atmosphere at The Hague Tech." />
+      <meta key="og:description" property="og:description" content="We are the top location for tech events in the Hague, from workshops to Meetups to festivals to hackathons and more! Join an event or host your own in a lively and fun atmosphere at Technology Park Ypenburg." />
+      <meta key="description" name="description" content="We are the top location for tech events in the Hague, from workshops to Meetups to festivals to hackathons and more! Join an event or host your own in a lively and fun atmosphere at Technology Park Ypenburg." />
 
     </Head>
     <Navigation />
@@ -55,7 +55,7 @@ function Happening() {
     </div>
     <div>
       <FooterBanner
-        title="Come and see for your self what The Hague Tech has to offer you!"
+        title="Come and see for your self what Technology Park Ypenburg has to offer you!"
         buttonText="book a tour"
         buttonLink="/contact"
         target="_top"

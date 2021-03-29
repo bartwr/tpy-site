@@ -20,7 +20,7 @@ class HappeningItem extends Component {
   render() {
     return <div className="HappeningItemPage">
       <Head>
-        <title key="title">HappeningItem at The Hague Tech</title>
+        <title key="title">Happening at Technology Park Ypenburg</title>
       </Head>
       <Navigation />
       <div style={{height: '132px'}} /> 
@@ -32,7 +32,7 @@ class HappeningItem extends Component {
       </div>
       <div>
         <FooterBanner
-          title="Come and see for your self what The Hague Tech has to offer you!"
+          title="Come and see for your self what Technology Park Ypenburg has to offer you!"
           buttonText="book a tour"
           buttonLink="/contact"
           target="_top"

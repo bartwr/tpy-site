@@ -14,14 +14,7 @@ const Footer = dynamic(() => import('../components/footer.js'));
 function Community() {
   return <div className="root">
     <Head>
-
-      <title>Pricing | The Hague Tech</title>
-
-      <meta key="og:title" property="og:title" content="Pricing | The Hague Tech" />
-      <meta key="og:image" property="og:image" content="https://www.thehaguetech.com/static/pages/pricing/meta.jpg" />
-      <meta key="og:description" property="og:description" content="Interested in becoming a member, renting an office, hosting an event, or an offsite meeting? The Hague Tech is the perfect location for entrepreneurs, businesses, governments, and more." />
-      <meta key="description" name="description" content="Interested in becoming a member, renting an office, hosting an event, or an offsite meeting? The Hague Tech is the perfect location for entrepreneurs, businesses, governments, and more." />
-
+      <title>Pricing | Technology Park Ypenburg</title>
     </Head>
     <Navigation />
     <PageHeader

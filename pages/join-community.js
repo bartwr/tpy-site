@@ -19,7 +19,7 @@ const ContactForm = dynamic(() => import('../components/contact-form.js'));
 function Contact() {
   return <div className="Contact">
     <Head>
-      <title>Join community - The Hague Tech</title>
+      <title>Join community - Technology Park Ypenburg</title>
     </Head>
     <Navigation />
     <div style={{height: '132px'}} /> 

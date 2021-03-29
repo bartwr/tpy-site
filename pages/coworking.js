@@ -16,13 +16,7 @@ const NewsletterSubscribe = dynamic(() => import('../components/newsletter-subsc
 function Community() {
   return <div className="root">
     <Head>
-      <title>Co-Working Space | The Hague Tech</title>
-
-      <meta key="og:title" property="og:title" content="Co-Working Space | The Hague Tech" />
-      <meta key="og:image" property="og:image" content="https://www.thehaguetech.com/static/pages/coworking/meta.jpg" />
-      <meta key="og:description" property="og:description" content="The Hague Tech offers the premier co-working environment in The Hague, with fixed or flexible options that perfectly match what you and your business needs. From 1 day a week to 24/7 we have flex desks in our open office space" />
-      <meta key="description" name="description" content="The Hague Tech offers the premier co-working environment in The Hague, with fixed or flexible options that perfectly match what you and your business needs. From 1 day a week to 24/7 we have flex desks in our open office space" />
-
+      <title>Co-Working Space | Technology Park Ypenburg</title>
     </Head>
     <Navigation />
     <PageHeader

@@ -17,7 +17,7 @@ const NewsletterSubscribeForm = dynamic(() => import('../components/newsletter-s
 function NewsletterPage() {
   return <div className="NewsletterPage">
     <Head>
-      <title>Subscribe to our newsltter - The Hague Tech</title>
+      <title>Subscribe to our newsltter - Technology Park Ypenburg</title>
     </Head>
     <Navigation />
     <div style={{height: '132px'}} /> 

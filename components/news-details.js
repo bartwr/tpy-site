@@ -19,7 +19,7 @@ class NewsDetails extends Component {
         <div className="flex-1">
           <h2>Location</h2>
           <p>
-            The Hague Tech<br />
+            Technology Park Ypenburg<br />
           </p>
           <h2>Date & time</h2>
           <p>

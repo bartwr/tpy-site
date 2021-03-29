@@ -8,7 +8,7 @@ class Marker extends Component {
     return (
       <div>
         <img src="/static/components/map/tpy-marker.png" style={{
-          marginLeft: '-34px',
+          marginLeft: '0',
           marginTop: '-100px',
           height: '100px'
         }} />
@@ -20,8 +20,8 @@ class Marker extends Component {
 class Map extends Component {
   static defaultProps = {
     center: {
-      lat: 52.044453,
-      lng: 4.3540451
+      lat: 52.042522,
+      lng: 4.3526007
     },
     zoom: 15
   };
@@ -35,8 +35,8 @@ class Map extends Component {
           defaultZoom={this.props.zoom}
         >
           <Marker
-            lat={52.044453}
-            lng={4.3540451}
+            lat={52.042522}
+            lng={4.3526007}
             text="Technology Park Ypenburg"
           />
         </GoogleMapReact>

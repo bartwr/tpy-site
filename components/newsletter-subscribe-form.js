@@ -29,7 +29,7 @@ class ContactForm extends Component {
         cname: this.state.CNAME
       })
     }).then(function(data) {
-      alert('Done! See you soon at The Hague Tech.')
+      alert('Done! See you soon at Technology Park Ypenburg.')
       self.refs.form.reset()
     }).catch(function(error) {
       console.log('Something went wrong while subscribing.')
