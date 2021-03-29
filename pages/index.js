@@ -102,7 +102,7 @@ class App extends Component {
         <TextAndImage
           image="https://i.imgur.com/bB8UO0W.png"
           category="community"
-          title="Header"
+          title="Community"
           text="The tight network of TPY consists of startups, scale-ups, schools, entrepreneurs, developers, universities and institutes, all cooperating. We’re always seeking to evolve, remain valued and innovate for today’s technology. Grow your business while working with awesome collaborators."
           buttonText="read more"
           buttonLink="/community"
@@ -112,7 +112,7 @@ class App extends Component {
           image="https://i.imgur.com/bB8UO0W.png"
           imagePosition="right"
           category="campus"
-          title="Header"
+          title="Campus"
           text="The goal of our TPY Campus is to offer facilities and events to support all your needs. Whether you’re a start up, scale up, a mature business or an international company. Our hub is located at a strong central position, in the middle of the ‘Maakindustrie’ in The Hague. Come visit our vibrant campus and see it for yourself. "
           buttonText="read more"
           buttonLink="/campus"
@@ -122,7 +122,7 @@ class App extends Component {
           image="https://i.imgur.com/bB8UO0W.png"
           imagePosition="left"
           category="academy"
-          title="Header"
+          title="Academy"
           text="Our virtual TPY Academy functions as a bridge between tech experts and learners. TPY partnered up with the local schools and universities, such as Delft University of Technology and University of Applied Sciences InHolland Composites, located less than 10 km away from our Campus."
           buttonText="read more"
           buttonLink="/academy"
@@ -139,7 +139,7 @@ class App extends Component {
           image="https://i.imgur.com/bB8UO0W.png"
           imagePosition="right"
           category="Acceleration & incubation"
-          title="Header"
+          title="Acceleration"
           text="Grow by Start-up or Scale-up working closely together and by cooperating with universities, knowledge institutes and government. TPY is the international hotspot for the development and manufacturing of products based on high-tech materials: composite and hybrid components in The Hague."
           buttonText="read more"
           buttonLink="/acceleration"
@@ -150,7 +150,7 @@ class App extends Component {
         <TextAndImage
           image="https://i.imgur.com/bB8UO0W.png"
           category="softlanding"
-          title="Header"
+          title="Softlanding"
           text="Considering establishing your business in the heart of high tech? TPY offers a solution to help you set up your business in the Netherlands and our softlanding programme to access the Netherlands and European markets. We’ll introduce you to key stakeholders and connect you with experts in setting up legal entities. "
           buttonText="read more"
           buttonLink="/softlanding"
@@ -162,7 +162,7 @@ class App extends Component {
           image="https://i.imgur.com/bB8UO0W.png"
           imagePosition="right"
           category="co-creation"
-          title="Header"
+          title="Co-creation"
           text="At TPY we work together on challenges, innovations and support to establish funding initiatives. We facilitate the processes of companies to connect to work together on common challenges, student hackathons/makeathons, set up innovation projects for products and processes and help find the appropriate local, regional, national and european funding initiatives to help accelerate your development."
           buttonText="read more"
           buttonLink="/co-creation"
@@ -173,8 +173,8 @@ class App extends Component {
         <FooterBanner
           title="Come and see for your self what TPY has to offer you!"
           buttonText="book a tour"
-          buttonLink="https://outlook.office365.com/owa/calendar/TheHagueTech@jongensvantechniek.nl/bookings/"
-          target="_blank"
+          buttonLink="/contact"
+          target="_top"
           />
       </div>
       <div>
