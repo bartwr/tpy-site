@@ -9,9 +9,7 @@ const Button = dynamic(() => import('./button.js'));
 
 class FooterBanner extends Component {
   componentDidMount() {
-    if(window && window.innerWidth > 481) {
-      sal();
-    }
+    sal();
   }
 
   initTransition() {
@@ -50,7 +48,9 @@ class FooterBanner extends Component {
 
   render() {
     return <div className="FooterBanner">
-      <div className="max-width text-center">
+      <div className="max-width text-center" style={{
+        width: '711px'
+      }}>
         <Title 
           size="large"
           data-sal="slide-up"

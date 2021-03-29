@@ -147,9 +147,15 @@ class HappeningItem extends Component {
         .introText {
           color: #0f2247;
           font-family: "Montserrat", sans-serif;
-          font-size: 22px;
           font-weight: 500;
-          line-height: 33px;
+          font-size: 16px;
+          line-height: 24px;
+        }
+        @media(min-width: 480px) {
+          .introText {
+            font-size: 22px;
+            line-height: 33px;
+          }
         }
         .detailedText {
           color: #0f2247;

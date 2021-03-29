@@ -61,7 +61,7 @@ class ContactForm extends Component {
         </form>
       </div>
       <div className="flex-1 address">
-        <p>
+        <p hidden>
           <img src="/static/pages/newsletter/page-header.jpg" alt="2019: THT OPENING EN HACKATON - © sacha grootjans" />
         </p>
         <p className="paragraph">

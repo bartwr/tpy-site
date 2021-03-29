@@ -19,7 +19,6 @@ function Cocreation() {
     <Head>
       <title key="title">Cocreation | Technology Park Ypenburg</title>
       <meta key="og:title" property="og:title" content="Cocreation | Technology Park Ypenburg" />
-      <meta key="og:image" property="og:image" content="https://www.thehaguetech.com/static/pages/community/meta.jpg" />
       <meta key="og:description" property="og:description" content="Build your network, build your business, and build your friendships all within our passionate community." />
       <meta key="description" name="description" content="Build your network, build your business, and build your friendships all within our passionate community." />
     </Head>

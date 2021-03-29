@@ -8,9 +8,7 @@ const Button = dynamic(() => import('../components/button.js'));
 
 class VideoBanner extends Component {
   componentDidMount() {
-    if(window && window.innerWidth > 481) {
-      sal();
-    }
+    sal();
   }
   render() {
     const images = [

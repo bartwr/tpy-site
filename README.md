@@ -55,7 +55,7 @@ UI only:
 
 Now open your favorite browser and go to http://localhost:3000
 
-Need help? [Create an issue](https://github.com/thehaguetech/tpy-site/issues).
+Need help? [Create an issue](https://github.com/bartwr/tpy-site/issues).
 
 ### 3. gitmoji for git commits
 

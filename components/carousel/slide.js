@@ -6,9 +6,7 @@ import $ from 'jquery';
 
 class Slide extends Component {
   componentDidMount() {
-    if(window && window.innerWidth > 481) {
-      sal();
-    }
+    sal();
   }
   slideTo(anchor) {
     if(! anchor) return;

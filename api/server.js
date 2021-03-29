@@ -42,7 +42,7 @@ app.prepare().then(() => {
     const urls = await populateSitemap();
     // Create sitemap
     const sitemap = sm.createSitemap({
-      hostname: 'https://www.thehaguetech.com',
+      hostname: 'https://www.technologyparkypenburg.nl',
       cacheTime: 600000,// 600 sec - cache purge period
       urls: urls
     });
