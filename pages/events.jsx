@@ -40,7 +40,7 @@ function Events() {
       <EventOverview />
     </div>
     <div>
-      <YellowBanner
+      <FooterBanner
         title="Come and see for your self what The Hague Tech has to offer you!"
         buttonText="book a tour"
         buttonLink="https://outlook.office365.com/owa/calendar/TheHagueTech@jongensvantechniek.nl/bookings/"

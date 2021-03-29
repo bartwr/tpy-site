@@ -59,7 +59,7 @@ module.exports = {
         ACCESS_TOKEN: JSON.stringify(process.env.CONTENTFUL_ACCESS_TOKEN),
       })
     );
-    config.optimization.minimize = false;
+    // config.optimization.minimize = true;
     config.node.fs = "empty";
     return config
   }

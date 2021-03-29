@@ -10,53 +10,53 @@ const contentful = require('contentful');
 import './_app.css';
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
-    let story = null, event = null, landingPage = null;
+  // static async getInitialProps({ Component, ctx }) {
+  //   let pageProps = {};
+  //   let story = null, event = null, landingPage = null;
 
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
+  //   if (Component.getInitialProps) {
+  //     pageProps = await Component.getInitialProps(ctx);
 
-      // Init Contentful connection
-      const client = await contentful.createClient( {
-        space: SPACE_ID,
-        accessToken: ACCESS_TOKEN
-      });
+  //     // Init Contentful connection
+  //     const client = await contentful.createClient( {
+  //       space: SPACE_ID,
+  //       accessToken: ACCESS_TOKEN
+  //     });
 
-      const splittedSlug = pageProps.slug ? pageProps.slug.split('/') : null;
+  //     const splittedSlug = pageProps.slug ? pageProps.slug.split('/') : null;
 
-      if (splittedSlug && splittedSlug.length > 1) {
-        // Get event based on slug
-        // event = await client.getEntries({
-        //   content_type: 'event',
-        //   'fields.slug': splittedSlug[1],
-        //   limit: 1
-        // })
-        //   .then((entry) => entry.items[0])
-        //   .catch(console.error);
-      }
+  //     if (splittedSlug && splittedSlug.length > 1) {
+  //       // Get event based on slug
+  //       // event = await client.getEntries({
+  //       //   content_type: 'event',
+  //       //   'fields.slug': splittedSlug[1],
+  //       //   limit: 1
+  //       // })
+  //       //   .then((entry) => entry.items[0])
+  //       //   .catch(console.error);
+  //     }
 
-      // Get story based on slug
-      // story = await client.getEntries({
-      //   content_type: 'story',
-      //   'fields.slug': pageProps.slug,
-      //   limit: 1
-      // })
-      //   .then((entry) => entry.items[0])
-      //   .catch(console.error);
+  //     // Get story based on slug
+  //     // story = await client.getEntries({
+  //     //   content_type: 'story',
+  //     //   'fields.slug': pageProps.slug,
+  //     //   limit: 1
+  //     // })
+  //     //   .then((entry) => entry.items[0])
+  //     //   .catch(console.error);
 
-      // Get landing page based on slug
-      // landingPage = await client.getEntries({
-      //   content_type: 'landingpage',
-      //   'fields.slug': pageProps.slug,
-      //   limit: 1
-      // })
-      //   .then((entry) => entry.items[0])
-      //   .catch(console.error);
-    }
+  //     // Get landing page based on slug
+  //     // landingPage = await client.getEntries({
+  //     //   content_type: 'landingpage',
+  //     //   'fields.slug': pageProps.slug,
+  //     //   limit: 1
+  //     // })
+  //     //   .then((entry) => entry.items[0])
+  //     //   .catch(console.error);
+  //   }
 
-    return { pageProps, story, event, landingPage }
-  }
+  //   return { pageProps, story, event, landingPage }
+  // }
 
   componentDidMount() {
     if ("serviceWorker" in navigator) {
