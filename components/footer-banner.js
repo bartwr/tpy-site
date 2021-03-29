@@ -9,7 +9,9 @@ const Button = dynamic(() => import('./button.js'));
 
 class FooterBanner extends Component {
   componentDidMount() {
-    sal();
+    if(window && window.innerWidth > 481) {
+      sal();
+    }
   }
 
   initTransition() {

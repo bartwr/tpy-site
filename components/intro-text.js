@@ -3,7 +3,9 @@ import sal from 'sal.js'
 
 class IntroText extends Component {
   componentDidMount() {
-    sal();
+    if(window && window.innerWidth > 481) {
+      sal();
+    }
   }
   render() {
     return <div

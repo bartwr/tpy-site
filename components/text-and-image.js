@@ -9,21 +9,19 @@ const SmallCapsTitle = dynamic(() => import('./small-caps-title.js'));
 
 class TextAndImage extends Component {
 
-  componentDidMount() {
-    // this.backgroundImageParallax($(`.TextAndImage[data-title='${this.props.title}'] .image-wrapper`), 0.25);
-  }
+  constructor(props) {
+    super(props);
 
-  backgroundImageParallax($object, multiplier) {
-    // The function
-    multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
-    multiplier = 1 - multiplier;
-    var $doc = $(document);
-    $object.css({ "background-attachment" : "fixed" });
-    $(window).scroll(function(){
-      var from_top = $doc.scrollTop(),
-          bg_css = '0px ' +(multiplier * from_top) + 'px';
-      $object.css({"background-position" : bg_css });
-    });
+    this.state = {
+      onMobile: true
+    }
+  }
+  componentDidMount() {
+    if(typeof window !== "undefined" && window.innerWidth >= 480) {
+      this.setState({
+        onMobile: false
+      })
+    }
   }
 
   render() {
@@ -38,19 +36,19 @@ class TextAndImage extends Component {
           backgroundImage: `url(${this.props.image})`,
           order: this.props.imagePosition  == 'right' ? 1 : 0
         }}
-        data-sal={`slide-${this.props.imagePosition == 'right' ? 'left' : 'right'}`}
+        data-sal={(this.state.onMobile) ? `fade` : `slide-${this.props.imagePosition == 'right' ? 'left' : 'right'}`}
         data-sal-duration="300"
         data-sal-delay="300"
-        data-sal-easing="ease-in-out"
+        data-sal-easing={`ease-in-out`}
       >
         <img src={this.props.image} className="image" />
       </div>
       <div
         className="text-wrapper"
-        data-sal={`slide-${this.props.imagePosition == 'right' ? 'right' : 'left'}`}
+        data-sal={(this.state.onMobile) ? `fade` : `slide-${this.props.imagePosition == 'right' ? 'right' : 'left'}`}
         data-sal-duration="300"
         data-sal-delay="300"
-        data-sal-easing="ease-in-out"
+        data-sal-easing={`ease-in-out`}
       >
 
         <div style={{

@@ -3,7 +3,9 @@ import sal from 'sal.js'
 
 class Title extends Component {
   componentDidMount() {
-    sal();
+    if(window && window.innerWidth > 481) {
+      sal();
+    }
   }
   render() {
     // Get length of title

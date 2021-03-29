@@ -6,12 +6,13 @@ import $ from 'jquery';
 
 class Slide extends Component {
   componentDidMount() {
-    sal();
+    if(window && window.innerWidth > 481) {
+      sal();
+    }
   }
   slideTo(anchor) {
     if(! anchor) return;
 
-    console.log($(anchor))
     $('html, body').animate({
       'scrollTop': $(anchor).offset().top - (window.innerWidth > 480 ? 50 : 0)
     }, 500);
