@@ -28,7 +28,7 @@ function Community() {
       smallCapsTitle="Become a member"
       smallCapsTitleColor="white"
       title="Become a member of Technology Park Ypenburg"
-      image="https://loremflickr.com/1920/1280"
+      image="https://i.imgur.com/bB8UO0W.png"
       style={{backgroundPosition: 'center top'}}
       />
     <div>

@@ -29,7 +29,7 @@ function Community() {
       smallCapsTitleColor="white"
       title="Join our community"
       imageBk="/static/pages/community/community.jpg"
-      image="https://loremflickr.com/1920/1280"
+      image="https://i.imgur.com/bB8UO0W.png"
       style={{backgroundPosition: 'center top'}}
       />
     <IntroText>

@@ -31,7 +31,7 @@ function Cocreation() {
       smallCapsTitleColor="white"
       title="TPY Cocreation"
       imageBk="/static/pages/community/community.jpg"
-      image="https://loremflickr.com/1920/1280"
+      image="https://i.imgur.com/bB8UO0W.png"
       style={{backgroundPosition: 'center top'}}
     />
 

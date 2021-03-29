@@ -31,7 +31,7 @@ function Softlanding() {
       smallCapsTitleColor="white"
       title="TPY Softlanding"
       imageBk="/static/pages/community/community.jpg"
-      image="https://loremflickr.com/1920/1280"
+      image="https://i.imgur.com/bB8UO0W.png"
       style={{backgroundPosition: 'center top'}}
     />
 
@@ -44,7 +44,7 @@ function Softlanding() {
     <div>
       <TextAndImage
         category=""
-        image="https://loremflickr.com/1200/800"
+        image="https://i.imgur.com/bB8UO0W.png"
         imagePosition="right"
         title="Why Ypenburg?"
         text="<p>Situated in the heart of the greater Rotterdam – The Hague area, TPY offers a strategic place with an innovative cluster of collaborative high-tech companies. The greater Rotterdam – The Hague area has been the birthplace of the development of world renown composite materials for the aviation, space and wind energy industries. This unique ecosystem makes the area an appealing location at regional, national and international levels.</p><p>In addition, the region is home to the complete chain of academic research & knowledge institutes such as TU Delft, InHolland Aeronautical Engineering and Leiden University. </p><p>Located along the A4 and A12 highways offering direct access to the rest of the Netherlands, Belgium and Germany. Amsterdam Schiphol Airport and Rotterdam Harbour can both be reached in less than 30 minutes. Fun fact: the area where Technology Park Ypenburg is located, was developed as an airport in 1936.</p>"

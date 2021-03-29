@@ -31,7 +31,7 @@ function Academy() {
       smallCapsTitleColor="white"
       title="TPY Academy"
       imageBk="/static/pages/community/community.jpg"
-      image="https://loremflickr.com/1920/1280"
+      image="https://i.imgur.com/bB8UO0W.png"
       style={{backgroundPosition: 'center top'}}
     />
 
@@ -44,7 +44,7 @@ function Academy() {
     <div>
       <TextAndImage
         category=""
-        image="https://loremflickr.com/1200/800"
+        image="https://i.imgur.com/bB8UO0W.png"
         imagePosition="right"
         title="A win-win for Schooling and Business"
         text="<p>For tech students, this is the place to grab the opportunity to enhance your ability and increase your career possibilities. Alongside gaining multiple or single company experience from our TPY companies. We want to encourage the development of talent no matter the stage of education or career. Our student programmes vary from thesis writing and internships to training and summer school.</p><p>Companies have the need to attract new talent and grow current talent. Our TPY companies benefit from the knowledge and talent of interns and graduated engineers, active in all contemporary fields of composites research. </p>"
@@ -54,7 +54,7 @@ function Academy() {
     <div>
       <TextAndImage
         category=""
-        image="https://loremflickr.com/1200/800"
+        image="https://i.imgur.com/bB8UO0W.png"
         imagePosition="left"
         title="Combing Sports with Business"
         text="<p>At TPY we believe that sport brings people together no matter their background or role. We arrange sport themed and fun events during the year for employees and Academy aligned students and schools. </p>"

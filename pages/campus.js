@@ -29,7 +29,7 @@ function Campus() {
       smallCapsTitleColor="white"
       title="TPY Campus"
       imageBk="/static/pages/community/community.jpg"
-      image="https://loremflickr.com/1920/1280"
+      image="https://i.imgur.com/bB8UO0W.png"
       />
     <IntroText>
       <p>
@@ -40,7 +40,7 @@ function Campus() {
     <div>
       <TextAndImage
         category=""
-        image="https://loremflickr.com/1200/800"
+        image="https://i.imgur.com/bB8UO0W.png"
         imagePosition="right"
         title="TPY Community Centre"
         text="<p>Our TPY Community Center provides a great environment for meeting peers as well as facilities from flex desks to offices and meeting rooms and a conference area and conferencing facilities.</p><p>The heart of our Community Centre is where we, TPY companies, Friends of TPY, Start Ups and Scale Ups, come together. To co-create, inspire and brainstorm. </p>"
@@ -50,7 +50,7 @@ function Campus() {
     <div>
       <TextAndImage
         category=""
-        image="https://loremflickr.com/1200/800"
+        image="https://i.imgur.com/bB8UO0W.png"
         imagePosition="left"
         title="TPY Prototyping Centre"
         text="<p>Our Prototyping Centre is a maker space to try out your ideas. It provides access to further High-Tech manufacturing, testing and inspection tooling. We utilise in-house professional expertise, which can help you with your ideas or brainstorms.</p><p>Our tremendous know-how focusses on Materials and Hybrid Structures design and industrialisation of Thermoplastics, Plastics and Composites. We strive to have the highest levels in Standards for critical high-end markets like Aerospace, Defence, Space, Naval, Offshore and Medical. In our Prototyping Centre, we welcome Businesses, Start Ups and Student Teams.</p>"
@@ -60,7 +60,7 @@ function Campus() {
     <div>
       <TextAndImage
         category=""
-        image="https://loremflickr.com/1200/800"
+        image="https://i.imgur.com/bB8UO0W.png"
         imagePosition="right"
         title="TPY Scale-up & Innovation Centre"
         text="<p>Ready to enhance your business development and scale-up? Our Innovation Centre is the ideal next phase location to fulfil the following steps in your business. Set up to foster a competitive and collaborative environment for mature Start Ups and Scale Ups. We pride ourselves with our in-house experts, who are eager to assist you and have a strong knowledge in High-Tech manufacturing. </p>"
@@ -70,7 +70,7 @@ function Campus() {
     <div>
       <TextAndImage
         category=""
-        image="https://loremflickr.com/1200/800"
+        image="https://i.imgur.com/bB8UO0W.png"
         imagePosition="left"
         title="Event spaces"
         text="<p>We offer spaces for events from 30 people up to 300 people to attend. Let us know your needs and we would be delighted to help make your event a success.</p>"

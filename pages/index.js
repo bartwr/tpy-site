@@ -100,7 +100,7 @@ class App extends Component {
           <Carousel slides={slides} />
         </div>
         <TextAndImage
-          image="https://loremflickr.com/1200/800"
+          image="https://i.imgur.com/bB8UO0W.png"
           category="community"
           title="Header"
           text="The tight network of TPY consists of startups, scale-ups, schools, entrepreneurs, developers, universities and institutes, all cooperating. We’re always seeking to evolve, remain valued and innovate for today’s technology. Grow your business while working with awesome collaborators."
@@ -109,7 +109,7 @@ class App extends Component {
           anchorName="community"
           />
         <TextAndImage
-          image="https://loremflickr.com/1200/800"
+          image="https://i.imgur.com/bB8UO0W.png"
           imagePosition="right"
           category="campus"
           title="Header"
@@ -119,7 +119,7 @@ class App extends Component {
           anchorName="campus"
           />
         <TextAndImage
-          image="https://loremflickr.com/1200/800"
+          image="https://i.imgur.com/bB8UO0W.png"
           imagePosition="left"
           category="academy"
           title="Header"
@@ -136,7 +136,7 @@ class App extends Component {
       <br />
       <div>
         <TextAndImage
-          image="https://loremflickr.com/1200/800"
+          image="https://i.imgur.com/bB8UO0W.png"
           imagePosition="right"
           category="Acceleration & incubation"
           title="Header"
@@ -148,7 +148,7 @@ class App extends Component {
       </div>
       <div>
         <TextAndImage
-          image="https://loremflickr.com/1200/800"
+          image="https://i.imgur.com/bB8UO0W.png"
           category="softlanding"
           title="Header"
           text="Considering establishing your business in the heart of high tech? TPY offers a solution to help you set up your business in the Netherlands and our softlanding programme to access the Netherlands and European markets. We’ll introduce you to key stakeholders and connect you with experts in setting up legal entities. "
@@ -159,7 +159,7 @@ class App extends Component {
       </div>
       <div>
         <TextAndImage
-          image="https://loremflickr.com/1200/800"
+          image="https://i.imgur.com/bB8UO0W.png"
           imagePosition="right"
           category="co-creation"
           title="Header"
