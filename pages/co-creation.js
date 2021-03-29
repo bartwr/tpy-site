@@ -26,9 +26,9 @@ function Cocreation() {
     <Navigation />
 
     <PageHeader
-      smallCapsTitle="Cocreation"
+      smallCapsTitle="Co-creation"
       smallCapsTitleColor="white"
-      title="TPY Cocreation"
+      title="TPY Co-creation"
       imageBk="/static/pages/community/community.jpg"
       image="https://i.imgur.com/bB8UO0W.png"
       style={{backgroundPosition: 'center top'}}

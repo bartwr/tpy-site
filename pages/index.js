@@ -36,7 +36,7 @@ const slides = [
     imageHeight: 106
   },
   {
-    title: 'acceleration',
+    title: 'acceleration & incubation',
     href: '#acceleration',
     image: '/static/components/carousel/tpy-icon-acceleration.svg',
     imageHeight: 120
@@ -113,7 +113,7 @@ class App extends Component {
           imagePosition="right"
           category="campus"
           title="Campus"
-          text="The goal of our TPY Campus is to offer facilities and events to support all your needs. Whether you’re a start up, scale up, a mature business or an international company. Our hub is located at a strong central position, in the middle of the ‘Maakindustrie’ in The Hague. Come visit our vibrant campus and see it for yourself. "
+          text="The goal of our TPY Campus is to offer facilities and events to support all your needs, whether you’re a start up, scale up, a mature business or an international company. Our hub is located at a strong central position, in the middle of the ‘Manufacturing Industry’ in The Hague. Come visit our vibrant campus and see it for yourself. "
           buttonText="read more"
           buttonLink="/campus"
           anchorName="campus"

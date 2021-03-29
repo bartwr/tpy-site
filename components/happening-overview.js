@@ -64,7 +64,13 @@ class HappeningOverview extends Component {
           </li>
           <li>
             <a href="#">Academy & Jobs</a>
-          </li>*/}
+          </li>
+
+          Community members
+          News from TPY
+          Activities: programmes & events
+          Academy & Jobs
+          */}
         </ul>
       </nav>
       <div className="items">
