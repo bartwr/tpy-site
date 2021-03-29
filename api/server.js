@@ -24,7 +24,7 @@ const {
   fetchStories,
   fetchStory
 } = require('./contentful.js');
-const {sendMail} = require('./email.js');
+const {sendMailUsingMailgun} = require('./email.js');
 const {newsletterAdd} = require('./newsletter.js');
 const {populateSitemap} = require('./sitemap.js');
 
@@ -61,7 +61,7 @@ app.prepare().then(() => {
     if(req.body.website) message += '' + req.body.website + '<br />';
     if(req.body.type) message += '<br />💬 I\'m interested in joining the community by ' + req.body.type + '<br />';
 
-    const mail = sendMail({
+    const mail = sendMailUsingMailgun({
       name: req.body.name,
       email: req.body.email,
       tel: req.body.tel,
@@ -93,7 +93,6 @@ app.prepare().then(() => {
 
     // Redirect to https
     const hostname = req.hostname === 'technologyparkypenburg.nl' ? 'www.technologyparkypenburg.nl' : req.hostname;
-    console.log('hostname', hostname, 'x-forwarded-proto', req.headers['x-forwarded-proto']);
     if (req.headers['x-forwarded-proto'] === 'http' || req.hostname === 'technologyparkypenburg.nl') {
       res.redirect(301, `https://${hostname}${req.url}`);
       return;

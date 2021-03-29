@@ -133,7 +133,7 @@ class ContactForm extends Component {
         {pageConfig.showMap && <div>
           <p className="paragraph">
             Technology Park Ypenburg<br />
-            <a href="https://www.openstreetmap.org/node/2599747462" target="_blank" rel="external noopener">Laan van Ypenburg 108</a><br />
+            <a href="https://www.google.com/maps/place/Technology+Park+Ypenburg/@52.042522,4.3526007,17z/data=!3m1!4b1!4m5!3m4!1s0x47c5b7f39f75f887:0xc779b2518cc28f12!8m2!3d52.042522!4d4.3547894?hl=en" target="_blank" rel="external noopener">Laan van Ypenburg 108</a><br />
             2497 GC The Hague<br />
             The Netherlands
           </p>
