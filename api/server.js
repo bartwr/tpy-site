@@ -91,6 +91,14 @@ app.prepare().then(() => {
     const parsedUrl = parse(req.url, true);
     const { pathname, query } = parsedUrl;
 
+    // Redirect to https
+    const hostname = req.hostname === 'technologyparkypenburg.nl' ? 'www.technologyparkypenburg.nl' : req.hostname;
+    console.log('hostname', hostname, 'x-forwarded-proto', req.headers['x-forwarded-proto']);
+    if (req.headers['x-forwarded-proto'] === 'http' || req.hostname === 'technologyparkypenburg.nl') {
+      res.redirect(301, `https://${hostname}${req.url}`);
+      return;
+    }
+
     // Make sw.js available (service worker)
     if (pathname === '/sw.js') {
       res.setHeader('content-type', 'text/javascript');
