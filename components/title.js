@@ -58,6 +58,10 @@ class Title extends Component {
           text-decoration: none;
         }
         .large {
+          font-size: 36px;
+          line-height: 40px;
+        }
+        .medium {
           font-size: 27px;
           line-height: 32px;
         }

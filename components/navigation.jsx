@@ -366,12 +366,12 @@ class Navigation extends Component {
           cursor: pointer;
         }
         .primary-nav-item {
-          max-width: 125px;
+          max-width: 140px;
         }
         .primary-nav-link {
           min-width: 96px;
           white-space: nowrap;
-          max-width: 113px;
+          max-width: 128px;
           max-height: 175px;
           white-space: normal;
         }
@@ -475,7 +475,7 @@ class Navigation extends Component {
           position: absolute;
           top: 0;
           left: 0;
-          padding-left: 125px;
+          padding-left: 140px;
           z-index: 0;
         }
         .primary-nav-item.is-active > nav.has-subnav {
@@ -505,8 +505,8 @@ class Navigation extends Component {
         }
         .icon-close,
         .icon-hamburger {
-          width: 18px;
-          height: 18px;
+          width: 24px;
+          height: 24px;
           display: block;
           background: center center no-repeat;
           background-size: contain;
@@ -517,7 +517,7 @@ class Navigation extends Component {
         }
         .icon-hamburger {
           height: 100%;
-          background-size: 18px;
+          background-size: 24px;
           background-image: url(/static/components/navigation/hamburger.svg);
         }
         @media(min-width: 1100px) {

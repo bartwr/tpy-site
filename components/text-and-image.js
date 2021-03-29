@@ -61,7 +61,7 @@ class TextAndImage extends Component {
           </SmallCapsTitle>
         </div>
 
-        <Title size="large">
+        <Title size="medium">
           {this.props.title}
         </Title>
 
@@ -106,7 +106,7 @@ class TextAndImage extends Component {
         }
         .text {
           margin: 8px 0 24px 0;
-          font-size: 17px;
+          font-size: 16px;
           line-height: 24px;
         }
         /* On desktop: show full size image */

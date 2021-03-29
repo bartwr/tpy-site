@@ -17,12 +17,12 @@ function BookATourBanner() {
       <Title size="large" color="#fff">
         "Team up and share your knowledge with like-minded technology peers."
       </Title>
-      <div style={{ margin: '1rem 0' }}>
+      <div style={{ margin: '20px 0 1rem 0' }}>
         <SmallCapsTitle color="#fff">
           Sophie Kochen  |  Community Manager
         </SmallCapsTitle>
       </div>
-      <br /><br />
+      <br />
       <Button buttonLink="https://www.bartroorda.nl" target="_blank">
         Book a tour
       </Button>
@@ -58,7 +58,12 @@ function BookATourBanner() {
         }
       }
       .placeholder {
-        flex: 6;
+        flex: 2;
+      }
+      @media (min-width: 480px) {
+        .placeholder {
+          flex: 6;
+        }
       }
       .text-wrapper {
         z-index: 1;

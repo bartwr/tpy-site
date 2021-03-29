@@ -18,6 +18,7 @@ class SmallCapsTitle extends Component {
             line-height: 16px;
             color: #FF8850;
             letter-spacing: 1px;
+            font-weight: 600;
           }
           @media(min-width: 480px) {
             .SmallCapsTitle {
