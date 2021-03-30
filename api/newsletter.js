@@ -4,7 +4,7 @@ const mailchimp = new Mailchimp(process.env.MAILCHIMP_ID);
 const newsletterAdd = async function(contact, callback) {
   return await mailchimp.request({
     method : 'post',
-    path : '/lists/f29698d044/members',
+    path : '/lists/4dc693a028/members',
     body : {
       "email_address": contact.email,
       "status": "pending",
