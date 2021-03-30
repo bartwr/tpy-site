@@ -30,8 +30,8 @@ function Academy() {
       smallCapsTitleColor="white"
       title="TPY Academy"
       imageBk="/static/pages/community/community.jpg"
-      image="https://i.imgur.com/bB8UO0W.png"
-      style={{backgroundPosition: 'center top'}}
+      image="/static/pages/academy/tpy-academy-header-image.jpg"
+      style={{backgroundPosition: 'center center'}}
     />
 
     <IntroText>

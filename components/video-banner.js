@@ -15,7 +15,7 @@ class VideoBanner extends Component {
     ]
     const randomFromArray = (items) => items[Math.floor(Math.random()*items.length)]
     return <div className="VideoBanner">
-      <img className="video" src={`/static/components/video-banner/tpy-hero.png`} />
+      <img className="video" src={`/static/pages/index/tpy-home-header-image-01.jpg`} />
       <div className="overlay">
         <Title
           color="#fff"

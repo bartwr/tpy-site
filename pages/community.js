@@ -28,7 +28,7 @@ function Community() {
       smallCapsTitleColor="white"
       title="Join our community"
       imageBk="/static/pages/community/community.jpg"
-      image="https://i.imgur.com/bB8UO0W.png"
+      image="/static/pages/community/tpy-community-header-image.jpg"
       style={{backgroundPosition: 'center top'}}
       />
     <IntroText>

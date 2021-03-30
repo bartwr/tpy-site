@@ -30,7 +30,7 @@ function Cocreation() {
       smallCapsTitleColor="white"
       title="TPY Co-creation"
       imageBk="/static/pages/community/community.jpg"
-      image="https://i.imgur.com/bB8UO0W.png"
+      image="/static/pages/co-creation/tpy-co-creation-header-image.jpg"
       style={{backgroundPosition: 'center top'}}
     />
 

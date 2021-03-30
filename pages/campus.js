@@ -28,7 +28,7 @@ function Campus() {
       smallCapsTitleColor="white"
       title="TPY Campus"
       imageBk="/static/pages/community/community.jpg"
-      image="https://i.imgur.com/bB8UO0W.png"
+      image="/static/pages/campus/tpy-campus-header-image.jpg"
       />
     <IntroText>
       <p>

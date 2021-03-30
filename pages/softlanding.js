@@ -30,7 +30,7 @@ function Softlanding() {
       smallCapsTitleColor="white"
       title="TPY Softlanding"
       imageBk="/static/pages/community/community.jpg"
-      image="https://i.imgur.com/bB8UO0W.png"
+      image="/static/pages/softlanding/tpy-softlanding-header-image.jpg"
       style={{backgroundPosition: 'center top'}}
     />
 
