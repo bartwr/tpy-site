@@ -23,7 +23,7 @@ function BookATourBanner() {
         </SmallCapsTitle>
       </div>
       <br />
-      <Button buttonLink="https://www.bartroorda.nl" target="_blank">
+      <Button buttonLink="/contact" target="_top">
         Book a tour
       </Button>
     </div>

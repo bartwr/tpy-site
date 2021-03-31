@@ -44,8 +44,8 @@ class VideoBanner extends Component {
             data-sal-easing="ease-in-out"
           >
             <Button
-              href="https://www.bartroorda.nl"
-              target="_blank"
+              href="/contact"
+              target="_top"
               style={{margin: '0 auto'}}
             >
               Book a tour
