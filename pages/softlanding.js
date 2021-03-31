@@ -31,7 +31,7 @@ function Softlanding() {
       title="TPY Softlanding"
       imageBk="/static/pages/community/community.jpg"
       image="/static/pages/softlanding/tpy-softlanding-header-image.jpg"
-      style={{backgroundPosition: 'center top'}}
+      style={{backgroundPosition: '17% 50%'}}
     />
 
     <IntroText>

@@ -29,7 +29,7 @@ function Community() {
       title="Join our community"
       imageBk="/static/pages/community/community.jpg"
       image="/static/pages/community/tpy-community-header-image.jpg"
-      style={{backgroundPosition: 'center top'}}
+      style={{backgroundPosition: '35% 50%'}}
       />
     <IntroText>
       <p>

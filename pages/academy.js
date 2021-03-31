@@ -31,7 +31,7 @@ function Academy() {
       title="TPY Academy"
       imageBk="/static/pages/community/community.jpg"
       image="/static/pages/academy/tpy-academy-header-image.jpg"
-      style={{backgroundPosition: 'center center'}}
+      style={{backgroundPosition: '71% 50%'}}
     />
 
     <IntroText>

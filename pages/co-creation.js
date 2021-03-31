@@ -31,7 +31,7 @@ function Cocreation() {
       title="TPY Co-creation"
       imageBk="/static/pages/community/community.jpg"
       image="/static/pages/co-creation/tpy-co-creation-header-image.jpg"
-      style={{backgroundPosition: 'center top'}}
+      style={{backgroundPosition: '68% 50%'}}
     />
 
     <IntroText>

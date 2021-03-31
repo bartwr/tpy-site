@@ -29,6 +29,7 @@ function Campus() {
       title="TPY Campus"
       imageBk="/static/pages/community/community.jpg"
       image="/static/pages/campus/tpy-campus-header-image.jpg"
+      style={{backgroundPosition: '72% 50%'}}
       />
     <IntroText>
       <p>

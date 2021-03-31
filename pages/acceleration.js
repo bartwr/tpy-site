@@ -31,7 +31,7 @@ function Acceleration() {
       title="TPY Acceleration"
       imageBk="/static/pages/community/community.jpg"
       image="/static/pages/acceleration/tpy-acceleration-and-incubation-header-image.jpg"
-      style={{backgroundPosition: 'center top'}}
+      style={{backgroundPosition: '10% 50%'}}
     />
 
     <IntroText>
