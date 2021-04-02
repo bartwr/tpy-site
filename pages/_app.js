@@ -255,6 +255,7 @@ class MyApp extends App {
             color: #0f2247;
           }
           .text-center { text-align: center; }
+          .mt-0 { margin-top: 0; }
           .px-2 { padding-right: 0.5rem; padding-left: 0.5rem; }
           .px-4 { padding-right: 1rem; padding-left: 1rem; }
           .flex {

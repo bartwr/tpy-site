@@ -5,8 +5,10 @@ import * as R from 'ramda';
 
 // Load components
 const IntroText = dynamic(() => import('../components/intro-text.js'));
+const Title = dynamic(() => import('../components/title.js'));
 const Button = dynamic(() => import('../components/button.js'));
 const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
+const MeetingSpaceBlock = dynamic(() => import('../components/meeting-space-block.js'));
 
 class PricingBlock extends Component {
   constructor(props) {
@@ -17,7 +19,6 @@ class PricingBlock extends Component {
     if (typeof props.handleIsActive !== 'undefined') {
       this.handleIsActive = props.handleIsActive;
     }
-
 
     this.state = {
       isActive: false
@@ -194,11 +195,12 @@ class PricingBlock extends Component {
           position: relative;
         }
         .price-in-euros sup {
-          position: absolute;
-          left: -17px;
           font-size: 22px;
+          line-height: 32px;
+          margin-right: -10px;
           font-weight: 500;
-          top: -16px;
+          top: -4px;
+          position: relative;
         }
         .pricing-wrapper small {
           display: block;
@@ -425,6 +427,26 @@ class Pricing extends Component {
       <div className="pricing-blocks-wrapper">
         {R.map((membershipPart1) => <PricingBlock handleIsActive={this.handleIsActive} key={membershipPart1.name} data={membershipPart1} />, membershipsPart1)}
       </div>
+      <Title style={{
+        padding: '45px 0px',
+        textAlign: 'center'
+      }}>
+        Rent a meeting space
+      </Title>
+      <div className="pricing-blocks-wrapper meeting-spaces">
+        <MeetingSpaceBlock
+          key={'meetingSpace1'}
+          variant="1"
+        />
+        <MeetingSpaceBlock
+          key={'meetingSpace2'}
+          variant="2"
+        />
+        <MeetingSpaceBlock
+          key={'meetingSpace3'}
+          variant="3"
+        />
+      </div>
       <div>
         <FooterBanner
           title="Come and see for your self what TPY has to offer you!"
@@ -437,14 +459,20 @@ class Pricing extends Component {
       .pricing-blocks-wrapper {
         text-align: center;
       }
-      
+      .pricing-blocks-wrapper.meeting-spaces {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 1160px;
+      }
+
       .newOfferings {
         font-size: 35px;
       }
       
-       #firstPricingBlock {
-          height: ${this.state.isActive ? '1200px' : '690px'}
-        }
+      #firstPricingBlock {
+        height: ${this.state.isActive ? '1200px' : '690px'}
+      }
       
       @media(max-width: 1340px) {
         .pricing-blocks-wrapper {
