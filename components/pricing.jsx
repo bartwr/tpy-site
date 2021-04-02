@@ -338,9 +338,9 @@ class Pricing extends Component {
         name: 'membership-only',
         heading: 'Membership only',
         extraBenefit: '',
-        price: '55',
+        price: '57.25',
         priceDescription: 'per month excl. 21% vat',
-        title: 'Become part of the  TPY community',
+        title: 'Become part of the TPY community',
         features: [
           'Super-fast wifi',
           'Unlimited coffee / tea',
@@ -460,6 +460,7 @@ class Pricing extends Component {
         text-align: center;
       }
       .pricing-blocks-wrapper.meeting-spaces {
+        margin: 0 auto;
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
