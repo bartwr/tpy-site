@@ -33,7 +33,7 @@ function Community() {
       />
     <IntroText>
       <p>
-        Our members have access to meeting spaces, an automation & digitalisation lab, a large autoclave & CNC milling and various testing equipment. And last, but certainly not least, enjoy our relaxing space and sports facilities from table football to mini gym to computer games rooms. 
+        Our members have access to meeting spaces, an automation & digitalisation lab, a large autoclave & CNC milling and various testing equipment.
       </p>
       <p>
         Enthusiastic to become part of the movement of Technology Park Ypenburg, the heart of high-tech? Book your tour today and explore all of our opportunities. Join our co-created workshops, build up sustainable relationships with your fellow peers in tech and drop in to one of our many events we host each month. 
