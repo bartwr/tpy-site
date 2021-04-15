@@ -254,6 +254,9 @@ class MyApp extends App {
           p > :global(a:visited) {
             color: #0f2247;
           }
+          .font-bold {
+            font-weight: bold;
+          }
           .text-center { text-align: center; }
           .mt-0 { margin-top: 0; }
           .px-2 { padding-right: 0.5rem; padding-left: 0.5rem; }
