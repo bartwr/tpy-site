@@ -136,7 +136,7 @@ class App extends Component {
       <br />
       <div>
         <TextAndImage
-          image="https://i.imgur.com/bB8UO0W.png"
+          image="/static/misc/office_space_i_have_a_dream_peter__07042021_TPY SPACES_Hani_HPM-06945.jpg"
           imagePosition="right"
           category="Acceleration & incubation"
           title="Acceleration"
@@ -148,7 +148,7 @@ class App extends Component {
       </div>
       <div>
         <TextAndImage
-          image="https://i.imgur.com/bB8UO0W.png"
+          image="/static/misc/man_working_in_office__07042021_TPY SPACES_Hani_HPM-07103.jpg"
           category="softlanding"
           title="Softlanding"
           text="Considering establishing your business in the heart of high tech? TPY offers a solution to help you set up your business in the Netherlands and our softlanding programme to access the Netherlands and European markets. We’ll introduce you to key stakeholders and connect you with experts in setting up legal entities. "
@@ -159,7 +159,7 @@ class App extends Component {
       </div>
       <div>
         <TextAndImage
-          image="https://i.imgur.com/bB8UO0W.png"
+          image="/static/misc/couch_with_two_men_meeting__07042021_TPY SPACES_Hani_HPM-06992.jpg"
           imagePosition="right"
           category="co-creation"
           title="Co-creation"
