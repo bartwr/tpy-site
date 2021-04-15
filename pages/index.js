@@ -100,7 +100,7 @@ class App extends Component {
           <Carousel slides={slides} />
         </div>
         <TextAndImage
-          image="https://i.imgur.com/bB8UO0W.png"
+          image="/static/misc/two_women_talking_in_kitchen__07042021_TPY SPACES_Hani_HPM-06942.jpg"
           category="community"
           title="Community"
           text="The tight network of TPY consists of startups, scale-ups, schools, entrepreneurs, developers, universities and institutes, all cooperating. We’re always seeking to evolve, remain valued and innovate for today’s technology. Grow your business while working with awesome collaborators."
@@ -109,7 +109,7 @@ class App extends Component {
           anchorName="community"
           />
         <TextAndImage
-          image="https://i.imgur.com/bB8UO0W.png"
+          image="/static/misc/making_space_bird_eye_view__07042021_TPY SPACES_Hani_HPM-07170.jpg"
           imagePosition="right"
           category="campus"
           title="Campus"
@@ -119,7 +119,7 @@ class App extends Component {
           anchorName="campus"
           />
         <TextAndImage
-          image="https://i.imgur.com/bB8UO0W.png"
+          image="/static/misc/shared_space_with_woman_working_and_women_chessing__07042021_TPY SPACES_Hani_HPM-06895.jpg"
           imagePosition="left"
           category="academy"
           title="Academy"

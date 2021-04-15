@@ -43,7 +43,7 @@ function Acceleration() {
     <div>
       <TextAndImage
         category=""
-        image="https://i.imgur.com/bB8UO0W.png"
+        image="/static/misc/shared_space_with_woman_working_and_women_chessing__07042021_TPY SPACES_Hani_HPM-06895.jpg"
         imagePosition="right"
         title="Surrounded by knowledge"
         text="<p>By surrounding ourselves with facilities such as TU Delft Aerospace Structures & Materials Lab, InHolland Composites Lab, SAM | XL Automation & Digitization Center and DFC Digital Factory Composites Ypenburg, we encourage the companies of our hub to accelerate their businesses.</p>"

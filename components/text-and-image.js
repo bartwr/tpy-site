@@ -33,7 +33,7 @@ class TextAndImage extends Component {
       <div 
         className="image-wrapper"
         style={{
-          backgroundImage: `url(${this.props.image})`,
+          backgroundImage: `url("${this.props.image}")`,
           order: this.props.imagePosition  == 'right' ? 1 : 0
         }}
         data-sal={(this.state.onMobile) ? `fade` : `slide-${this.props.imagePosition == 'right' ? 'left' : 'right'}`}
