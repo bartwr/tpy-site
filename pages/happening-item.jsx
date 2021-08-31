@@ -1,6 +1,9 @@
 import dynamic from 'next/dynamic';
+import { Container } from 'next/app';
 import { Component } from 'react';
 import Head from 'next/head';
+import absoluteUrl from 'next-absolute-url'
+import fetch from 'node-fetch';
 
 // Load components
 const Navigation = dynamic(() => import('../components/navigation.jsx'));
@@ -12,20 +15,28 @@ const PageHeader = dynamic(() => import('../components/page-header.js'));
 const Footer = dynamic(() => import('../components/footer.js'));
 const HappeningItemComponent = dynamic(() => import('../components/happening-item.js'));
 
-class HappeningItem extends Component {
-  static async getInitialProps({ query }) {
-    // Get slug
-    return { slug: query.slug };
+function HappeningItem({ data }) {
+  const url = `${data.baseUrl}/happening/${data.slug}`;
+  let imageUrl = 'https://www.technologyparkypenburg.nl/static/og-image.jpg';
+  if(data.smallImage && data.smallImage.fields && data.smallImage.fields.file && data.smallImage.fields.file.url) {
+    imageUrl = 'https:' + data.smallImage.fields.file.url;
   }
-  render() {
-    return <div className="HappeningItemPage">
-      <Head>
-        <title key="title">Happening at Technology Park Ypenburg</title>
-      </Head>
+
+  return <Container>
+    <Head>
+      <title key="title">{data.title} | Happening at Technology Park Ypenburg</title>
+      <meta key="og:url" property="og:url" content={url} />
+      <meta key="og:title" property="og:title" content={data.title} />
+      <meta key="og:image" property="og:image" content={imageUrl} />
+      <meta key="og:url" property="og:url" content={url} />
+      <meta key="og:description" property="og:description" content={data.introText} />
+      <meta key="description" name="description" content={data.introText} />
+    </Head>
+    <div className="HappeningItemPage">
       <Navigation />
       <div style={{height: '132px'}} /> 
       <div>
-        <HappeningItemComponent slug={this.props.slug} />
+        <HappeningItemComponent slug={data.slug} />
       </div>
       <div>
         <BookATourBanner />
@@ -40,6 +51,21 @@ class HappeningItem extends Component {
       </div>
       <Footer />
     </div>
+  </Container>
+}
+
+export async function getServerSideProps(context) {
+  const slug = context.query.slug;
+
+  // Get absolute URL
+  const { origin } = absoluteUrl(context.req);
+  const res = await fetch(`${origin}/api/news/${slug}`);
+  const json = await res.json();
+  let data = json.fields;
+  data.baseUrl = origin;
+
+  return {
+    props: {data}, // will be passed to the page component as props
   }
 }
 

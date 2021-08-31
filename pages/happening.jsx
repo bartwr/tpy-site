@@ -11,7 +11,6 @@ const Footer = dynamic(() => import('../components/footer.js'));
 const HappeningOverview = dynamic(() => import('../components/happening-overview.js'));
 
 function Happening() {
-  console.log('')
   return <div className="HappeningPage">
     <Head>
 

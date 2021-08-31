@@ -73,7 +73,7 @@ class MyApp extends App {
 
     // Set default meta tags
     let meta = {
-      imageUrl: 'https://tpy-site.herokuapp.com/static/og-image.jpg',
+      imageUrl: 'https://www.technologyparkypenburg.nl/static/og-image.jpg',
       title: 'Join Technology Park Ypenburg',
       description: 'Team up and share your knowledge with like-minded technology peers in The Hague.',
       url: 'https://www.technologyparkypenburg.nl/',
@@ -86,6 +86,7 @@ class MyApp extends App {
       if (typeof story.fields.longText !== 'undefined') {
         meta.description = story.fields.longText.split("\n")[0];
       }
+      meta.url = `/happening/${story.fields.slug}`;
     }
 
     // If this is a event, set event meta tags
@@ -95,6 +96,7 @@ class MyApp extends App {
       if (typeof event.fields.introText !== 'undefined') {
         meta.description = event.fields.introText;
       }
+      meta.url = `/happening/${event.fields.slug}`;
     }
 
     // If this is a landing page, set landing page meta tags
