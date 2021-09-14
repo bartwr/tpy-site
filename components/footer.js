@@ -8,16 +8,16 @@ class Footer extends Component {
       <div className="max-width flex">
         <div>
           <nav className="social-icons">
-            <a href="https://www.facebook.com/thehaguetech/" target="_blank" title="">
+            <a href="https://www.facebook.com/TPYthehague/" target="_blank" title="">
               <img src="/static/components/footer/facebook-icon.svg" alt="Facebook" />
             </a>
-            <a href="https://www.twitter.com/The_Hague_Tech" target="_blank">
-              <img src="/static/components/footer/twitter-icon.svg" alt="Twitter" />
-            </a>
-            <a href="https://www.linkedin.com/company/thehaguetech" target="_blank">
+            <a href="https://www.linkedin.com/company/tpythehague/" target="_blank">
               <img src="/static/components/footer/linkedin-icon.svg" alt="LinkedIn" />
             </a>
-            <a href="https://www.instagram.com/thehaguetech/" target="_blank">
+            <a href="https://technologyparkypenburg.medium.com/" target="_blank" className="font-bold">
+              M
+            </a>
+            <a href="https://www.instagram.com/technology_park_ypenburg/" target="_blank">
               <img src="/static/components/footer/instagram-icon.png" alt="Instagram" />
             </a>
           </nav>
@@ -45,7 +45,6 @@ class Footer extends Component {
         .social-icons {
           max-width: 12rem;
           justify-content: space-between;
-          visibility: hidden;
         }
         .social-icons img {
           width: 18px;
