@@ -23,8 +23,9 @@ class VideoBanner extends Component {
           data-sal="slide-up"
           data-sal-delay="300"
           data-sal-easing="ease-in-out"
+          size="large"
         >
-          Join the best of our industry
+          Join the best in our high-tech industry
         </Title>
         <div>
           <div

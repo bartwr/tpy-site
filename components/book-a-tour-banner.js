@@ -29,10 +29,11 @@ function BookATourBanner() {
     </div>
     <style jsx>{`
       .BookATourBanner {
-        background: #000 center left no-repeat;
-        background-image: url('/static/components/book-a-tour-banner/banner.jpg');
+        background-color: #000;
+        background-repeat: no-repeat;
+        background-image: url('/static/components/book-a-tour-banner/team.jpg');
         background-size: auto 100%;
-        background-position: -198px 50%;
+        background-position: 0% 50%;
         position: relative;
         color: #fff;
         padding: 3rem 1rem;
@@ -46,7 +47,7 @@ function BookATourBanner() {
         right: 0;
         bottom: 0;
         left: 0;
-        background-color: rgba(81, 81, 81, 0.5);
+        background-color: rgba(81, 81, 81, 0.4);
       }
       @media (min-width: 480px) {
         .BookATourBanner {
