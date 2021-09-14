@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve your CoinCollect app
+about: Create a report to help us improve your TPY app
 title: "\U0001F41B Describe your bug here"
 labels: fix
 assignees: ''

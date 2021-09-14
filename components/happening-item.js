@@ -96,6 +96,7 @@ class HappeningItem extends Component {
   }
   render() {
     if(! this.state.event) return <div style={{minHeight: '800px'}} />
+    console.log(this.state.event);
     return <div className="HappeningItem">
       <Head>
         <title key="title">{this.state.event.title}</title>
@@ -107,7 +108,7 @@ class HappeningItem extends Component {
       <div className="flex">
         <div className="flex-1 extra-padding">
           <div style={{width: '57px', margin: '24px 0'}}>
-            <DateCircle date={this.state.event.datetime} />
+            {this.state.event.publishDate ? <DateCircle date={this.state.event.publishDate} /> : ''}
           </div>
           {/*<SmallCapsTitle></SmallCapsTitle>*/}
           <div style={{marginTop: '12px', marginBottom: '12px'}}>
