@@ -19,87 +19,87 @@ const members = [
   {
     title: 'Exasun',
     url: 'https://exasun.com',
-    image: 'something'
+    image: 'exasun.svg'
   },
   {
     title: 'Unified International',
     url: 'https://unifiedinternational.net',
-    image: 'something'
+    image: 'unified-international.png'
   },
   {
     title: 'KVE',
     url: 'https://www.kve.nl',
-    image: 'something'
+    image: 'kve.jpg'
   },
   {
     title: 'Airborne',
     url: 'https://www.airborne.com',
-    image: 'something'
+    image: 'airborne.png'
   },
   {
     title: 'Promolding',
     url: 'https://www.promolding.nl/en/',
-    image: 'something'
+    image: 'promolding.jpg'
   },
   {
     title: 'GTM-AS',
     url: 'https://gtm-as.com',
-    image: 'something'
+    image: 'gtm.png'
   },
-  {
-    title: 'InHolland',
-    url: 'https://www.inholland.nl/',
-    image: 'something'
-  },
+  // {
+  //   title: 'InHolland',
+  //   url: 'https://www.inholland.nl/',
+  //   image: 'inholland.svg'
+  // },
   {
     title: 'TU Delft',
     url: 'https://www.tudelft.nl/',
-    image: 'something'
+    image: 'tu-delft.svg'
   },
   {
     title: 'Hittech',
     url: 'https://hittech.com/en/',
-    image: 'something'
+    image: 'hittech.jpeg'
   },
   {
     title: 'Light Tree Ventures',
     url: 'https://www.lighttreeventures.com',
-    image: 'something'
+    image: 'lighttree.svg'
   },
   {
     title: 'Project Dragonfly',
     url: 'https://projectdragonfly.nl',
-    image: 'something'
+    image: 'project-dragonfly.jpg'
   },
   {
     title: 'QLayers',
     url: 'https://www.qlayers.com',
-    image: 'something'
+    image: 'qlayers.jpg'
   },
   {
     title: 'ZeroAvia',
     url: 'https://www.zeroavia.com',
-    image: 'something'
+    image: 'zero-avia.jpg'
   },
   {
     title: 'Chapter8',
     url: 'https://chapter8.com',
-    image: 'something'
+    image: 'chapter8.svg'
   },
   {
     title: 'Robin Radar',
     url: 'https://www.robinradar.com',
-    image: 'something'
+    image: 'robin.jpeg'
   },
   {
     title: 'SITA',
     url: 'https://www.sita.aero',
-    image: 'something'
+    image: 'sita.svg'
   },
   {
     title: 'Somni',
     url: 'https://www.somnisolutions.com',
-    image: 'something'
+    image: 'somni.webp'
   }
 ];
 
@@ -142,11 +142,14 @@ function Community() {
           Our members include
         </Title>
       </div>
-      <div className="MembersOverview-logos">
+      <div className="MembersOverview-logos flex flex-wrap text-center">
         {R.map((member) => {
           return <p className="MembersOverview-logo">
-            <a href={member.url}>
-              {member.title}
+            <a href={member.url} target="_blank" title={member.title} style={{
+              backgroundImage: `url("/static/pages/community/logos/${member.image}")`
+            }}>
+              <span hidden>{member.title}</span>
+              <img src={`/static/pages/community/logos/${member.image}`} className="block" alt={'Logo ' + member.title} />
             </a>
           </p>
         }, members)}
@@ -169,6 +172,32 @@ function Community() {
         max-width: 100%;
         padding: 0 24px;
         position: relative;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .flex-wrap {
+        flex-wrap: wrap;
+      }
+      .MembersOverview-logo {
+        margin: 0 auto;
+      }
+      @media(min-width: 480px) {
+        .MembersOverview-logo {
+          width:49%;
+        }
+      }
+      .MembersOverview-logo a {
+        display: block;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .MembersOverview-logo a * {
+        display: none;
       }
     `}</style>
   </div>
