@@ -31,9 +31,19 @@ function Campus() {
       image="/static/pages/campus/tpy-campus-header-image.jpg"
       style={{backgroundPosition: '72% 50%'}}
       />
+
     <IntroText>
       <p>
         The goal of our TPY Campus is to offer facilities and events to support all your needs with easy access and close to Den Haag. Whether you’re a start up, scale up, a mature business or an international company. Come visit our vibrant campus and see it for yourself.
+      </p>
+      <p>
+        TPY is conveniently located between The Hague and Delft, right next to the A4 and close to the Laan van Ypenburg tram- and bus stop. We also have plenty of parking facilities at our park!
+      </p>
+      <p>
+        TPY is located near educational institutions such as TU Delft, InHolland, and The Hague University of Applied Sciences. At TPY, students have the ability to cooperate and co-create with fellow students from different schools, whilst networking with  companies at our Production Center. This way, TPY offers a unique experience for students!
+      </p>
+      <p>
+        Students have worked on various projects in the past at the TPY Scale-up & Innovation Center. We have welcomed teams such as the DragonFly Team by InHolland Delft, and the Formula- and EcoRunner Team by TU Delft. Our Production Center offers plenty of space and all the tools needed to help students achieve their best and most innovative projects possible. Interested in learning more about the past projects that were hosted at TPY? This article has got you covered!
       </p>
     </IntroText>
 
@@ -70,10 +80,20 @@ function Campus() {
     <div>
       <TextAndImage
         category=""
-        image="/static/misc/meeting_space_big_though_empty__07042021_TPY SPACES_Hani_HPM-07161.jpg"
+        image="/static/pages/campus/event-picture-1.jpg"
         imagePosition="left"
-        title="Event spaces"
-        text="<p>We offer spaces for events from 30 people up to 300 people to attend. Let us know your needs and we would be delighted to help make your event a success.</p>"
+        title="Meeting & Event Spaces"
+        text="<p>At TPY, we have several fully equipped meeting spaces in different sizes, that can host from 4 to 12 people. Something bigger in mind? We also offer event spaces which can host up to 200 people to attend.</p>"
+        />
+    </div>
+
+    <div>
+      <TextAndImage
+        category=""
+        image="/static/pages/campus/event-picture-2.jpg"
+        imagePosition="right"
+        title=""
+        text="<p>Let us know your needs and we would be delighted to help make your event a success, you can contact us via <a href='mailto:info@technologyparkypenburg.nl'>info@technologyparkypenburg.nl</a></p>"
         />
     </div>
 
