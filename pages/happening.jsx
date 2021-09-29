@@ -24,7 +24,7 @@ function Happening() {
     <Navigation />
     <div>
       <PageHeader
-        image="https://i.imgur.com/bB8UO0W.png"
+        image="/static/pages/campus/tpy-campus-header-image.jpg"
         smallCapsTitle="what is happening"
         smallCapsTitleColor="white"
         title="Everyday is full of great oppertunities"
