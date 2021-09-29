@@ -15,19 +15,45 @@ class MeetingSpaceBlock extends Component {
   getData(variant) {
     const variants = {
       '1': {
-        title: 'Meeting space 1',
-        subTitle: '14 persons - 27',
-        price1: 50,
+        type: 'Meeting room',
+        title: 'Amelia Earhart (Community Center)',
+        titleContext: 'First woman to fly across the Atlantic solo',
+        setup: 'Boardroom',
+        m2: '12.5',
+        capacityNoPersons: '4',
+        subTitle: '',
+        price1: 20,
         price1Desc: 'per hour excl. 21% vat',
-        price2: 175,
+        price2: 70,
         price2Desc: 'half a day excl. 21% vat<br />9:00 - 13:00  |  13:00 - 17:00',
-        price3: 325,
+        price3: 140,
         price3Desc: 'full day excl. 21% vat<br />9:00 - 17:00',
         tagline: 'Members get 10% discount.<br />Office owners get 35% discount.'
       },
       '2': {
-        title: 'Meeting space 2',
-        subTitle: '8 persons - 20',
+        type: 'Meeting room',
+        title: 'Hermann Staudinger (Community Center)',
+        titleContext: 'German chemist who discovered the existence of polymers; "father of polymer chemistry"',
+        setup: 'Boardroom',
+        m2: '19.4',
+        capacityNoPersons: '8',
+        subTitle: '',
+        price1: 35,
+        price1Desc: 'per hour excl. 21% vat',
+        price2: 100,
+        price2Desc: 'half a day excl. 21% vat<br />9:00 - 13:00  |  13:00 - 17:00',
+        price3: 200,
+        price3Desc: 'full day excl. 21% vat<br />9:00 - 17:00',
+        tagline: 'Members get 10% discount.<br />Office owners get 35% discount.'
+      },
+      '3': {
+        type: 'Meeting room',
+        title: 'Chiaki Mukai (Community Center)',
+        titleContext: 'Japanese physician and JAXA astronaut and the first Asian women to have been to space',
+        setup: 'Boardroom',
+        m2: '26.8',
+        capacityNoPersons: '12',
+        subTitle: '',
         price1: 40,
         price1Desc: 'per hour excl. 21% vat',
         price2: 125,
@@ -36,14 +62,35 @@ class MeetingSpaceBlock extends Component {
         price3Desc: 'full day excl. 21% vat<br />9:00 - 17:00',
         tagline: 'Members get 10% discount.<br />Office owners get 35% discount.'
       },
-      '3': {
-        title: 'Meeting space 3',
-        subTitle: '4 persons - 13',
-        price1: 25,
+      '4': {
+        type: 'Eventspace',
+        title: 'Willemina Cornelia Ruitman (Community Center)',
+        titleContext: 'First balloonist and first parachutist in the Netherlands. She jumped out of the balloon.',
+        setup: 'Theatre/Cabaret',
+        m2: '143.2',
+        capacityNoPersons: '50',
+        subTitle: '',
+        price1: 60,
         price1Desc: 'per hour excl. 21% vat',
-        price2: 90,
+        price2: 240,
         price2Desc: 'half a day excl. 21% vat<br />9:00 - 13:00  |  13:00 - 17:00',
-        price3: 175,
+        price3: 480,
+        price3Desc: 'full day excl. 21% vat<br />9:00 - 17:00',
+        tagline: 'Members get 10% discount.<br />Office owners get 35% discount.'
+      },
+      '5': {
+        type: 'Meeting room',
+        title: 'Anthony Fokker (Scale up & Innovation Center)',
+        titleContext: 'Dutch aviation pioneer who is well known for manufacturing and designing aircrafts',
+        setup: 'Boardroom',
+        m2: '26.1',
+        capacityNoPersons: '8',
+        subTitle: '',
+        price1: 40,
+        price1Desc: 'per hour excl. 21% vat',
+        price2: 125,
+        price2Desc: 'half a day excl. 21% vat<br />9:00 - 13:00  |  13:00 - 17:00',
+        price3: 250,
         price3Desc: 'full day excl. 21% vat<br />9:00 - 17:00',
         tagline: 'Members get 10% discount.<br />Office owners get 35% discount.'
       }
@@ -59,10 +106,16 @@ class MeetingSpaceBlock extends Component {
       <div className="boxed">
         <div className="heading">
           <Link href="/join-community">
-            <b>{data.title}</b>
+            <b className="heading-inner">{data.type}</b>
           </Link>
+          <span className="MeetingSpaceBlock-title">
+            <b>{data.title}</b>
+          </span>
+          <span className="MeetingSpaceBlock-titleContext">
+            {data.titleContext}
+          </span>
           <span className="extra-benefit">
-            {data.subTitle} m<sup>2</sup>
+            <b>{data.setup}</b><br />{data.capacityNoPersons} persons - {data.m2} m<sup>2</sup>
           </span>
         </div>
         <div className="py-4" style={{
@@ -183,7 +236,7 @@ class MeetingSpaceBlock extends Component {
           top: -4px;
           position: relative;
         }
-        .heading b {
+        .heading .heading-inner {
           letter-spacing: 1px;
           font-size: 18px;
           line-height: 48px;
@@ -198,6 +251,8 @@ class MeetingSpaceBlock extends Component {
           text-transform: uppercase;
           text-align: center;
         }
+        .MeetingSpaceBlock-title,
+        .MeetingSpaceBlock-titleContext,
         .extra-benefit {
           color: #0F2247;
           display: block;
@@ -209,6 +264,15 @@ class MeetingSpaceBlock extends Component {
           font-size: 22px;
           line-height: 32px;
           padding: 30px 0;
+        }
+        .MeetingSpaceBlock-title,
+        .MeetingSpaceBlock-titleContext {
+          padding: 30px 0 0 0;
+        }
+        .MeetingSpaceBlock-titleContext {
+          font-size: 16px;
+          line-height: 24px;
+          min-height: 130px;
         }
         .pricing-wrapper {
           margin: 24px 0 24px 0;

@@ -13,6 +13,7 @@ const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
 const Footer = dynamic(() => import('../components/footer.js'));
 const NewsletterSubscribe = dynamic(() => import('../components/newsletter-subscribe.js'));
 const FullWidthImage = dynamic(() => import('../components/full-width-image.js'));
+const MeetingSpaceBlock = dynamic(() => import('../components/meeting-space-block.js'));
 
 function Campus() {
   return <div className="root">
@@ -43,7 +44,7 @@ function Campus() {
         TPY is located near educational institutions such as TU Delft, InHolland, and The Hague University of Applied Sciences. At TPY, students have the ability to cooperate and co-create with fellow students from different schools, whilst networking with  companies at our Production Center. This way, TPY offers a unique experience for students!
       </p>
       <p>
-        Students have worked on various projects in the past at the TPY Scale-up & Innovation Center. We have welcomed teams such as the DragonFly Team by InHolland Delft, and the Formula- and EcoRunner Team by TU Delft. Our Production Center offers plenty of space and all the tools needed to help students achieve their best and most innovative projects possible. Interested in learning more about the past projects that were hosted at TPY? This article has got you covered!
+        Students have worked on various projects in the past at the TPY Scale-up & Innovation Center. We have welcomed teams such as the DragonFly Team by InHolland Delft, and the Formula- and EcoRunner Team by TU Delft. Our Production Center offers plenty of space and all the tools needed to help students achieve their best and most innovative projects possible. Interested in learning more about the past projects that were hosted at TPY? This <a href="https://www.technologyparkypenburg.nl/happening/student-run-projects-in-tpy" rel="external" target="_blank">article</a> has got you covered!
       </p>
     </IntroText>
 
@@ -98,14 +99,64 @@ function Campus() {
     </div>
 
     <div>
+      <Title style={{
+        padding: '45px 0px',
+        textAlign: 'center'
+      }}>
+        Rent a meeting spaces
+      </Title>
+      <div className="pricing-blocks-wrapper meeting-spaces">
+        <MeetingSpaceBlock
+          key={'meetingSpace1'}
+          variant="1"
+        />
+        <MeetingSpaceBlock
+          key={'meetingSpace2'}
+          variant="2"
+        />
+        <MeetingSpaceBlock
+          key={'meetingSpace3'}
+          variant="3"
+        />
+        <MeetingSpaceBlock
+          key={'meetingSpace3'}
+          variant="4"
+        />
+        <MeetingSpaceBlock
+          key={'meetingSpace3'}
+          variant="5"
+        />
+      </div>
+    </div>
+
+    <div>
       <FooterBanner
-        title="Join us!"
+        title="Come and see for your self what TPY has to offer you!"
         buttonText="book a tour"
         buttonLink="/contact"
         />
     </div>
     <NewsletterSubscribe />
     <Footer />
+      <style jsx>{`
+      .pricing-blocks-wrapper {
+        text-align: center;
+      }
+      .pricing-blocks-wrapper.meeting-spaces {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 1160px;
+      }
+      @media(max-width: 1340px) {
+        .pricing-blocks-wrapper {
+          width: 1000px;
+          max-width: 100%;
+          margin: 0 auto;
+        }
+      }
+    `}</style>    
   </div>
 }
 

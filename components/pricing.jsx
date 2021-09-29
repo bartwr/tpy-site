@@ -446,6 +446,14 @@ class Pricing extends Component {
           key={'meetingSpace3'}
           variant="3"
         />
+        <MeetingSpaceBlock
+          key={'meetingSpace3'}
+          variant="4"
+        />
+        <MeetingSpaceBlock
+          key={'meetingSpace3'}
+          variant="5"
+        />
       </div>
       <div>
         <FooterBanner
