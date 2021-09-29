@@ -14,26 +14,6 @@ const Footer = dynamic(() => import('../components/footer.js'));
 const NewsletterSubscribe = dynamic(() => import('../components/newsletter-subscribe.js'));
 const FullWidthImage = dynamic(() => import('../components/full-width-image.js'));
 
-function Testimonial() {
-  return <div>
-    <h1>Sander Althuis</h1>
-    <div>
-      Finance & Supply Chain Manager DUT21
-    </div>
-    <div>
-      Formula Student Team Delft 
-    </div>
-    <div>
-      <p>
-        "As the Formula Student Team Delft we have built our carbon fibre monocoque in the Scale Up & Innovation Center. It was great to be surrounded by other teams and companies doing similar production, so we could exchange knowledge and help each other. After our monocoque was finished we assembled our electric racecar, in order to participate in the international Formula Student competitions in the summer of 2021. We have so far won the Engineering Design and Cost & Manufacturing event at Formula Student Netherlands, and are ready to race for more prizes at the Red Bull Ring and the Hockenheimring!
-      </p>
-      <p>
-        We are looking forward to build our next autonomous racecar at the facilities that TPY has to offer." 
-      </p>
-    </div>
-  </div>
-}
-
 function Acceleration() {
   return <div className="root">
     <Head>
@@ -81,7 +61,45 @@ function Acceleration() {
         Testimonals from projects in de Scale up & Innovation Center
       </Title>
 
-      <Testimonial />
+      <TextAndImage
+        image="/static/misc/two_women_talking_in_kitchen__07042021_TPY SPACES_Hani_HPM-06942.jpg"
+        category=""
+        title="Sander Althuis"
+      >
+        <div>
+          Finance & Supply Chain Manager DUT21
+        </div>
+        <div>
+          Formula Student Team Delft 
+        </div>
+        <div>
+          <p>
+            "As the Formula Student Team Delft we have built our carbon fibre monocoque in the Scale Up & Innovation Center. It was great to be surrounded by other teams and companies doing similar production, so we could exchange knowledge and help each other. After our monocoque was finished we assembled our electric racecar, in order to participate in the international Formula Student competitions in the summer of 2021. We have so far won the Engineering Design and Cost & Manufacturing event at Formula Student Netherlands, and are ready to race for more prizes at the Red Bull Ring and the Hockenheimring!
+          </p>
+          <p>
+            We are looking forward to build our next autonomous racecar at the facilities that TPY has to offer." 
+          </p>
+        </div>
+      </TextAndImage>
+
+      <TextAndImage
+        image="/static/misc/two_women_talking_in_kitchen__07042021_TPY SPACES_Hani_HPM-06942.jpg"
+        imagePosition="right"
+        category=""
+        title="Arnold Koetje"
+      >
+        <div>
+          Manager Applied Sciences Labs Aeronautical- and Precision Engineering
+        </div>
+        <div>
+          Inholland Delft University of Applied Sciences
+        </div>
+        <div>
+          <p>
+            "We chose TPY as an integration location because of the access to manufacturing possibilities and composites expertise. Given the proximity of the Campus in Delft, it is an extremely suitable location for Inholland to further develop innovation projects in a safe and applied environment."
+          </p>
+        </div>
+      </TextAndImage>
 
     </div>
 

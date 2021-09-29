@@ -46,8 +46,43 @@ function Softlanding() {
         image="/static/misc/making_space_bird_eye_view__07042021_TPY SPACES_Hani_HPM-07170.jpg"
         imagePosition="right"
         title="Why Ypenburg?"
-        text="<p>Situated in the heart of the greater Rotterdam – The Hague area, TPY offers a strategic place with an innovative cluster of collaborative high-tech companies. The greater Rotterdam – The Hague area has been the birthplace of the development of world renown composite materials for the aviation, space and wind energy industries. This unique ecosystem makes the area an appealing location at regional, national and international levels.</p><p>In addition, the region is home to the complete chain of academic research & knowledge institutes such as TU Delft, InHolland Aeronautical Engineering and Leiden University. </p><p>Located along the A4 and A12 highways offering direct access to the rest of the Netherlands, Belgium and Germany. Amsterdam Schiphol Airport and Rotterdam Harbour can both be reached in less than 30 minutes. Fun fact: the area where Technology Park Ypenburg is located, was developed as an airport in 1936.</p>"
-        />
+      >
+        <p>
+          Situated in the heart of the greater Rotterdam – The Hague area, TPY offers a strategic place with an innovative cluster of collaborative high-tech companies. The greater Rotterdam – The Hague area has been the birthplace of the development of world renown composite materials for the aviation, space and wind energy industries. This unique ecosystem makes the area an appealing location at regional, national and international levels.
+        </p>
+      </TextAndImage>
+    </div>
+
+    <div>
+      <TextAndImage
+        category=""
+        image=""
+        imagePosition="left"
+        title=""
+      >
+        <p>
+          In addition, the region is home to the complete chain of academic research & knowledge institutes such as TU Delft, InHolland Aeronautical Engineering and Leiden University.
+        </p>
+        <p>
+          Located along the A4 and A12 highways offering direct access to the rest of the Netherlands, Belgium and Germany. Amsterdam Schiphol Airport and Rotterdam Harbour can both be reached in less than 30 minutes. Fun fact: the area where Technology Park Ypenburg is located, was developed as an airport in 1936.
+        </p>
+      </TextAndImage>
+    </div>
+
+    <div>
+      <TextAndImage
+        category=""
+        image=""
+        imagePosition="right"
+        title="Virtual office"
+      >
+        <p>
+          TPY also offers a ‘Virtual Office Membership’, which is a membership with business address. With this membership you can have the ability to start operating your business in The Netherlands, as you can use our business address to register at the Dutch Chamber of Commerce (KvK). You will have a mailbox at Laan van Ypenburg 108 in The Hague plus the possibility to use the membership area at the TPY Community Center. If you are not able to come to our physical location to pick up the mail, it is optional to have your mail forwarded once or twice a month.
+        </p>
+        <p>
+          Interested in a Virtual Office Membership? Please take a look at our <a href="https://www.technologyparkypenburg.nl/pricing" target="_blank">Pricing</a>.
+        </p>
+      </TextAndImage>
     </div>
 
     <div>

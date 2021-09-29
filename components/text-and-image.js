@@ -63,7 +63,11 @@ class TextAndImage extends Component {
           {this.props.title}
         </Title>
 
-        <div className="text" dangerouslySetInnerHTML={{__html: this.props.text}} />
+        {this.props.text && <div className="text" dangerouslySetInnerHTML={{__html: this.props.text}} />}
+
+        {this.props.children && <div className="text">
+          {this.props.children}
+        </div>}
 
         {this.props.buttonLink && <Button
           href={this.props.buttonLink}
