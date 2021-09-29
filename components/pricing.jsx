@@ -204,6 +204,7 @@ class PricingBlock extends Component {
         }
         .pricing-wrapper small {
           display: block;
+          min-height: 40px;
           color: #144372;
           font-family: "Montserrat", sans-serif;
           font-size: 16px;
@@ -245,7 +246,7 @@ class PricingBlock extends Component {
         }
         .feature {
           border-top: solid #ccc 1px;
-          padding: 12px;
+          padding: 12px 30px 12px 12px;
           position: relative;
         }
         .button {
@@ -342,56 +343,62 @@ class Pricing extends Component {
         priceDescription: 'per month excl. 21% vat',
         title: 'Become part of the TPY community',
         features: [
-          'Super-fast wifi',
+          'Workplace at the membership area',
+          'Access to lounge area and kitchenette',
+          'Superfast wifi',
           'Unlimited coffee / tea',
-          'Private events',
-          'Use massage chair',
-          'Ping-pong and foosball',
+          'Access to the TPY community',
+          'Private events, programs, and meetups',
           'Access Monday to Friday',
+          'Free parking',
           'Contract period 1 month'
         ],
-        tagline: 'A great way to access the power of our community.'
+        tagline: '* If you’re a student you receive a 50% discount on your membership. This means you can become a member of the TPY community for 28.50 p/m excl. 21% VAT!'
+        // tagline: 'A great way to access the power of our community.'
       },
       {
         name: 'flex-coworking',
-        heading: 'Flex co-working',
+        heading: 'Flex Coworking',
         extraBenefit: '+ membership',
-        price: '180',
+        price: '207.50',
         priceDescription: 'per month excl. 21% vat',
         title: 'Flexible workplace starting from 1 day a week',
         features: [
-          'Super-fast wifi',
+          'Flex-workplace at the co-working area',
+          'Ergonomic chair, height adjustable desk, monitor',
+          'Access to lounge area and kitchenette',
+          'Superfast wifi',
           'Unlimited coffee / tea',
-          'Private events',
-          'Use massage chair',
-          'Ping-pong and foosball',
+          'Access to the TPY community',
+          'Private events, programs, and meetups',
           'Access 24/7',
+          'Free parking',
           'Contract period 1 month',
-          'Use desks in co-working space',
           'Locker (add. € 15 p/m)',
-          'Postal address (add. € 25 p/m)',
+          'Postal address (add. € 25 p/m)'
         ],
         tagline: 'An incredible way to work in our co-working space and with our community.'
       },
       {
         name: 'flex-dedicated',
-        heading: 'Flex dedicated',
-        extraBenefit: '+ flex dedicated',
-        price: '225',
+        heading: 'Dedicated Coworking',
+        extraBenefit: '+ membership',
+        price: '228.75',
         priceDescription: 'per month excl. 21% VAT',
-        title: 'Fixed workplace in co-working space',
+        title: 'Fixed workplace in our coworking space',
         features: [
-          'Super-fast wifi',
+          'Dedicated workplace at the co-working area',
+          'Personal locker',
+          'Business registration + personal mailbox',
+          'Ergonomic chair, height adjustable desk, monitor',
+          'Access to lounge area and kitchenette',
+          'Superfast wifi',
           'Unlimited coffee / tea',
-          'Private events',
-          'Use massage chair',
-          'Ping-pong and foosball',
-          'Access Access 24/7',
+          'Access to the TPY community',
+          'Private events, programs, and meetups',
+          'Access 24/7',
+          'Free parking',
           'Contract period 1 month',
-          'Use desks in co-working space',
-          'Locker (add. € 15 p/m)',
-          'Postal address (add. € 25 p/m)',
-          'Dedicated workplace with desk',
         ],
         tagline: 'The perfect way to set up your shop right in the heart of our community.'
       },
@@ -399,24 +406,58 @@ class Pricing extends Component {
         name: 'office',
         heading: 'Office',
         extraBenefit: '+ membership',
-        price: 525,
-        priceDescription: 'per month excl. 21% VAT',
+        price: '732.75',
+        priceDescription: 'per month excl. 21% VAT for a 3-person office',
         title: 'Use of workplace in enclosed space',
         features: [
-          'Super-fast wifi',
-          'Unlimited coffee / tea',
-          'Private events',
-          'Use massage chair',
-          'Ping-pong and foosball',
-          'Access 24/7',
-          'Contract period 1 month',
-          'Use desks in co-working space',
-          'Locker (add. € 15 p/m)',
-          'Postal address (add. € 25 p/m)',
+          'Enclosed, locked office',
           'Dedicated workplace with desk',
-          'Enclosed, lockable office',
+          'Personal locker',
+          'Business registration + personal mailbox',
+          'Access to lounge area and kitchenette',
+          'Superfast wifi',
+          'Unlimited coffee / tea',
+          'Access to the TPY community',
+          'Private events, programs, and meetups',
+          'Access 24/7',
+          'Free parking',
+          'Contract period 1 month',
         ],
         tagline: 'The best way to make our space yours and join our community.'
+      },
+      {
+        name: 'travel-pass',
+        heading: 'Travel Pass',
+        extraBenefit: '',
+        price: '25.00',
+        priceDescription: 'per day excl. 21% VAT',
+        title: 'Access to the TPY Community for 1 day',
+        features: [
+          'Flex-workplace at the co-working area',
+          'Ergonomic chair, height adjustable desk, monitor',
+          'Access to lounge area and kitchenette',
+          'Superfast wifi',
+          'Unlimited coffee / tea',
+          'Access to the TPY community ',
+          'Access from 08:00-18:00',
+          'Travelpass 1 week (5 days) = 100,- '
+        ],
+        tagline: ''
+      },
+      {
+        name: 'virtual-office',
+        heading: 'Virtual Office',
+        extraBenefit: '',
+        price: '83.25',
+        priceDescription: 'per month excl. 21% VAT',
+        title: 'Membership with business address',
+        features: [
+          'Recognized business address (register Chamber of Commerce)',
+          'Mailbox at Laan van Ypenburg 108, The Hague',
+          'Possibility to use the workplaces in the membership area at the TPY Community Center',
+          'Optional: mail forwarded twice a month'
+        ],
+        tagline: ''
       }
     ];
 
