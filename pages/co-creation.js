@@ -13,6 +13,7 @@ const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
 const Footer = dynamic(() => import('../components/footer.js'));
 const NewsletterSubscribe = dynamic(() => import('../components/newsletter-subscribe.js'));
 const FullWidthImage = dynamic(() => import('../components/full-width-image.js'));
+const MembersOverview = dynamic(() => import('../components/members-overview.js'));
 
 function Cocreation() {
   return <div className="root">
@@ -41,7 +42,12 @@ function Cocreation() {
       <p>
         We drive events which are educational in content or challenging through events like “Hackathons” and “Makethons”. In addition, we set up innovation projects for products and processes and help find the appropriate local, regional, national and european funding initiatives to help accelerate your development.
       </p>
+      <p>
+        Our open community thrives to connect with the best of the best. Our community members focus on developing innovative solutions in the field of high-tech manufacturing through collaboration. Through collaboration and co-creation, innovative solutions have been developed in our community. Interested in what has been co-created so far by our members? Please visit our *testimonial page*.
+      </p>
     </IntroText>
+
+    <MembersOverview />
 
     <div>
       <FooterBanner
