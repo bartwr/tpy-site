@@ -129,7 +129,7 @@ class Navigation extends Component {
           href: '/academy',
           image: '/static/components/carousel/tpy-icon-academy.svg'
         }, {
-          title: 'Acceleration & incubation',
+          title: 'Acceleration & Incubation',
           href: '/acceleration',
           image: '/static/components/carousel/tpy-icon-acceleration.svg',
         }, {

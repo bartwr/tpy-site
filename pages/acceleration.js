@@ -14,6 +14,26 @@ const Footer = dynamic(() => import('../components/footer.js'));
 const NewsletterSubscribe = dynamic(() => import('../components/newsletter-subscribe.js'));
 const FullWidthImage = dynamic(() => import('../components/full-width-image.js'));
 
+function Testimonial() {
+  return <div>
+    <h1>Sander Althuis</h1>
+    <div>
+      Finance & Supply Chain Manager DUT21
+    </div>
+    <div>
+      Formula Student Team Delft 
+    </div>
+    <div>
+      <p>
+        "As the Formula Student Team Delft we have built our carbon fibre monocoque in the Scale Up & Innovation Center. It was great to be surrounded by other teams and companies doing similar production, so we could exchange knowledge and help each other. After our monocoque was finished we assembled our electric racecar, in order to participate in the international Formula Student competitions in the summer of 2021. We have so far won the Engineering Design and Cost & Manufacturing event at Formula Student Netherlands, and are ready to race for more prizes at the Red Bull Ring and the Hockenheimring!
+      </p>
+      <p>
+        We are looking forward to build our next autonomous racecar at the facilities that TPY has to offer." 
+      </p>
+    </div>
+  </div>
+}
+
 function Acceleration() {
   return <div className="root">
     <Head>
@@ -28,7 +48,7 @@ function Acceleration() {
     <PageHeader
       smallCapsTitle="Acceleration"
       smallCapsTitleColor="white"
-      title="TPY Acceleration"
+      title="TPY Acceleration & Incubation"
       imageBk="/static/pages/community/community.jpg"
       image="/static/pages/acceleration/tpy-acceleration-and-incubation-header-image.jpg"
       style={{backgroundPosition: '10% 50%'}}
@@ -36,7 +56,13 @@ function Acceleration() {
 
     <IntroText>
       <p>
-        With our ideal location, close to TU Delft, TNO and NLR amongst other industrial capabilities, TPY is an attractive environment for startup and mature companies to expand/grow their business and capabilities from. We facilitate cooperation between companies, academic institutions and the government.
+        With our ideal location, close to TU Delft, TNO, The Hague University of Applied Sciences and NLR amongst other industrial capabilities, TPY is an attractive environment for startup and mature companies to expand/grow their business and capabilities from. We facilitate cooperation between companies, academic institutions and the government.
+      </p>
+      <p>
+        Students can easily access TPY, as our campus is conveniently located between The Hague and Delft. Come visit TPY by bike or take the bus or tram (tram stop Laan van Ypenburg)!
+      </p>
+      <p>
+        Interested in becoming a part of the TPY Community? We got you covered! If you’re a   student you receive a 50% discount on your membership. This means you can become  a member of the TPY community for 28.50 p/m excl. 21% VAT! More information can   be found on our <a href="https://www.technologyparkypenburg.nl/pricing" target="_blank">Pricing</a> page.
       </p>
     </IntroText>
 
@@ -48,6 +74,15 @@ function Acceleration() {
         title="Surrounded by knowledge"
         text="<p>By surrounding ourselves with facilities such as TU Delft Aerospace Structures & Materials Lab, InHolland Composites Lab, SAM | XL Automation & Digitization Center and DFC Digital Factory Composites Ypenburg, we encourage the companies of our hub to accelerate their businesses.</p>"
         />
+    </div>
+
+    <div hidden>
+      <Title>
+        Testimonals from projects in de Scale up & Innovation Center
+      </Title>
+
+      <Testimonial />
+
     </div>
 
     <div>
