@@ -43,7 +43,7 @@ function Cocreation() {
         We drive events which are educational in content or challenging through events like “Hackathons” and “Makethons”. In addition, we set up innovation projects for products and processes and help find the appropriate local, regional, national and european funding initiatives to help accelerate your development.
       </p>
       <p>
-        Our open community thrives to connect with the best of the best. Our community members focus on developing innovative solutions in the field of high-tech manufacturing through collaboration. Through collaboration and co-creation, innovative solutions have been developed in our community. Interested in what has been co-created so far by our members? Please visit our *testimonial page*.
+        Our open community thrives to connect with the best of the best. Our community members focus on developing innovative solutions in the field of high-tech manufacturing through collaboration. Through collaboration and co-creation, innovative solutions have been developed in our community. Interested in what has been co-created so far by our members? Please visit our [/acceleration](testimonial page).
       </p>
     </IntroText>
 

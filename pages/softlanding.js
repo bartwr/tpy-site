@@ -74,6 +74,32 @@ function Softlanding() {
         category=""
         image=""
         imagePosition="right"
+        title="Introduction to key stakeholders"
+      >
+        <p>
+          TPY can help you connect with innovative peers from the high tech manufacturing industry, including lightweight composites, plastics- and metal materials, assemblies design and production, mechatronics, and automation solutions. We also have an extensive network in the aviation-, space- and medical markets. TPY is a center of globalization and internationalization while still focusing on the importance of local ecosystems and communities around The Hague and the Netherlands.
+        </p>
+      </TextAndImage>
+    </div>
+
+    <div>
+      <TextAndImage
+        category=""
+        image=""
+        imagePosition="left"
+        title="Connection to business establishment experts"
+      >
+        <p>
+          TPY has extensive connections with business establishment experts, and together with these experienced experts we can see how we can best assist you in further developing your business. We work in closely together with InnovationQuarter and The Hague Business Agency. We can help connect you with companies experienced in helping companies establish their operations in the Netherlands, recruit talent and access funding stimulants that may help your businesses development. Joining TPY’s Softlanding Program is the quickest, easiest, and more comprehensive path to growing your business in The Netherlands, the gateway to Europe.
+        </p>
+      </TextAndImage>
+    </div>
+
+    <div>
+      <TextAndImage
+        category=""
+        image=""
+        imagePosition="right"
         title="Virtual office"
       >
         <p>
