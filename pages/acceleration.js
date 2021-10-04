@@ -56,13 +56,15 @@ function Acceleration() {
         />
     </div>
 
-    <div hidden>
-      <Title>
-        Testimonals from projects in de Scale up & Innovation Center
-      </Title>
+    <div>
+      <div className="max-width">
+        <Title size="large">
+          Testimonals from projects in de Scale up & Innovation Center
+        </Title>
+      </div>
 
       <TextAndImage
-        image="/static/misc/two_women_talking_in_kitchen__07042021_TPY SPACES_Hani_HPM-06942.jpg"
+        image="/static/pages/acceleration/sander-althuis-tu-delft.jpg"
         category=""
         title="Sander Althuis"
       >
@@ -83,7 +85,7 @@ function Acceleration() {
       </TextAndImage>
 
       <TextAndImage
-        image="/static/misc/two_women_talking_in_kitchen__07042021_TPY SPACES_Hani_HPM-06942.jpg"
+        image="/static/pages/acceleration/arnold-koetje-inholland.jpg"
         imagePosition="right"
         category=""
         title="Arnold Koetje"
@@ -115,6 +117,14 @@ function Acceleration() {
 
     <Footer />
 
+    <style jsx>{`
+      .max-width {
+        padding: 140px 12px;
+        width: 800px;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+    `}</style>
   </div>
 }
 
