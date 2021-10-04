@@ -67,7 +67,12 @@ class App extends Component {
         <link href="/static/favicon.ico" rel="icon" type="image/x-icon" />
       </Head>
       <Navigation />
-      <VideoBanner />
+      <VideoBanner
+        title="Join the best in our high-tech industry"
+        subTitle="Team up and share your knowledge with like-minded technology peers"
+        showOverlay={true}
+        showButton={true}
+        />
       <IntroText
         data-sal-duration="300"
         data-sal="slide-down"

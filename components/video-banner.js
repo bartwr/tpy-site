@@ -15,8 +15,13 @@ class VideoBanner extends Component {
     ]
     const randomFromArray = (items) => items[Math.floor(Math.random()*items.length)]
     return <div className="VideoBanner">
-      <img className="video" src={`/static/pages/index/tpy-home-header-image-01.jpg`} />
-      <div className="overlay">
+      {! this.props.video && <img className="video" src={`/static/pages/index/tpy-home-header-image-01.jpg`} />}
+      {this.props.video && <div>
+        <video className="video" width="100%" autoPlay muted loop style={{height: 'auto'}}>
+          <source src={this.props.video} type="video/mp4" />
+        </video>
+      </div>}
+      <div className={this.props.showOverlay ? `overlay` : ``}>
         <Title
           color="#fff"
           data-sal-duration="400"
@@ -25,7 +30,7 @@ class VideoBanner extends Component {
           data-sal-easing="ease-in-out"
           size="large"
         >
-          Join the best in our high-tech industry
+          {this.props.title && this.props.title}
         </Title>
         <div>
           <div
@@ -35,9 +40,9 @@ class VideoBanner extends Component {
             data-sal-delay="600"
             data-sal-easing="ease-in-out"
             >
-            Team up and share your knowledge with like-minded technology peers
+            {this.props.subTitle || this.props.subTitle}
           </div>
-          <div
+          {this.props.showButton && <div
             className="button-wrapper"
             data-sal-duration="300"
             data-sal="fade"
@@ -51,7 +56,7 @@ class VideoBanner extends Component {
             >
               Book a tour
             </Button>
-          </div>
+          </div>}
         </div>
       </div>
       <style jsx>{`
