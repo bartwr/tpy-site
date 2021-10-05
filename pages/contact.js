@@ -23,6 +23,7 @@ function Contact() {
     <Navigation />
     <div style={{height: '132px'}} /> 
     <div className="contact-wrapper">
+
       <SmallCapsTitle>
         Introduction
       </SmallCapsTitle>
@@ -30,6 +31,7 @@ function Contact() {
       <Title size="small">
         Send us a message
       </Title>
+
       <p style={{
         fontWeight: 'bold',
         background: '#feef00',
@@ -38,7 +40,75 @@ function Contact() {
       }}>
         Thank you for your message! We will contact you soon.
       </p>
+
       <ContactForm />
+
+      <div>
+        <SmallCapsTitle>
+          About us
+        </SmallCapsTitle>
+        <br />
+        <Title size="small">
+          Overview TPY team
+        </Title>
+        <br />
+        <br />
+
+        <div className="flex justify-between flex-wrap">
+          <div className="about-us-block">
+            <img src="/static/pages/contact/stephen-hands.jpg" alt="Photo"
+              data-sal-duration="400"
+              data-sal="fade-in"
+              data-sal-delay="300"
+            />
+            <h1>Stephen<br />Managing Director</h1>
+            <p>
+              <a href="https://www.linkedin.com/in/stephen-hands-0b669634/" target="_blank" rel="external">
+                <img src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" alt="LinkedIn logo" width="40" className="linkedin-icon"
+                data-sal-duration="400"
+                data-sal="fade-in"
+                data-sal-delay="300"
+                />
+              </a>
+            </p>
+          </div>
+          <div className="about-us-block">
+            <img src="/static/pages/contact/sophie-kochen.jpg" alt="Photo"
+              data-sal-duration="400"
+              data-sal="fade-in"
+              data-sal-delay="300"
+            />
+            <h1>Sophie<br />Ecosystem Manager</h1>
+            <p>
+              <a href="https://www.linkedin.com/in/sophie-kochen-1a594468/" target="_blank" rel="external">
+                <img src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" alt="LinkedIn logo" width="40" className="linkedin-icon"
+                data-sal-duration="400"
+                data-sal="fade-in"
+                data-sal-delay="300"
+                />
+              </a>
+            </p>
+          </div>
+          <div className="about-us-block">
+            <img src="/static/pages/contact/delilah-dols.jpg" alt="Photo"
+              data-sal-duration="400"
+              data-sal="fade-in"
+              data-sal-delay="300"
+            />
+            <h1>Delilah<br />Community Manager</h1>
+            <p>
+              <a href="https://www.linkedin.com/in/delilahdols/" target="_blank" rel="external">
+                <img src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" alt="LinkedIn logo" width="40" className="linkedin-icon"
+                data-sal-duration="400"
+                data-sal="fade-in"
+                data-sal-delay="300"
+                />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
     <BookATourBanner />
     <NewsletterSubscribe />
@@ -52,6 +122,27 @@ function Contact() {
         padding: 0 18px;
         margin: 0 auto;
         margin-top: 4rem;
+      }
+      .about-us-block {
+        width: 300px;
+      }
+      .about-us-block h1 {
+        color: rgb(20, 67, 114);
+        font-family: Montserrat, sans-serif;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 32px;
+        text-align: center;
+        min-height: 96px;
+        -webkit-box-pack: center;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+      }
+      .about-us-block .linkedin-icon {
+        width: 40px;
+        display: block;
+        margin: 0 auto;
       }
     `}</style>
   </div>
