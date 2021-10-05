@@ -112,7 +112,7 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps, story, event, landingPage } = this.props;
+    const { Component, pageProps, story, event, landingPage, defaultView } = this.props;
     const meta = this.getMeta({story, event, landingPage});
 
     return (

@@ -10,7 +10,7 @@ const PageHeader = dynamic(() => import('../components/page-header.js'));
 const Footer = dynamic(() => import('../components/footer.js'));
 const HappeningOverview = dynamic(() => import('../components/happening-overview.js'));
 
-function Happening() {
+function Happening({ defaultView }) {
   return <div className="HappeningPage">
     <Head>
 
@@ -49,7 +49,7 @@ function Happening() {
           </Title>
         </div>
       </div>
-      <HappeningOverview />
+      <HappeningOverview defaultView={defaultView} />
     </div>
     <div>
       <FooterBanner
@@ -159,4 +159,13 @@ function Happening() {
   </div>
 }
 
+export function getServerSideProps(context) {
+  const defaultView = context.query.defaultView;
+
+  return {
+    props: {
+      defaultView: defaultView
+    }
+  }
+}
 export default Happening;

@@ -110,7 +110,7 @@ function Contact() {
         </div>
       </div>
 
-      <div>
+      <div style={{marginTop: '200px', textAlign: 'center'}}>
         <SmallCapsTitle>
           Short graphic history of TPY
         </SmallCapsTitle>

@@ -21,6 +21,8 @@ const {
   fetchEntry,
   fetchNews,
   fetchNewsItem,
+  fetchEvents,
+  fetchEventsItem,
   fetchStories,
   fetchStory
 } = require('./contentful.js');
@@ -103,10 +105,23 @@ app.prepare().then(() => {
       res.setHeader('content-type', 'text/javascript');
       createReadStream('./offline/serviceWorker.js').pipe(res);
     }
+    // Make it possible to link to HAPPENING=>NEWS page
+    else if (pathname == '/happening/news') {
+      app.render(req, res, '/happening', { defaultView: 'news' });
+    }
+    // Make it possible to link to HAPPENING=>EVENTS page
+    else if (pathname == '/happening/events') {
+      app.render(req, res, '/happening', { defaultView: 'events' });
+    }
     // Make it possible to link to stories
     else if (pathname.indexOf('/happening/') === 0) {
       const slug = pathname.split('/happening/')[1];
       app.render(req, res, '/happening-item', { slug: slug });
+    }
+    // Make it possible to link to events
+    else if (pathname.indexOf('/event/') === 0) {
+      const slug = pathname.split('/event/')[1];
+      app.render(req, res, '/events-item', { slug: slug });
     }
     // API: News
     else if (pathname === '/api/news' || pathname.indexOf('/api/news?') === 0 ) {
@@ -122,6 +137,21 @@ app.prepare().then(() => {
       res.setHeader('Content-Type', 'application/json');
       res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
       res.end(JSON.stringify(newsItem, null, 3));
+    }
+    // API: Events
+    else if (pathname === '/api/events' || pathname.indexOf('/api/events?') === 0 ) {
+      let events = await fetchEvents();
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+      res.end(JSON.stringify(events, null, 3));
+    }
+    // API: Events item
+    else if (pathname.indexOf('/api/events/') === 0) {
+      const slug = pathname.split('/events/')[1];
+      let eventsItem = await fetchEventsItem({ slug: slug });
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+      res.end(JSON.stringify(eventsItem, null, 3));
     }
     else {
       return handle(req, res, parsedUrl);

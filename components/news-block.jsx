@@ -17,16 +17,11 @@ class NewsBlock extends Component {
         <header style={{
           backgroundImage: `url( ${this.props.event.smallImage ? this.props.event.smallImage.fields.file.url : ''} )`
         }} />
-        <DateCircle date={this.props.event.datetime} />
+        <DateCircle date={this.props.event.publishDate || this.props.event.datetime} />
         <div className="info">
-          <div style={{
-            display: 'none',
-            marginBottom: '10px'
-          }}>
-            <SmallCapsTitle>
-              {this.props.event.category || 'design'}
-            </SmallCapsTitle>
-          </div>
+          {/*<SmallCapsTitle>
+            {this.props.event.category || 'design'}
+          </SmallCapsTitle>*/}
           <Title size="small" style={{
           }}>
             {this.props.event.title}

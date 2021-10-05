@@ -129,9 +129,33 @@ function fetchNewsItem (query) {
     .catch(console.error)
 }
 
+function fetchEvents () {
+  return client.getEntries({
+      content_type: 'events',
+      limit: 200,
+      order: 'fields.publishDate'
+    })
+  .then((response) => response.items)
+  .catch((error) => {
+    console.log(chalk.red(`\nError occurred while fetching Entries for events:`));
+    console.error(error)
+  })
+}
+function fetchEventsItem (query) {
+  return client.getEntries({
+    content_type: query.content_type || 'events',
+    'fields.slug': query.slug,
+    limit: 1
+  })
+    .then((entry) => entry.items[0])
+    .catch(console.error)
+}
+
 module.exports = {
   fetchEntriesForContentType,
   fetchEntry,
   fetchNews,
-  fetchNewsItem
+  fetchNewsItem,
+  fetchEvents,
+  fetchEventsItem
 };

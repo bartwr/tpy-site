@@ -20,7 +20,7 @@ const getNews = async function() {
     return news;
   }
   // Or directly from localStorage
-  return eventsFromLocalStorage.events;
+  // return eventsFromLocalStorage.events;
 }
 
 const getEvents = async function() {
@@ -37,7 +37,7 @@ const getEvents = async function() {
     return events;
   }
   // Or directly from localStorage
-  return eventsFromLocalStorage.events;
+  // return eventsFromLocalStorage.events;
 }
 
 const getStories = async function() {
@@ -54,7 +54,7 @@ const getStories = async function() {
     return stories;
   }
   // Or directly from localStorage
-  return storiesFromLocalStorage.stories;
+  // return storiesFromLocalStorage.stories;
 }
 
 export {

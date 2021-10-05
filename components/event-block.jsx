@@ -10,26 +10,26 @@ const DateCircle = dynamic(() => import('./date-circle.js'));
 
 class EventBlock extends Component {
   render() {
-    const slug = this.props.event.datetime.split('T')[0] + '/' + this.props.event.slug
+    // const slug = this.props.event.datetime.split('T')[0] + '/' + this.props.event.slug
+    const slug = this.props.event.slug
     const introText = this.props.event.introText.length <= 10 ? marked(this.props.event.detailedText).replace(/<\/?[^>]+(>|$)/g, '').substring(0, 200) : this.props.event.introText;
-    return <Link href={`/event?slug=${slug}`} as={`/events/${slug}`}>
+    return <Link href={`/events-item?slug=${slug}`} as={`/event/${slug}`}>
       <div className="EventBlock">
         <header style={{
           backgroundImage: `url( ${this.props.event.smallImage.fields.file.url} )`
         }} />
-        <DateCircle date={this.props.event.datetime} />
+        <DateCircle date={this.props.event.publishDate || this.props.event.datetime} />
         <div className="info">
           {/*<SmallCapsTitle size="small">
             {this.props.event.category || 'design'}
           </SmallCapsTitle>*/}
           <Title size="small" style={{
-            fontSize: '30px',
-            fontWeight: '700',
-            lineHeight: '32px'
           }}>
             {this.props.event.title}
           </Title>
-          <p>
+          <p style={{
+            color: '#0F2247'
+          }}>
             {introText}        
           </p>
         </div>
@@ -47,7 +47,7 @@ class EventBlock extends Component {
           }
           @media(min-width: 480px) {
             .EventBlock {
-              width: 285px;
+              width: 306px;
             }
           }
           .EventBlock:hover {
@@ -55,6 +55,10 @@ class EventBlock extends Component {
             transition: box-shadow 0.2s;
             transition: all 0.4s cubic-bezier(.08,.82,.17,1);
             transform: scale(1.02);
+          }
+          .EventBlock p {
+            font-size: 16px;
+            line-height: 24px;
           }
           header {
             background: center center / cover no-repeat;
@@ -70,7 +74,7 @@ class EventBlock extends Component {
             height: 192px;
           }
           .info {
-            padding: 32px 28px;
+            padding: 40px 28px;
             font-size: 14px;
             font-weight: 300;
             line-height: 24px;
