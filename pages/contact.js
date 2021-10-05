@@ -12,6 +12,7 @@ const SmallCapsTitle = dynamic(() => import('../components/small-caps-title.js')
 const BookATourBanner = dynamic(() => import('../components/book-a-tour-banner.js'));
 const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
 const Footer = dynamic(() => import('../components/footer.js'));
+const Timeline = dynamic(() => import('../components/timeline.js'));
 const NewsletterSubscribe = dynamic(() => import('../components/newsletter-subscribe.js'));
 const ContactForm = dynamic(() => import('../components/contact-form.js'));
 
@@ -108,6 +109,20 @@ function Contact() {
           </div>
         </div>
       </div>
+
+      <div>
+        <SmallCapsTitle>
+          Short graphic history of TPY
+        </SmallCapsTitle>
+        <br />
+        <Title size="small">
+          Overview TPY team
+        </Title>
+        <br />
+        <br />
+      </div>
+
+      <Timeline />
 
     </div>
     <BookATourBanner />
