@@ -116,7 +116,7 @@ function Contact() {
         </SmallCapsTitle>
         <br />
         <Title size="small">
-          Overview TPY team
+          How did it come to be?
         </Title>
         <br />
         <br />

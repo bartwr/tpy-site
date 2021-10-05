@@ -43,6 +43,20 @@ const timelineEvents = [
 ]
 
 class Timeline extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      onMobile: true
+    }
+  }
+  componentDidMount() {
+    if(typeof window !== "undefined" && window.innerWidth >= 480) {
+      this.setState({
+        onMobile: false
+      })
+    }
+  }
   render() {
     let i = 0;
     return <div className="Timeline">
@@ -54,7 +68,7 @@ class Timeline extends Component {
             data-sal={`slide-${i % 2 == 0 ? 'right' : 'left'}`}
             data-sal-duration="100"
             data-sal-delay="100"
-            data-sal-easing={`ease-in-out`}
+            data-sal-easing={this.state.onMobile ? `fade-in` : `ease-in-out`}
             >
             <div className="marker"></div>
             <div className="timeline-content">
