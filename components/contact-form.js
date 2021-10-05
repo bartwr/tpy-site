@@ -137,6 +137,9 @@ class ContactForm extends Component {
             2497 GC The Hague<br />
             The Netherlands
           </p>
+          <p className="paragraph">
+            TPY is conveniently located between The Hague and Delft, right next to the A4 and close to the <a href="https://www.htm.nl/halte/laan-van-ypenburg" target="_blank" rel="external">Laan van Ypenburg</a> tram- and bus stop (tram 15 & bus 30). We also have plenty of free parking facilities at our park!
+          </p>
         </div>}
         <br />
         <br />
