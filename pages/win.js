@@ -59,6 +59,86 @@ function Campus() {
       <p>
         This is your chance to take the leap towards building your dream prototype. We have a dream that our prototyping center will help create sustainable solutions for the future thanks to the bright minds of our region. What’s your dream?
       </p>
+
+      <Title
+        align="center"
+        style={{
+          marginTop: '50px',
+        }}
+      >
+        Entry Requirements
+      </Title>
+
+      <p>
+        To enter the competition your prototype should be producing hardware using metal, plastic or composite. You can enter by submitting a 1-minute pitch explaining:
+      </p>
+
+      <ul>
+        <li>
+          How much time do you think you'll need to develop your prototype?
+        </li>
+
+        <li>
+          What are you planning to build?
+        </li>
+
+        <li>
+          What makes your prototype unique?
+        </li>
+
+        <li>
+          How do you see the future of your product?
+        </li>
+      </ul>
+
+      <p>
+        Deadline: 1 December 2021 at 23.59
+      </p>
+
+      <Title
+        align="center"
+        style={{
+          marginTop: '50px',
+        }}
+      >
+        The Prices
+      </Title>
+
+      <p>
+        3 winners will be selected from the pitch contest, receiving one of the following prices
+      </p>
+
+      <div align="center">
+        <p>
+          <b>1st price</b>
+        </p>
+
+        <p>
+          One month of free use, worth €2,500,-
+        </p>
+
+        <p>
+          <b>2nd price</b>
+        </p>
+
+        <p>
+          One week of free use, worth €750,-
+        </p>
+
+        <p>
+          <b>3nd price</b>
+        </p>
+
+        <p>
+          One day of free use, worth €250,-
+        </p>
+      </div>
+
+      <br />
+      <p align="center">
+        Send your 1 minute pitch to <a href="mailto:info@technologyparkypenburg.nl" className="font-bold">info@technologyparkypenburg.nl</a>!
+      </p>
+
     </IntroText>
 
     <NewsletterSubscribe />
