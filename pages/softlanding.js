@@ -113,8 +113,8 @@ function Softlanding() {
 
     <div>
       <FooterBanner
-        title="Join our academy"
-        buttonText="send us a message"
+        title="Come and see for yourself what Technology Park Ypenburg has to offer you!"
+        buttonText="book a tour"
         buttonLink="/contact"
       />
     </div>

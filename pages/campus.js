@@ -103,7 +103,7 @@ function Campus() {
         padding: '45px 0px',
         textAlign: 'center'
       }}>
-        Rent a meeting spaces
+        Rent a meeting space
       </Title>
       <div className="pricing-blocks-wrapper meeting-spaces">
         <MeetingSpaceBlock
@@ -131,7 +131,7 @@ function Campus() {
 
     <div>
       <FooterBanner
-        title="Come and see for your self what TPY has to offer you!"
+        title="Come and see for yourself what Technology Park Ypenburg has to offer you!"
         buttonText="book a tour"
         buttonLink="/contact"
         />

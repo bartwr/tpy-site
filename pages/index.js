@@ -176,7 +176,7 @@ class App extends Component {
       </div>
       <div>
         <FooterBanner
-          title="Come and see for yourself what TPY has to offer you!"
+          title="Come and see for yourself what Technology Park Ypenburg has to offer you!"
           buttonText="book a tour"
           buttonLink="/contact"
           target="_top"
