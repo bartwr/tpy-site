@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { Component } from 'react';
 import * as R from 'ramda';
+import sal from 'sal.js';
 
 const timelineEvents = [
   {
@@ -56,6 +57,7 @@ class Timeline extends Component {
         onMobile: false
       })
     }
+    sal();
   }
   render() {
     let i = 0;
