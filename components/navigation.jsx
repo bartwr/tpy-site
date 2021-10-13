@@ -140,7 +140,11 @@ class Navigation extends Component {
           title: 'Co-creation',
           href: '/co-creation',
           image: '/static/components/carousel/tpy-icon-co-creation.svg'
-        }]
+        }, {
+          title: 'Win a Voucher!',
+          href: '/win',
+          image: '/static/components/carousel/tpy-icon-academy.svg'
+        }],
       },
       {
         title: 'What is happening?',
@@ -562,8 +566,8 @@ class Navigation extends Component {
           header.is-active .white-background.sub {
             transition: background .36s cubic-bezier(0.32, 0.08, 0.24, 1), max-height .56s cubic-bezier(0.52, 0.16, 0.24, 1);
             position: absolute;
-            height: 26rem;
-            max-height: 405px;
+            height: 28rem;
+            max-height: 505px;
             background: #fff;
             width: 100%;
             left: 0;
