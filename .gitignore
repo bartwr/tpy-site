@@ -1,5 +1,6 @@
 .env
 .next
+.next.bk
 node_modules
 out
 .idea
