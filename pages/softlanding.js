@@ -56,7 +56,7 @@ function Softlanding() {
     <div>
       <TextAndImage
         category=""
-        image=""
+        image="/static/pages/softlanding/formula-student-team-delft.jpg"
         imagePosition="left"
         title=""
       >
@@ -72,7 +72,7 @@ function Softlanding() {
     <div>
       <TextAndImage
         category=""
-        image=""
+        image="/static/pages/softlanding/TPY_Mayors_Visit_210907_HPM_UK_8.jpg"
         imagePosition="right"
         title="Introduction to key stakeholders"
       >
@@ -85,7 +85,7 @@ function Softlanding() {
     <div>
       <TextAndImage
         category=""
-        image=""
+        image="/static/pages/softlanding/90627-CloseOutTPY-9.jpg"
         imagePosition="left"
         title="Connection to business establishment experts"
       >
@@ -98,7 +98,7 @@ function Softlanding() {
     <div>
       <TextAndImage
         category=""
-        image=""
+        image="/static/pages/softlanding/07042021_TPY SPACES_Hani_HPM-06945.jpg"
         imagePosition="right"
         title="Virtual office"
       >
