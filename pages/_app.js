@@ -183,12 +183,6 @@ class MyApp extends App {
           />
 
           <meta
-            key="og:url"
-            property="og:url"
-            content={meta.url}
-          />
-
-          <meta
             key="og:description"
             property="og:description"
             content={meta.description}

@@ -23,7 +23,6 @@ function Campus() {
       <title key="title">Prototype Center Voucher Campaign | Technology Park Ypenburg</title>
       
       <meta key="twitter:title" property="twitter:title" content={"Prototype Center Voucher Campaign | Technology Park Ypenburg"} />
-      <meta key="og:url" property="og:url" content={url} />
 
       <meta key="og:title" property="og:title" content="Prototype Center Voucher Campaign | Technology Park Ypenburg" />
       <meta key="og:description" property="og:description" content="We invite innovative thinkers and builders to use our space to bring their ideas to life." />
