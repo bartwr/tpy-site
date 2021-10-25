@@ -155,8 +155,20 @@ class Navigation extends Component {
         href: '/pricing'
       },
       {
-        title: 'Contact',
-        href: '/contact'
+        title: 'About',
+        items: [{
+          title: 'Contact details',
+          href: '/contact',
+          image: '/static/components/carousel/tpy-icon-community.svg'
+        }, {
+          title: 'About us',
+          href: '/about',
+          image: '/static/components/carousel/tpy-icon-campus.svg'
+        }, {
+          title: 'History of TPY',
+          href: '/history-of-tpy',
+          image: '/static/components/carousel/tpy-icon-academy.svg'
+        }],
       }
     ]
     return <header className={'Navigation' + (this.state.showNav ? ' is-active' : '')}>

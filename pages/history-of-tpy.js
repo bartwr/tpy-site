@@ -16,40 +16,35 @@ const Timeline = dynamic(() => import('../components/timeline.js'));
 const NewsletterSubscribe = dynamic(() => import('../components/newsletter-subscribe.js'));
 const ContactForm = dynamic(() => import('../components/contact-form.js'));
 
-function Contact() {
-  return <div className="Contact">
+function HistoryOfTpy() {
+  return <div className="HistoryOfTpy">
     <Head>
-      <title>Contact Us | Technology Park Ypenburg</title>
+      <title>History of TPY | Technology Park Ypenburg</title>
     </Head>
     <Navigation />
     <div style={{height: '132px'}} /> 
     <div className="contact-wrapper">
 
-      <SmallCapsTitle>
-        Contact Details
-      </SmallCapsTitle>
-      <br />
-      <Title size="small">
-        Send us a message
-      </Title>
+      <div style={{marginTop: '200px', textAlign: 'center'}}>
+        <SmallCapsTitle>
+          History of TPY
+        </SmallCapsTitle>
+        <br />
+        <Title size="small">
+          How did TPY come to be?
+        </Title>
+        <br />
+        <br />
+      </div>
 
-      <p style={{
-        fontWeight: 'bold',
-        background: '#feef00',
-        padding: '5px 10px',
-        display: 'none'
-      }}>
-        Thank you for your message! We will contact you soon.
-      </p>
-
-      <ContactForm />
+      <Timeline />
 
     </div>
     <BookATourBanner />
     <NewsletterSubscribe />
     <Footer />
     <style jsx>{`
-      .Contact {
+      .HistoryOfTpy {
       }
       .contact-wrapper {
         width: 1245px;
@@ -83,4 +78,4 @@ function Contact() {
   </div>
 }
 
-export default Contact;
+export default HistoryOfTpy;
