@@ -110,16 +110,16 @@ function Campus() {
           marginTop: '50px',
         }}
       >
-        The Prices
+        The Prizes
       </Title>
 
       <p>
-        3 winners will be selected from the pitch contest, receiving one of the following prices
+        3 winners will be selected from the pitch contest, receiving one of the following prizes
       </p>
 
       <div align="center">
         <p>
-          <b>1st price</b>
+          <b>1st prize</b>
         </p>
 
         <p>
@@ -127,7 +127,7 @@ function Campus() {
         </p>
 
         <p>
-          <b>2nd price</b>
+          <b>2nd prize</b>
         </p>
 
         <p>
@@ -135,7 +135,7 @@ function Campus() {
         </p>
 
         <p>
-          <b>3nd price</b>
+          <b>3nd prize</b>
         </p>
 
         <p>
