@@ -114,38 +114,35 @@ function Campus() {
       </Title>
 
       <p>
-        3 winners will be selected from the pitch contest, receiving one of the following prizes
+        3 winners will be selected from the pitch contest. You can win the following prizes: 1 day for free (minimum rent of 1 day), 1 week for free (minimum rent of 1 week), and 1 month for free (minimum rent of 1 month).
       </p>
 
       <div align="center">
-        <p>
-          <b>1st prize</b>
-        </p>
+
+        <Title size="small">1st prize – Month Voucher</Title>
 
         <p>
-          One month of free use, worth €2,500,-
+          <img alt="1st prize image" src="/static/pages/win/prize-1.jpg" />
         </p>
 
-        <p>
-          <b>2nd prize</b>
-        </p>
+        <Title size="small">2nd prize – Week Voucher</Title>
 
         <p>
-          One week of free use, worth €750,-
+          <img alt="2st prize image" src="/static/pages/win/prize-2.jpg" />
         </p>
 
-        <p>
-          <b>3nd prize</b>
-        </p>
+        
+        <Title size="small">3nd prize – Day Voucher</Title>
 
         <p>
-          One day of free use, worth €250,-
+          <img alt="3st prize image" src="/static/pages/win/prize-3.jpg" />
         </p>
+
       </div>
 
       <br />
       <p align="center">
-        Send your 1 minute pitch to <a href="mailto:info@technologyparkypenburg.nl" className="font-bold">info@technologyparkypenburg.nl</a>!
+        Send your 1 minute pitch to <a href="mailto:info@technologyparkypenburg.com" className="font-bold">info@technologyparkypenburg.com</a> explaining what you would like to prototype in our Prototype Center and you might win one of the prizes!
       </p>
 
     </IntroText>
