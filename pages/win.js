@@ -122,7 +122,7 @@ function Campus() {
         <Title size="small">1st prize – Month Voucher</Title>
 
         <p>
-          <img alt="1st prize image" src="/static/pages/win/prize-1.jpg" />
+          <img alt="1st prize image" src="/static/pages/win/prize-1.png" />
         </p>
 
         <Title size="small">2nd prize – Week Voucher</Title>
