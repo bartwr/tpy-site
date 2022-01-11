@@ -1,7 +1,5 @@
 import { Component } from 'react';
-import fetch from "node-fetch";
 import {Container} from "next/app";
-import Head from "next/head";
 import dynamic from "next/dynamic";
 import React from "react";
 

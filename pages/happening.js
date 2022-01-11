@@ -1,66 +1,71 @@
-import dynamic from 'next/dynamic';
-import Head from 'next/head';
+import { Component } from 'react';
+import dynamic from "next/dynamic";
+import React from "react";
+import Head from "next/head";
+import HappeningOverview from "../components/happening-overview";
+import Title from "../components/title";
 
-// Load components
 const Navigation = dynamic(() => import('../components/navigation.jsx'));
-const IntroText = dynamic(() => import('../components/intro-text.js'));
-const Title = dynamic(() => import('../components/title.js'));
 const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
-const PageHeader = dynamic(() => import('../components/page-header.js'));
 const Footer = dynamic(() => import('../components/footer.js'));
-const HappeningOverview = dynamic(() => import('../components/happening-overview.js'));
+const PageHeader = dynamic(() => import('../components/page-header.js'));
 
-function Happening({ defaultView }) {
-  return <div className="HappeningPage">
-    <Head>
+class Happening extends Component {
+    static async getInitialProps({ query }) {
+        return { defaultView: query.defaultView }
+    }
 
-      <title key="title">Happening | TPY</title>
+    render() {
+        return <div className="HappeningPage">
+            <Head>
 
-      <meta key="og:title" property="og:title" content="Happening | Technology Park Ypenburg" />
-      <meta key="og:description" property="og:description" content="We are the top location for tech events in the Hague, from workshops to Meetups to festivals to hackathons and more! Join an event or host your own in a lively and fun atmosphere at Technology Park Ypenburg." />
-      <meta key="description" name="description" content="We are the top location for tech events in the Hague, from workshops to Meetups to festivals to hackathons and more! Join an event or host your own in a lively and fun atmosphere at Technology Park Ypenburg." />
+                <title key="title">Happening | TPY</title>
 
-    </Head>
-    <Navigation />
-    <div>
-      <PageHeader
-        image="/static/pages/campus/tpy-campus-header-image.jpg"
-        smallCapsTitle="what is happening"
-        smallCapsTitleColor="white"
-        title="Everyday is full of great oppertunities"
-        />
-      {/*<IntroText>
+                <meta key="og:title" property="og:title" content="Happening | Technology Park Ypenburg" />
+                <meta key="og:description" property="og:description" content="We are the top location for tech events in the Hague, from workshops to Meetups to festivals to hackathons and more! Join an event or host your own in a lively and fun atmosphere at Technology Park Ypenburg." />
+                <meta key="description" name="description" content="We are the top location for tech events in the Hague, from workshops to Meetups to festivals to hackathons and more! Join an event or host your own in a lively and fun atmosphere at Technology Park Ypenburg." />
+
+            </Head>
+            <Navigation />
+            <div>
+                <PageHeader
+                    image="/static/pages/campus/tpy-campus-header-image.jpg"
+                    smallCapsTitle="what is happening"
+                    smallCapsTitleColor="white"
+                    title="Everyday is full of great opportunities"
+                />
+                {/*<IntroText>
       </IntroText>*/}
-      <div className="flex flex-wrap" style={{
-        width: '1000px',
-        maxWidth: '100%',
-        margin: '0px auto 48px',
-      }}>
-        <div style={{
-          width: '300px',
-          maxWidth: '100%'
-        }} className="show-on-desktop-only" />
-        <div className="flex flex-1" style={{
-          marginLeft: '20px',
-          marginTop: '112px'
-        }}>
-          <Title>
-            What is happening?
-          </Title>
-        </div>
-      </div>
-      <HappeningOverview defaultView={defaultView} />
-    </div>
-    <div>
-      <FooterBanner
-        title="Come and see for yourself what Technology Park Ypenburg has to offer you!"
-        buttonText="book a tour"
-        buttonLink="/contact"
-        target="_top"
-        />
-    </div>
-    <Footer />
-    <style jsx global>{`
+                <div className="flex flex-wrap" style={{
+                    width: '1000px',
+                    maxWidth: '100%',
+                    margin: '0px auto 48px',
+                }}>
+                    <div style={{
+                        width: '300px',
+                        maxWidth: '100%'
+                    }} className="show-on-desktop-only" />
+                    <div className="flex flex-1" style={{
+                        marginLeft: '20px',
+                        marginTop: '112px'
+                    }}>
+                        <Title>
+                            What is happening?
+                        </Title>
+                    </div>
+                </div>
+                <HappeningOverview defaultView={this.props.defaultView} />
+            </div>
+            <div>
+                <FooterBanner
+                    title="Come and see for yourself what Technology Park Ypenburg has to offer you!"
+                    buttonText="book a tour"
+                    buttonLink="/contact"
+                    target="_top"
+                />
+            </div>
+            <Footer />
+            <style jsx global>{`
       * {
         box-sizing: border-box;
       }
@@ -156,16 +161,8 @@ function Happening({ defaultView }) {
           font-style: normal;
       }
     `}</style>
-  </div>
-}
-
-export function getServerSideProps(context) {
-  const defaultView = context.query.defaultView;
-
-  return {
-    props: {
-      defaultView: defaultView
+        </div>
     }
-  }
 }
+
 export default Happening;
