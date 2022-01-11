@@ -7,7 +7,7 @@ import moment from 'moment';
 
 // Import helpers
 import {getNews, getNewsItem} from '../helpers/localStorage.js';
-
+``
 // Load components
 const Title = dynamic(() => import('../components/title.js'));
 const SmallCapsTitle = dynamic(() => import('../components/small-caps-title.js'));
@@ -96,7 +96,6 @@ class HappeningItem extends Component {
   }
   render() {
     if(! this.state.event) return <div style={{minHeight: '800px'}} />
-    console.log(this.state.event);
     return <div className="HappeningItem">
       <Head>
         <title key="title">{this.state.event.title}</title>
