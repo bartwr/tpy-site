@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import React, { Component } from 'react';
 import * as R from 'ramda';
+import config from "../config/config";
 
 const Button = dynamic(() => import('./button.js'));
 const Map = dynamic(() => import('./map.js'));
@@ -20,7 +21,7 @@ class ContactForm extends Component {
     const self = this;
     if(e) e.preventDefault();
 
-    fetch('/api/mail/contact', {
+    fetch(`${config.apiUrl}/mail/contact`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

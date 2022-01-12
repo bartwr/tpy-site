@@ -5,6 +5,8 @@ import * as R from 'ramda';
 import marked from 'marked';
 import moment from 'moment';
 
+import config from "../config/config";
+
 // Import helpers
 import {getNews, getNewsItem} from '../helpers/localStorage.js';
 ``
@@ -88,7 +90,7 @@ class HappeningItem extends Component {
     this.setState({ event: this.formatNewsItem(event) })
   }
   async fetchNewsItem(slug) {
-    const response = await fetch(`/api/news/${slug}`)
+    const response = await fetch(`${config.apiUrl}/news/${slug}`)
     return await response.json()
   }
   formatNewsItem(event) {

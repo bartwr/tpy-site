@@ -1,3 +1,5 @@
+import config from "../config/config";
+
 const today = new Date();
 const currentDate = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`;
 
@@ -9,8 +11,8 @@ const clearCache = function() {
 const getNews = async function() {
   const newsFromLocalStorage = JSON.parse(localStorage.getItem('TPY__news')) || { lastUpdate: '' };
   // Return from API
-  if(true || newsFromLocalStorage.lastUpDate != currentDate) {
-    const apiResponse = await fetch('/api/news')
+  if(true || newsFromLocalStorage.lastUpDate !== currentDate) {
+    const apiResponse = await fetch(`${config.apiUrl}/news`)
     const news = await apiResponse.json()
     // Save in localStorage
     localStorage.setItem('TPY__news', JSON.stringify({
@@ -20,15 +22,15 @@ const getNews = async function() {
     return news;
   }
   // Or directly from localStorage
-  // return eventsFromLocalStorage.events;
+  // return newsFromLocalStorage.news;
 }
 
 const getEvents = async function() {
   const eventsFromLocalStorage = JSON.parse(localStorage.getItem('TPY__events')) || { lastUpdate: '' };
   // Return from API
-  if(true || eventsFromLocalStorage.lastUpDate != currentDate) {
-    const apiResponse = await fetch('/api/events')
-    const events = await apiResponse.json()
+  if(true || eventsFromLocalStorage.lastUpDate !== currentDate) {
+    const apiResponse = await fetch(`${config.apiUrl}/events`)
+    const events = await apiResponse.json();
     // Save in localStorage
     localStorage.setItem('TPY__events', JSON.stringify({
       lastUpDate: currentDate,
@@ -43,8 +45,8 @@ const getEvents = async function() {
 const getStories = async function() {
   const storiesFromLocalStorage = JSON.parse(localStorage.getItem('TPY__stories')) || { lastUpdate: '' };
   // Return from API
-  if(true || storiesFromLocalStorage.lastUpDate != currentDate) {
-    const apiResponse = await fetch('/api/stories')
+  if(storiesFromLocalStorage.lastUpDate !== currentDate) {
+    const apiResponse = await fetch(`${config.apiUrl}/stories`)
     const stories = await apiResponse.json()
     // Save in localStorage
     localStorage.setItem('TPY__stories', JSON.stringify({

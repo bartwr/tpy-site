@@ -1,0 +1,1 @@
+self.__BUILD_MANIFEST = {"/happening":["static\u002Fchunks\u002F29.2023b3591ac99f6df62b.js"]};self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()

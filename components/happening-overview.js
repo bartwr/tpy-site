@@ -4,8 +4,7 @@ import * as R from 'ramda';
 import moment from 'moment';
 
 // Import helpers
-import {getNews, getNewsItem} from '../helpers/localStorage.js';
-import {getEvents, getEventsItem} from '../helpers/localStorage.js';
+import {getNews, getEvents} from '../helpers/localStorage.js';
 
 // Import components
 const NewsBlock = dynamic(() => import('./news-block.jsx'));
@@ -26,7 +25,7 @@ class HappeningOverview extends Component {
     }
   }
   async componentDidMount() {
-    const items = this.state.activeView == 'news' ? await this.fetchNews() : await this.fetchEvents();
+    const items = this.state.activeView === 'news' ? await this.fetchNews() : await this.fetchEvents();
     this.setState({ items: items })
   }
   async fetchNews() {
@@ -39,11 +38,13 @@ class HappeningOverview extends Component {
   }
   async fetchEvents() {
     let items;
-    items = await getEvents()
-    items = this.formatItems(items)
-    items = this.getFutureItemsOnly(items)
-    items = this.filterItems(items)
-    items = this.sortItems(items)
+    items = await getEvents();
+    items = this.formatItems(items);
+    items = this.getFutureItemsOnly(items);
+
+    items = this.filterItems(items);
+    items = this.sortItems(items);
+
     return items;
   }
   formatItems(items) {
@@ -75,10 +76,11 @@ class HappeningOverview extends Component {
     });
 
     let items;
-    if(filter == 'news') {
+    if(filter === 'news') {
       items = await this.fetchNews();
     }
-    if(filter == 'events') {
+
+    if(filter === 'events') {
       items = await this.fetchEvents();
     }
 
@@ -88,19 +90,19 @@ class HappeningOverview extends Component {
     const self = this;
     const itemsToShow = R.filter((item) => {
       // Return if on overview page OR if item is not the active detail page
-      return item.slug ==  '/happening' || document.location.pathname.indexOf(item.slug) <= -1;
+      return item.slug ===  '/happening' || document.location.pathname.indexOf(item.slug) <= -1;
     }, this.state.items || {});
 
     if(! this.state.items) return <div style={{minHeight: '800px'}} />
     return <div className="HappeningOverview flex flex-wrap flex-start">
       <nav className="filters show-on-desktop-only">
         <ul>
-          <li className={this.state.activeView == 'news' ? 'is-active' : ''}>
+          <li className={this.state.activeView === 'news' ? 'is-active' : ''}>
             <a onClick={this.clickFilter.bind(this, 'news')}>
               News from TPY
             </a>
           </li>
-          <li className={this.state.activeView == 'events' ? 'is-active' : ''}>
+          <li className={this.state.activeView === 'events' ? 'is-active' : ''}>
             <a onClick={this.clickFilter.bind(this, 'events')}>
               Programmes & Events
             </a>
@@ -120,7 +122,7 @@ class HappeningOverview extends Component {
       <div className="items">
         {R.map((idx) => {
           const item = this.state.items[idx];
-          return self.state.activeView == 'events'
+          return self.state.activeView === 'events'
             ? <EventBlock key={idx} event={item} />
             : <NewsBlock key={idx} event={item} />;
         }, Object.keys(itemsToShow))}
