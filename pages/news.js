@@ -4,11 +4,8 @@ import Head from 'next/head';
 
 // Load components
 const Navigation = dynamic(() => import('../components/navigation.jsx'));
-const IntroText = dynamic(() => import('../components/intro-text.js'));
-const Title = dynamic(() => import('../components/title.js'));
 const BookATourBanner = dynamic(() => import('../components/book-a-tour-banner.js'));
 const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
-const PageHeader = dynamic(() => import('../components/page-header.js'));
 const Footer = dynamic(() => import('../components/footer.js'));
 const HappeningItem = dynamic(() => import('../components/happening-item.js'));
 

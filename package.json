@@ -10,7 +10,7 @@
     "build": "./node_modules/next/dist/bin/next build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "next build && next export",
-    "serve": "next build && node api/server.js"
+    "serve": "next build && next export && node api/server.js"
   },
   "plugins": [
     [

@@ -2,6 +2,7 @@
 .next
 .next.bk
 node_modules
-out
 .idea
 package-lock.json
+.vs
+.vscode/*
