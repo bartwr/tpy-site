@@ -196,6 +196,7 @@ class MyApp extends App {
           <link href="/static/tht-favicon@2x.png" rel="icon" type="image/x-icon" />
           <script dangerouslySetInnerHTML={{
           __html: `const GOOGLE_SCRIPT = null;`}} />
+          <script src="https://cdn.tailwindcss.com"></script>
         </Head>
         <style jsx global>{`
           * {

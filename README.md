@@ -45,11 +45,11 @@ MAILCHIMP_ID='XXXX-us15'
 
 2. Start the app
 
-With server:
+With server
 
         npm run dev
 
-UI only:
+UI only (has hot reload)
 
         npm run dev-without-server
 
