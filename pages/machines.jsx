@@ -13,6 +13,7 @@ const Footer = dynamic(() => import('../components/footer.js'));
 const MachinesOverview = dynamic(() => import('../components/machines-overview.js'));
 const MachinesFilter = dynamic(() => import('../components/machines-filter.js'));
 const MachinesSearchBar = dynamic(() => import('../components/machines-search-bar.js'));
+const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
 
 function Community() {
   return <div className="root">
@@ -41,7 +42,7 @@ function Community() {
         </IntroText>
       </div>
     </div>
-    <div className="flex flex-wrap md:flex-nowrap mx-4 max-width sm:mx-auto">
+    <div className="flex flex-wrap md:flex-nowrap mx-4 mb-16 max-width sm:mx-auto">
       <div className="
         w-full
         md:w-1/4
@@ -56,6 +57,12 @@ function Community() {
         <MachinesOverview />
       </div>
     </div>
+    <FooterBanner
+      title="Come and see for yourself what Technology Park Ypenburg has to offer you!"
+      buttonText="book a tour"
+      buttonLink="https://outlook.office365.com/owa/calendar/TheHagueTech@jongensvantechniek.nl/bookings/"
+      target="_blank"
+      />
     <div>
       <NewsletterSubscribe />
     </div>

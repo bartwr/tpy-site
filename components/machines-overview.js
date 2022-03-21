@@ -15,9 +15,15 @@ import dynamic from 'next/dynamic';
 // const EventBlock = dynamic(() => import('./event-block.jsx'));
 const Title = dynamic(() => import('./title.js'));
 const Button = dynamic(() => import('./button.js'));
+const MachineSpecifications = dynamic(() => import('./machine-specifications.jsx'));
 
 const MachineQuickView = (props) => {
   const {machine, onClose} = props;
+
+  const closeHandler = (e) => {
+    e.preventDefault();
+    onClose ? onClose() : ''
+  }
 
   return <div className="
     fixed
@@ -31,11 +37,21 @@ const MachineQuickView = (props) => {
     z-10
     max-h-full
     overflow-auto
-  " style={{
-    backgroundColor: 'rgba(241, 239, 236, 0.8)'
-  }}>
+  ">
+    <div className="
+      absolute
+      top-0
+      right-0
+      bottom-0
+      left-0
+    " style={{
+      backgroundColor: 'rgba(241, 239, 236, 0.8)'
+    }}
+    onClick={closeHandler}
+    />
     <div className="
       MachineQuickView-inner
+      relative
       bg-white
       mt-10
       md:mt-0
@@ -51,7 +67,7 @@ const MachineQuickView = (props) => {
     }}>
       <div className="
         w-full
-        md:w-1/4
+        md:w-2/5
         mb-8
         md:mb-0
       ">
@@ -59,38 +75,22 @@ const MachineQuickView = (props) => {
       </div>
       <div className="
         w-full
-        md:w-3/4
+        md:w-3/5
       ">
-        <div className="mx-4 md:mx-14">
+        <div className="pl-4 pr-4 md:pl-14">
           <Title style={{marginBottom: '20px'}}>
             {machine.title}
           </Title>
-          <div className="font-montserrat text-theme-black text-3xl">
-            <p className="my-2">
-              <b>Category:</b> Facility
-            </p>
-            <p className="my-2">
-              <b>Materials:</b> Facility
-            </p>
-            <p className="my-2">
-              <b>Spec/Standard:</b> ISO14644-1 class 8
-            </p>
-            <p className="my-2">
-              <b>Dimensions:</b> Not specified
-            </p>
-            <p className="my-2">
-              <b>Company:</b> GTM
-            </p>
-            <p className="my-2 mt-4">
-              <a href="#" className="
-                text-theme-orange
-                text-base
-                no-underline
-              ">
-                View full item
-              </a>
-            </p>
-          </div>
+          <MachineSpecifications machine={machine} />
+          <p className="my-2 mt-4">
+            <a href="/machines-details" className="
+              text-theme-orange
+              text-base
+              no-underline
+            ">
+              View full item
+            </a>
+          </p>
           <div className="
             flex
             justify-between
@@ -103,10 +103,7 @@ const MachineQuickView = (props) => {
               </Button>
             </div>
             <div className="flex flex-col justify-center">
-              <a href="#" onClick={(e) => {
-                e.preventDefault();
-                onClose ? onClose() : ''
-              }}>
+              <a href="#" onClick={closeHandler}>
                 Sluiten
               </a>
             </div>
@@ -228,7 +225,7 @@ const Machine = (props) => {
           h-11
           text-orange
           cursor-pointer
-        ">
+        " href="/machines-details">
           more info
         </a>
         <a className="
@@ -241,7 +238,7 @@ const Machine = (props) => {
           h-11
           text-white
           cursor-pointer
-        ">
+        " href="/machines-details">
           contact
         </a>
       </footer>
