@@ -5,3 +5,23 @@
 .flex-wrap {
   flex-wrap: wrap;
 }
+
+.text-theme-blue {
+  color: #144372;
+}
+.text-theme-green {
+  color: #14B485
+}
+.text-theme-black {
+  color: #0F2247;
+}
+.text-theme-orange {
+  color: #FF8850;
+}
+.bg-theme-orange {
+  background-color: #FF8850;
+}
+
+.font-montserrat {
+  font-family: "Montserrat",sans-serif;
+}

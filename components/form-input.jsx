@@ -5,15 +5,19 @@ const FormInput = (props) => {
     type,
     defaultValue,
     placeholder,
-    onChange
+    onChange,
+    classes,
+    style
   } = props;
 
   return <div className="FormInput">
     <input
       type={type || 'text'}
-      defaultValue={type || 'defaultValue'}
-      placeholder={type || 'placeholder'}
+      defaultValue={defaultValue || ''}
+      placeholder={placeholder || ''}
       onChange={onChange}
+      className={classes}
+      style={style}
     />
     <style jsx>{`
       input {

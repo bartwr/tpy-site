@@ -23,10 +23,19 @@ function Community() {
     <PageHeader
       smallCapsTitle="Machine Portal"
       smallCapsTitleColor="white"
-      title="Book a machine!"
-      image="https://i.imgur.com/bB8UO0W.png"
+      title="Rent a machine"
+      image="/static/pages/machines/hero-image.png"
       style={{backgroundPosition: 'center top'}}
       />
+    <div className="flex">
+      <div className="w-1/4">
+      </div>
+      <div className="flex-1">
+        <IntroText>
+          Introduction text about the machine portal.
+        </IntroText>
+      </div>
+    </div>
     <div className="flex">
       <div className="w-1/4">
         <MachinesFilter />

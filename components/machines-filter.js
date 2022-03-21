@@ -32,11 +32,21 @@ const MachinesFilter = (props) => {
     },
   ]
 
-  return <div className="MachinesFilter text-base">
+  return <section className="MachinesFilter text-base">
+    <h1 className="
+      text-theme-blue
+      uppercase
+      font-bold
+      tracking-wide
+      text-lg
+      font-montserrat 
+    ">
+      Machine type
+    </h1>
     {R.map(x => {
       return <MachinesFilterItem key={x.title} data={x} />
     }, categories)}
-  </div>;
+  </section>;
 }
 
 export default MachinesFilter;

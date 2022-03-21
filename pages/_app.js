@@ -260,7 +260,6 @@ class MyApp extends App {
           .px-4 { padding-right: 1rem; padding-left: 1rem; }
           .flex {
             display: flex;
-            justify-content: space-between;
           }
           .flex-1 { flex: 1 } 
           .flex-column { flex-direction: column; }
