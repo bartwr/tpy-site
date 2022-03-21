@@ -12,6 +12,7 @@ class IntroText extends Component {
       data-sal-duration={this.props['data-sal-duration']}
       data-sal-delay={this.props['data-sal-delay']}
       data-sal-easing={this.props['data-sal-easing']}
+      style={this.props.style}
     >
       {this.props.children}
       <style jsx>{`

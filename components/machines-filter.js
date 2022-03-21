@@ -13,11 +13,18 @@ import * as R from 'ramda';
 const MachinesFilterItem = (props) => {
   const {data} = props;
 
-  return <div className="
+  return <a className="
     MachinesFilterItem
-  ">
+    font-montserrat
+    text-md
+    block
+    mb-4
+    cursor-pointer
+  " style={{
+    color: '#14437280'
+  }}>
     {data.title}
-  </div>
+  </a>
 }
 
 const MachinesFilter = (props) => {
@@ -40,6 +47,7 @@ const MachinesFilter = (props) => {
       tracking-wide
       text-lg
       font-montserrat 
+      mb-10
     ">
       Machine type
     </h1>

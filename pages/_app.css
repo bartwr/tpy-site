@@ -25,3 +25,8 @@
 .font-montserrat {
   font-family: "Montserrat",sans-serif;
 }
+
+.max-width {
+  width: 1245px;
+  max-width: 100%;
+}

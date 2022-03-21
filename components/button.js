@@ -6,7 +6,7 @@ class Button extends Component {
     return (
       <div>
         <Link href={props.buttonLink || props.href}>
-          <a target={props.target || '_self'} className="Button" style={props.style}>
+          <a target={props.target || '_self'} className={`Button ${props.classes}`} style={props.style}>
             {props.children}
           </a>
         </Link>

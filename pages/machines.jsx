@@ -27,20 +27,31 @@ function Community() {
       image="/static/pages/machines/hero-image.png"
       style={{backgroundPosition: 'center top'}}
       />
-    <div className="flex">
+    <div className="flex mx-4 max-width sm:mx-auto">
       <div className="w-1/4">
       </div>
-      <div className="flex-1">
-        <IntroText>
+      <div className="w-3/4">
+        <IntroText style={{
+          marginLeft: '1rem',
+          marginRight: '1rem',
+          paddingLeft: 0,
+          paddingRight: 0
+        }}>
           Introduction text about the machine portal.
         </IntroText>
       </div>
     </div>
-    <div className="flex">
-      <div className="w-1/4">
+    <div className="flex flex-wrap md:flex-nowrap mx-4 max-width sm:mx-auto">
+      <div className="
+        w-full
+        md:w-1/4
+      ">
         <MachinesFilter />
       </div>
-      <div className="flex-1">
+      <div className="
+        w-full
+        md:w-3/4
+      ">
         <MachinesSearchBar />
         <MachinesOverview />
       </div>

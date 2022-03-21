@@ -17,11 +17,12 @@ const MachinesSearchBar = (props) => {
     <FormInput
       name="q"
       value=""
-      defaultValue="Search a machine"
+      defaultValue=""
       placeholder="Search a machine"
       classes="bg-no-repeat"
       style={{
         marginTop: 0,
+        marginBottom: '20px',
         paddingLeft: '44px',
         backgroundPosition: '16px 50%',
         backgroundImage: `url('/static/components/machines-filter/icon-search.png')`

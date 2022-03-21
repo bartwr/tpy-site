@@ -16,13 +16,13 @@ class Title extends Component {
     } else {
       size = (lengthOfTitle < 38 ? 'large' : 'small')
     }
+    // If size prop is large -> show large title
+    // If size prop is small -> show small title
+    // By default: show small title is text length < 40 characters
     return <div
-        className={
-          // If size prop is large -> show large title
-          // If size prop is small -> show small title
-          // By default: show small title is text length < 40 characters
-          'Title ' + size
-        }
+        className={`
+          Title ${size} ${this.props.classes}
+        `}
         data-sal-duration={this.props['data-sal-duration']}
         data-sal={this.props['data-sal']}
         data-sal-delay={this.props['data-sal-delay']}
