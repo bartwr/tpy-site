@@ -17,7 +17,7 @@ const MachinesSearchBar = (props) => {
     <FormInput
       name="q"
       value=""
-      defaultValue=""
+      onChange={(x) => {}}
       placeholder="Search a machine"
       classes="bg-no-repeat"
       style={{

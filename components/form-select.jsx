@@ -1,38 +1,33 @@
 import dynamic from 'next/dynamic';
 
-const FormInput = (props) => {
+const FormSelect = (props) => {
   const {
     name,
-    type,
     value,
     placeholder,
     onChange,
     classes,
-    style
+    style,
+    options
   } = props;
 
-  return <div className="FormInput">
-    {type === 'textarea' && <textarea
+  return <div className="FormSelect">
+    <select
       name={name}
-      value={value || ''}
-      placeholder={placeholder || ''}
       value={value}
       onChange={onChange}
       className={classes}
       style={style}
-    ></textarea>}
-    {type !== 'textarea' && <input
-      name={name}
-      type={type || 'text'}
-      value={value}
-      placeholder={placeholder || ''}
-      onChange={onChange}
-      className={classes}
-      style={style}
-    />}
-
+    >
+      <option value="">{placeholder}</option>
+      {options.map(x => {
+        return <option key={x.value} value={x.value}>
+          {x.title}
+        </option>
+      })}
+    </select>
     <style jsx>{`
-      input, textarea {
+      select {
         color: #0f2247;
         font-family: "Montserrat", sans-serif;
         font-size: 19px;
@@ -46,11 +41,8 @@ const FormInput = (props) => {
         width: 100%;
         padding: 0 8px;
       }
-      textarea {
-        height: 209px;
-      }
     `}</style>
   </div>
 }
 
-export default FormInput;
+export default FormSelect;

@@ -14,6 +14,7 @@ const Footer = dynamic(() => import('../components/footer.js'));
 const MachinesOverview = dynamic(() => import('../components/machines-overview.js'));
 const MachinesFilter = dynamic(() => import('../components/machines-filter.js'));
 const MachinesSearchBar = dynamic(() => import('../components/machines-search-bar.js'));
+const MachineContactForm = dynamic(() => import('../components/machine-contact-form.jsx'));
 const MachineSpecifications = dynamic(() => import('../components/machine-specifications.jsx'));
 const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
 const SmallCapsTitle = dynamic(() => import('../components/small-caps-title.js'));
@@ -48,7 +49,7 @@ class MachineDetails extends Component {
               </p>
             </div>
             <div className="my-16">
-              <MachineSpecifications mcahine={this.props.machine} />
+              <MachineSpecifications machine={this.props.machine} />
             </div>
 
             <Button href="#">
@@ -62,6 +63,8 @@ class MachineDetails extends Component {
             md:w-3/5
             md:pl-4
           ">
+            <MachineContactForm machine={this.props.machine} />
+
             <img src="https://i.imgur.com/83Ovq2V.jpeg" />
 
             <div className="my-8">
