@@ -4,6 +4,7 @@ import {
   useState
 } from 'react';
 import dynamic from 'next/dynamic';
+import { motion } from "framer-motion"
 // import * as R from 'ramda';
 // import moment from 'moment';
 
@@ -38,79 +39,106 @@ const MachineQuickView = (props) => {
     max-h-full
     overflow-auto
   ">
-    <div className="
-      absolute
-      top-0
-      right-0
-      bottom-0
-      left-0
-    " style={{
-      backgroundColor: 'rgba(241, 239, 236, 0.8)'
-    }}
-    onClick={closeHandler}
-    />
-    <div className="
-      MachineQuickView-inner
-      relative
-      bg-white
-      mt-10
-      md:mt-0
-      p-6
-      mx:p-10
-      mx-auto
-      flex
-      flex-wrap
-      md:flex-nowrap
-    " style={{
-      maxWidth: '872px',
-      width: '100%'
-    }}>
+    <motion.div
+      layout
+      initial={{ opacity: 0.5 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.15 }}
+    >
       <div className="
-        w-full
-        md:w-2/5
-        mb-8
-        md:mb-0
-      ">
-        <img src="https://i.imgur.com/83Ovq2V.jpeg" />
-      </div>
+        absolute
+        top-0
+        right-0
+        bottom-0
+        left-0
+      " style={{
+        backgroundColor: 'rgba(241, 239, 236, 0.8)'
+      }}
+      onClick={closeHandler}
+      />
+    </motion.div>
+{/*    <motion.div
+      animate={{ scale: 2 }}
+      transition={{ duration: 0.5 }}
+    >*/}
+{/*    <motion.div
+      layout
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+*/}
+    <motion.div
+      key={true}
+      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 20 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.15 }}
+    >
       <div className="
-        w-full
-        md:w-3/5
-      ">
-        <div className="pl-4 pr-4 md:pl-14">
-          <Title style={{marginBottom: '20px'}}>
-            {machine.title}
-          </Title>
-          <MachineSpecifications machine={machine} />
-          <p className="my-2 mt-4">
-            <a href="/machines-details" className="
-              text-theme-orange
-              text-base
-              no-underline
-            ">
-              View full item
-            </a>
-          </p>
-          <div className="
-            flex
-            justify-between
-            mt-12
-            w-full
-          ">
-            <div>
-              <Button target="_blank" buttonLink={'#'}>
-                contact
-              </Button>
-            </div>
-            <div className="flex flex-col justify-center">
-              <a href="#" onClick={closeHandler}>
-                Sluiten
+        MachineQuickView-inner
+        relative
+        bg-white
+        mt-10
+        md:mt-0
+        p-6
+        mx:p-10
+        mx-auto
+        flex
+        flex-wrap
+        md:flex-nowrap
+      " style={{
+        maxWidth: '872px',
+        width: '100%'
+      }}>
+        <div className="
+          w-full
+          md:w-2/5
+          mb-8
+          md:mb-0
+        ">
+          <img src="https://i.imgur.com/83Ovq2V.jpeg" />
+        </div>
+        <div className="
+          w-full
+          md:w-3/5
+        ">
+          <div className="pl-4 pr-4 md:pl-14">
+            <Title style={{marginBottom: '20px'}}>
+              {machine.title}
+            </Title>
+            <MachineSpecifications machine={machine} />
+            <p className="my-2 mt-4">
+              <a href="/machines-details" className="
+                text-theme-orange
+                text-base
+                no-underline
+              ">
+                View full item
               </a>
+            </p>
+            <div className="
+              flex
+              justify-between
+              mt-12
+              w-full
+            ">
+              <div>
+                <Button target="_blank" buttonLink={'#'}>
+                  contact
+                </Button>
+              </div>
+              <div className="flex flex-col justify-center">
+                <a href="#" onClick={closeHandler}>
+                  Sluiten
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   </div>
 }
 
