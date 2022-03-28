@@ -1,10 +1,12 @@
 import {type} from "ramda";
 
-require('dotenv').config();
+// require('dotenv').config();
+
+import 'dotenv/config' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 
 import Head from 'next/head';
 import React from 'react';
-import App, { Container } from 'next/app';
+import App from 'next/app';
 const contentful = require('contentful');
 
 import './_app.css';
@@ -116,7 +118,7 @@ class MyApp extends App {
     const meta = this.getMeta({story, event, landingPage});
 
     return (
-      <Container>
+      <>
         <Head>
           <meta
             name="viewport"
@@ -269,7 +271,7 @@ class MyApp extends App {
           @media(max-width: 480px) { .show-on-desktop-only { display: none; }
         `}</style>
         <Component {...pageProps} />
-      </Container>
+      </>
     );
   }
 }

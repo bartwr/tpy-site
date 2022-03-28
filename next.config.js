@@ -46,7 +46,7 @@ module.exports = {
       }
     ]
   },
-  webpack: (config, { dev }) => {
+  webpack: (config, { isServer }) => {
     config.plugins.push(
       new webpack.ProvidePlugin({
         '$': 'jquery',
@@ -60,7 +60,13 @@ module.exports = {
       })
     );
     // config.optimization.minimize = true;
-    config.node.fs = "empty";
+    // config.node.fs = "empty";
+    // Fixes npm packages that depend on `fs` module, for Next.js users.
+    // See https://stackoverflow.com/a/68511591
+    if (!isServer) {
+      config.resolve.fallback.fs = false;
+    }
     return config
-  }
+  },
+  fs: false
 };
