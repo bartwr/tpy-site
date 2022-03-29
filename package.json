@@ -67,7 +67,7 @@
     "swipe-js-iso": "2.1.5"
   },
   "engines": {
-    "node": "12.13.0"
+    "node": "14.15.4"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0"
