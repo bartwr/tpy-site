@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import {Container} from "next/app";
 import dynamic from "next/dynamic";
 import React from "react";
 
@@ -15,7 +14,7 @@ class HappeningItem extends Component {
     }
 
     render() {
-        return <Container>
+        return <div>
             <div className="HappeningItemPage">
                 <Navigation />
                 <div style={{height: '132px'}} />
@@ -35,7 +34,7 @@ class HappeningItem extends Component {
                 </div>
                 <Footer />
             </div>
-        </Container>
+        </div>
     }
 }
 
