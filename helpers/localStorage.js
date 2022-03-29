@@ -59,8 +59,26 @@ const getStories = async function() {
   // return storiesFromLocalStorage.stories;
 }
 
+const getMachines = async function() {
+  const machinesFromLocalStorage = JSON.parse(localStorage.getItem('TPY__machines')) || { lastUpdate: '' };
+  // Return from API
+  if(machinesFromLocalStorage.lastUpDate !== currentDate) {
+    const apiResponse = await fetch(`${config.apiUrl}/machines`)
+    const machines = await apiResponse.json()
+    // Save in localStorage
+    localStorage.setItem('TPY__machines', JSON.stringify({
+      lastUpDate: currentDate,
+      machines: machines
+    }))
+    return machines;
+  }
+  // Or directly from localStorage
+  return machinesFromLocalStorage.machines;
+}
+
 export {
   getEvents,
   getStories,
   getNews,
+  getMachines,
 }

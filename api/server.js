@@ -24,7 +24,9 @@ const {
   fetchEvents,
   fetchEventsItem,
   fetchStories,
-  fetchStory
+  fetchStory,
+  fetchMachines,
+  fetchMachinesItem
 } = require('./contentful.js');
 const {sendMailUsingMailgun} = require('./email.js');
 const {newsletterAdd} = require('./newsletter.js');
@@ -152,6 +154,21 @@ app.prepare().then(() => {
       res.setHeader('Content-Type', 'application/json');
       res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
       res.end(JSON.stringify(eventsItem, null, 3));
+    }
+    // API: Machines
+    else if (pathname === '/api/machines' || pathname.indexOf('/api/events?') === 0 ) {
+      let machines = await fetchMachines();
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+      res.end(JSON.stringify(machines, null, 3));
+    }
+    // API: Machines item
+    else if (pathname.indexOf('/api/machines/') === 0) {
+      const slug = pathname.split('/machines/')[1];
+      let machinesItem = await fetchMachinesItem({ slug: slug });
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+      res.end(JSON.stringify(machinesItem, null, 3));
     }
     else {
       return handle(req, res, parsedUrl);

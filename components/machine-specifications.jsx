@@ -18,24 +18,27 @@ const Button = dynamic(() => import('./button.js'));
 
 const MachineSpecifications = (props) => {
   const {machine} = props;
+  if(! machine) return <div />
 
   return (
     <div className="font-montserrat text-theme-black text-3xl">
-      <p className="my-2">
-        <b>Category:</b> Facility
-      </p>
-      <p className="my-2">
-        <b>Materials:</b> Facility
-      </p>
-      <p className="my-2">
-        <b>Spec/Standard:</b> ISO14644-1 class 8
-      </p>
-      <p className="my-2">
-        <b>Dimensions:</b> Not specified
-      </p>
-      <p className="my-2">
-        <b>Company:</b> GTM
-      </p>
+      {machine.category && <p className="my-2">
+        <b>Category:</b> {machine.category}
+      </p>}
+      {machine.materials && <p className="my-2">
+        <b>Materials:</b> {machine.materials}
+      </p>}
+      {machine.specstandard && <p className="my-2">
+        <b>Spec/Standard:</b> {machine.specstandard}
+      </p>}
+      {machine.dimensions && <p className="my-2">
+        <b>Dimensions:</b> {machine.dimensions}
+      </p>}
+      {machine.company && <p className="my-2">
+        <b>Company:</b> <a href={machine.company.website} target="_blank" rel="external">
+          {machine.company.name}
+        </a>
+      </p>}
     </div>
   )
 }

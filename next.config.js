@@ -63,10 +63,10 @@ module.exports = {
     // config.node.fs = "empty";
     // Fixes npm packages that depend on `fs` module, for Next.js users.
     // See https://stackoverflow.com/a/68511591
-    if (!isServer) {
+    if (! isServer) {
       config.resolve.fallback.fs = false;
     }
-    return config
+    return config;
   },
   fs: false
 };

@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic';
 import { motion } from "framer-motion"
 // import * as R from 'ramda';
 // import moment from 'moment';
+import {getMachines} from '../helpers/localStorage.js';
 
 // Import helpers
 // import {getNews, getEvents} from '../helpers/localStorage.js';
@@ -55,17 +56,6 @@ const MachineQuickView = (props) => {
     exit={{ opacity: 0 }}
     transition={{ duration: 0.2 }}
     />
-{/*    <motion.div
-      animate={{ scale: 2 }}
-      transition={{ duration: 0.5 }}
-    >*/}
-{/*    <motion.div
-      layout
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-*/}
     <motion.div
       animate={{ opacity:1, scale:1 }}
       initial={{ opacity:0.6, scale:0.6 }}
@@ -102,7 +92,7 @@ const MachineQuickView = (props) => {
       ">
         <div className="pl-4 pr-4 md:pl-14">
           <Title style={{marginBottom: '20px'}}>
-            {machine.title}
+            {machine.name}
           </Title>
           <MachineSpecifications machine={machine} />
           <p className="my-2 mt-4">
@@ -223,7 +213,7 @@ const Machine = (props) => {
             inline-block
             font-montserrat
           ">
-            {data.machineType}
+            {data.category}
           </span>
           <h1 className="
             Machine-title
@@ -233,7 +223,7 @@ const Machine = (props) => {
             text-theme-blue
             my-2
           ">
-            {data.title}
+            {data.name}
           </h1>
           <div className="
             text-theme-black
@@ -292,27 +282,57 @@ const Machine = (props) => {
 
 const MachinesOverview = (props) => {
   // const { something } = props;
+  const [machines, setMachines] = useState([])
 
-  const machines = [
-    {
-      title: "Cleanroom for solar panel assembly",
-      description: "hardwall cleanroom with different zones and classes.",
-      machineType: "Assembly",
-      image: "https://i.imgur.com/83Ovq2V.jpeg"
-    },
-    {
-      title: "Composites production",
-      description: "Automated prepreg and fibre cutting.",
-      machineType: "Composites production",
-      image: "https://i.imgur.com/83Ovq2V.jpeg"
-    },
-    {
-      title: "Composites design",
-      description: "Composites design, using advanced 3D design and finite element analysis tool",
-      machineType: "Engineering",
-      image: "https://i.imgur.com/83Ovq2V.jpeg"
-    }
-  ]
+  // const machines = [
+  //   {
+  //     title: "Cleanroom for solar panel assembly",
+  //     description: "hardwall cleanroom with different zones and classes.",
+  //     machineType: "Assembly",
+  //     image: "https://i.imgur.com/83Ovq2V.jpeg"
+  //   },
+  //   {
+  //     title: "Composites production",
+  //     description: "Automated prepreg and fibre cutting.",
+  //     machineType: "Composites production",
+  //     image: "https://i.imgur.com/83Ovq2V.jpeg"
+  //   },
+  //   {
+  //     title: "Composites design",
+  //     description: "Composites design, using advanced 3D design and finite element analysis tool",
+  //     machineType: "Engineering",
+  //     image: "https://i.imgur.com/83Ovq2V.jpeg"
+  //   }
+  // ]
+
+  const fetchMachines = async () => {
+    const theMachines = await getMachines();
+    const machineObjects = theMachines.map(x => {
+      return {
+        id: x.sys.id,
+        category: x.fields.category,
+        company: {
+          id: x.fields.company.sys.id,
+          contactEmail: x.fields.company.fields.contactEmail,
+          contactPhone: x.fields.company.fields.contactPhone,
+          name: x.fields.company.fields.name,
+          website: x.fields.company.fields.website,
+        },
+        description: x.fields.description,
+        dimensions: x.fields.dimensions,
+        materials: x.fields.materials,
+        specstandard: x.fields.specstandard,
+        name: x.fields.name,
+        type: x.fields.type,
+        image: "https://i.imgur.com/83Ovq2V.jpeg"
+      }
+    })
+    setMachines(machineObjects);
+  }
+
+  useEffect(x => {
+    fetchMachines();
+  }, [])
 
   return <div className="
     MachinesOverview

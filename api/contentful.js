@@ -151,11 +151,35 @@ function fetchEventsItem (query) {
     .catch(console.error)
 }
 
+function fetchMachines () {
+  return client.getEntries({
+    content_type: 'machines',
+    limit: 200,
+    // order: 'fields.publishDate'
+  })
+  .then((response) => response.items)
+  .catch((error) => {
+    console.log(chalk.red(`\nError occurred while fetching entries for machines:`));
+    console.error(error)
+  })
+}
+function fetchMachinesItem (query) {
+  return client.getEntries({
+    content_type: query.content_type || 'machines',
+    // 'fields.slug': query.slug,
+    limit: 1
+  })
+    .then((entry) => entry.items[0])
+    .catch(console.error)
+}
+
 module.exports = {
   fetchEntriesForContentType,
   fetchEntry,
   fetchNews,
   fetchNewsItem,
   fetchEvents,
-  fetchEventsItem
+  fetchEventsItem,
+  fetchMachines,
+  fetchMachinesItem
 };
