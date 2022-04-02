@@ -3,11 +3,14 @@ import {
   useEffect,
   useState
 } from 'react';
+import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router'
 // import * as R from 'ramda';
 // import moment from 'moment';
 import {fetchMachines} from '../helpers/machines.js';
+
+import MachineModel from '../models/Machine.ts'
 
 // Import helpers
 // import {getNews, getEvents} from '../helpers/localStorage.js';
@@ -18,15 +21,18 @@ import {fetchMachines} from '../helpers/machines.js';
 const Title = dynamic(() => import('./title.js'));
 const Button = dynamic(() => import('./button.js'));
 const SmallCapsTitle = dynamic(() => import('../components/small-caps-title.js'));
-const MachinesOverview = dynamic(() => import('../components/machines-overview.js'));
+const MachinesOverview = dynamic(() => import('../components/machines-overview.tsx'));
 const MachinesFilter = dynamic(() => import('../components/machines-filter.js'));
-const MachinesSearchBar = dynamic(() => import('../components/machines-search-bar.js'));
+const MachinesSearchBar = dynamic(() => import('../components/machines-search-bar.jsx'));
 const MachineContactForm = dynamic(() => import('../components/machine-contact-form.jsx'));
 const MachineSpecifications = dynamic(() => import('../components/machine-specifications.jsx'));
 
 const MachineDetails = (props) => {
   const [machines, setMachines] = useState([])
-  const [machine, setMachine] = useState({})
+  const [machine, setMachine] = useState({
+    name: ''
+  })
+  const [searchQuery, setSearchQuery] = useState('');
 
   const router = useRouter()
   const queryParams = router.query;
@@ -39,7 +45,7 @@ const MachineDetails = (props) => {
   const fetchMachine = (machines, machineId) => {
     if(! machines) return {}
     if(! machineId) return {}
-    const currentMachine = machines.filter(x => x.id === machineId, machines)[0];
+    const currentMachine: MachineModel = machines.filter(x => x.id === machineId, machines)[0];
     setMachine(currentMachine);
   }
 
@@ -59,26 +65,53 @@ const MachineDetails = (props) => {
           md:w-2/5
           md:pr-4
         ">
-          <div className="my-2">
-            <SmallCapsTitle color="#14B586">
-              {machine.category ? machine.category : ''}
-            </SmallCapsTitle>
-          </div>
-          <Title>
-            Cleanroom for solar panel assembly
-          </Title>
-          <div className="my-2">
-            <p>
-              {machine.description ? machine.description : ''}
-            </p>
-          </div>
-          <div className="my-16">
-            <MachineSpecifications machine={machine} />
-          </div>
 
-          <Button href="#">
-            Contact
-          </Button>
+          {/* Show category */}
+          {! queryParams.form && <>
+            <div className="my-2">
+              <SmallCapsTitle color="#14B586">
+                {machine.category ? machine.category : ''}
+              </SmallCapsTitle>
+            </div>
+          </>}
+          {/* If form is visible: show 'Check availability' */}
+          {queryParams.form && <>
+            <div className="my-2">
+              <SmallCapsTitle color="#FF8850">
+                CHECK AVAILABILITY
+              </SmallCapsTitle>
+            </div>
+          </>}
+          
+          <Title>
+            {machine.name}
+          </Title>
+
+          {! queryParams.form && <>
+            <div className="my-2">
+              <p>
+                {machine.description ? machine.description : ''}
+              </p>
+            </div>
+            <div className="my-16">
+              <MachineSpecifications machine={machine} />
+            </div>
+            <Button href={{ pathname: '/machines-details', query: {id: machine.id, form: 1}}}>
+              Contact
+            </Button>
+          </>}
+
+          {queryParams.form && <>
+            <p className="my-4">
+              <img src={machine.image} />
+            </p>
+            <Link href={{ pathname: '/machines-details', query: {id: machine.id}}}>
+              <span className="text-base cursor-pointer">
+                &laquo; Machine details
+              </span>
+            </Link>
+          </>}
+
         </div>
         <div className="
           mt-8
@@ -109,8 +142,8 @@ const MachineDetails = (props) => {
           <div className="
             w-full
           ">
-            <MachinesSearchBar />
-            <MachinesOverview />
+            <MachinesSearchBar onUpdate={setSearchQuery} />
+            <MachinesOverview searchQuery={searchQuery} />
           </div>
         </div>
 

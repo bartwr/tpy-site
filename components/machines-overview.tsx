@@ -4,6 +4,7 @@ import {
   useState
 } from 'react';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { motion } from "framer-motion"
 import * as R from 'ramda';
 // import moment from 'moment';
@@ -243,40 +244,52 @@ const Machine = (props) => {
           bottom-0
           w-full
         ">
-          <motion.a className="
-            flex-1
-            bg-white
-            text-center
-            flex
-            flex-col
-            justify-center
-            h-11
-            text-orange
-            cursor-pointer
-          "
-          href="/machines-details"
-          whileHover={{ fontStyle: 'italic' }}
-          whileTap={{ fontStyle: 'italic' }}
-          >
-            more info
-          </motion.a>
-          <motion.a className="
-            flex-1
-            bg-theme-orange
-            text-center
-            flex
-            flex-col
-            justify-center
-            h-11
-            text-white
-            cursor-pointer
-          "
-          href="/machines-details"
-          whileHover={{ fontStyle: 'italic' }}
-          whileTap={{ fontStyle: 'italic' }}
-          >
-            contact
-          </motion.a>
+          <div className="
+            h-12
+            w-full
+            -mt-12
+            absolute
+            top-0
+          " style={{
+            backgroundImage: 'linear-gradient(transparent, white, white)'
+          }}
+          />
+          <Link href={{ pathname: '/machines-details', query: {id: data.id}}}>
+            <motion.a className="
+              flex-1
+              bg-white
+              text-center
+              flex
+              flex-col
+              justify-center
+              h-11
+              text-orange
+              cursor-pointer
+            "
+            whileHover={{ fontStyle: 'italic' }}
+            whileTap={{ fontStyle: 'italic' }}
+            >
+              more info
+            </motion.a>
+          </Link>
+          <Link href={{ pathname: '/machines-details', query: {id: data.id, form: 1}}}>
+            <motion.a className="
+              flex-1
+              bg-theme-orange
+              text-center
+              flex
+              flex-col
+              justify-center
+              h-11
+              text-white
+              cursor-pointer
+            "
+            whileHover={{ fontStyle: 'italic' }}
+            whileTap={{ fontStyle: 'italic' }}
+            >
+              contact
+            </motion.a>
+          </Link>
         </footer>
       </motion.div>
       {doShowQuickView && <MachineQuickView onClose={
@@ -303,7 +316,7 @@ const MachinesOverview = (props) => {
   const machinesFilteredOnSearchQuery =
     R.filter((machine: MachineModel) => {
       // Create shorter variable name for searchQuery
-      const q = searchQuery.toLowerCase();
+      const q = searchQuery ? searchQuery.toLowerCase() : '';
       // If no search query is given: include every machine
       if(q === '') return true;
       // If search query is given: only return if query is found

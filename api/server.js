@@ -125,6 +125,10 @@ app.prepare().then(() => {
       const slug = pathname.split('/event/')[1];
       app.render(req, res, '/events-item', { slug: slug });
     }
+    // Make it possible to link to events
+    else if (pathname.indexOf('/machine-details/') === 0) {
+      app.render(req, res, '/machine-details');
+    }
     // API: News
     else if (pathname === '/api/news' || pathname.indexOf('/api/news?') === 0 ) {
       let news = await fetchNews();
