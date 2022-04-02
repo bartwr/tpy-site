@@ -34,8 +34,7 @@ class Happening extends Component {
                     smallCapsTitleColor="white"
                     title="Everyday is full of great opportunities"
                 />
-                {/*<IntroText>
-      </IntroText>*/}
+                {/*<IntroText></IntroText>*/}
                 <div className="flex flex-wrap" style={{
                     width: '1000px',
                     maxWidth: '100%',

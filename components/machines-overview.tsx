@@ -5,9 +5,11 @@ import {
 } from 'react';
 import dynamic from 'next/dynamic';
 import { motion } from "framer-motion"
-// import * as R from 'ramda';
+import * as R from 'ramda';
 // import moment from 'moment';
 import {fetchMachines} from '../helpers/machines.js';
+
+import MachineModel from '../models/Machine.ts';
 
 // Import helpers
 // import {getNews, getEvents} from '../helpers/localStorage.js';
@@ -19,8 +21,13 @@ const Title = dynamic(() => import('./title.js'));
 const Button = dynamic(() => import('./button.js'));
 const MachineSpecifications = dynamic(() => import('./machine-specifications.jsx'));
 
+type MachineQuickViewProps = {
+  machine: MachineModel;
+  onClose?: func;
+};
+
 const MachineQuickView = (props) => {
-  const {machine, onClose} = props;
+  const {machine, onClose}: Props = props;
 
   const closeHandler = (e) => {
     e.preventDefault();
@@ -151,7 +158,6 @@ const Machine = (props) => {
       whileHover={{
         boxShadow: '0px 8px 13px rgba(0, 0, 0, 0.2)'
       }}
-      layoutId="underline"
       className="
         Machine-inner
         h-full
@@ -281,29 +287,9 @@ const Machine = (props) => {
 }
 
 const MachinesOverview = (props) => {
-  // const { something } = props;
-  const [machines, setMachines] = useState([])
+  const { searchQuery } = props;
 
-  // const machines = [
-  //   {
-  //     title: "Cleanroom for solar panel assembly",
-  //     description: "hardwall cleanroom with different zones and classes.",
-  //     machineType: "Assembly",
-  //     image: "https://i.imgur.com/83Ovq2V.jpeg"
-  //   },
-  //   {
-  //     title: "Composites production",
-  //     description: "Automated prepreg and fibre cutting.",
-  //     machineType: "Composites production",
-  //     image: "https://i.imgur.com/83Ovq2V.jpeg"
-  //   },
-  //   {
-  //     title: "Composites design",
-  //     description: "Composites design, using advanced 3D design and finite element analysis tool",
-  //     machineType: "Engineering",
-  //     image: "https://i.imgur.com/83Ovq2V.jpeg"
-  //   }
-  // ]
+  const [machines, setMachines] = useState([])
 
   const fetchMachinesAndStoreInState = async () => {
     const machineObjects = await fetchMachines();
@@ -314,14 +300,32 @@ const MachinesOverview = (props) => {
     fetchMachinesAndStoreInState();
   }, [])
 
+  const machinesFilteredOnSearchQuery =
+    R.filter((machine: MachineModel) => {
+      // Create shorter variable name for searchQuery
+      const q = searchQuery.toLowerCase();
+      // If no search query is given: include every machine
+      if(q === '') return true;
+      // If search query is given: only return if query is found
+      return machine.name.toLowerCase().indexOf(q) > -1
+          || (machine.category && machine.category.toLowerCase().indexOf(q) > -1)
+          || (machine.description && machine.description.toLowerCase().indexOf(q) > -1)
+          || (machine.dimensions && machine.dimensions.toLowerCase().indexOf(q) > -1)
+          || (machine.materials && machine.materials.toLowerCase().indexOf(q) > -1)
+          || (machine.specstandard && machine.specstandard.toLowerCase().indexOf(q) > -1)
+          || (machine.type && machine.type.toLowerCase().indexOf(q) > -1);
+    })
+
+  const filteredMachines = machinesFilteredOnSearchQuery(machines);
+
   return <div className="
     MachinesOverview
     text-base
     flex flex-wrap
     md:-mx-4
   ">
-    {machines.map(x => {
-      return <Machine key={x.title} data={x} />
+    {filteredMachines.map(x => {
+      return <Machine key={x.id} data={x} />
     })}
   </div>
 }

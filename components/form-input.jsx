@@ -5,6 +5,7 @@ const FormInput = (props) => {
     name,
     type,
     value,
+    defaultValue,
     placeholder,
     onChange,
     classes,
@@ -14,6 +15,7 @@ const FormInput = (props) => {
   return <div className="FormInput">
     {type === 'textarea' && <textarea
       name={name}
+      defaultValue={defaultValue || ''}
       value={value || ''}
       placeholder={placeholder || ''}
       value={value}
@@ -24,6 +26,7 @@ const FormInput = (props) => {
     {type !== 'textarea' && <input
       name={name}
       type={type || 'text'}
+      defaultValue={defaultValue || ''}
       value={value}
       placeholder={placeholder || ''}
       onChange={onChange}

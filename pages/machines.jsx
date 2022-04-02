@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -10,12 +11,14 @@ const Title = dynamic(() => import('../components/title.js'));
 const Pricing = dynamic(() => import('../components/pricing.jsx'));
 const NewsletterSubscribe = dynamic(() => import('../components/newsletter-subscribe.js'));
 const Footer = dynamic(() => import('../components/footer.js'));
-const MachinesOverview = dynamic(() => import('../components/machines-overview.js'));
+const MachinesOverview = dynamic(() => import('../components/machines-overview.tsx'));
 const MachinesFilter = dynamic(() => import('../components/machines-filter.js'));
-const MachinesSearchBar = dynamic(() => import('../components/machines-search-bar.js'));
+const MachinesSearchBar = dynamic(() => import('../components/machines-search-bar.jsx'));
 const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
 
 function Community() {
+  const [searchQuery, setSearchQuery] = useState('');
+
   return <div className="root">
     <Head>
       <title>Machine Portal | Technology Park Ypenburg</title>
@@ -53,8 +56,8 @@ function Community() {
         w-full
         md:w-3/4
       ">
-        <MachinesSearchBar />
-        <MachinesOverview />
+        <MachinesSearchBar onUpdate={setSearchQuery} />
+        <MachinesOverview searchQuery={searchQuery} />
       </div>
     </div>
     <FooterBanner

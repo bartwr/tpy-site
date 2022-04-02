@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router'
 // import * as R from 'ramda';
 // import moment from 'moment';
+import {fetchMachines} from '../helpers/machines.js';
 
 // Import helpers
 // import {getNews, getEvents} from '../helpers/localStorage.js';
@@ -24,11 +25,31 @@ const MachineContactForm = dynamic(() => import('../components/machine-contact-f
 const MachineSpecifications = dynamic(() => import('../components/machine-specifications.jsx'));
 
 const MachineDetails = (props) => {
+  const [machines, setMachines] = useState([])
+  const [machine, setMachine] = useState({})
+
   const router = useRouter()
-  const {machine} = props;
-  const urlPath = router.query;
-  console.log(urlPath);
-  // if(! machine) return <></>
+  const queryParams = router.query;
+
+  const fetchMachinesAndStoreInState = async () => {
+    const machineObjects = await fetchMachines();
+    setMachines(machineObjects);
+  }
+
+  const fetchMachine = (machines, machineId) => {
+    if(! machines) return {}
+    if(! machineId) return {}
+    const currentMachine = machines.filter(x => x.id === machineId, machines)[0];
+    setMachine(currentMachine);
+  }
+
+  useEffect(x => {
+    fetchMachinesAndStoreInState();
+  }, [])
+
+  useEffect(x => {
+    fetchMachine(machines, queryParams.id);
+  }, [machines, queryParams])
 
   return (
     <>
@@ -40,7 +61,7 @@ const MachineDetails = (props) => {
         ">
           <div className="my-2">
             <SmallCapsTitle color="#14B586">
-              category
+              {machine.category ? machine.category : ''}
             </SmallCapsTitle>
           </div>
           <Title>
@@ -48,11 +69,11 @@ const MachineDetails = (props) => {
           </Title>
           <div className="my-2">
             <p>
-              Hardwall cleanroom with different zones and classes. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+              {machine.description ? machine.description : ''}
             </p>
           </div>
           <div className="my-16">
-            <MachineSpecifications machine={props.machine} />
+            <MachineSpecifications machine={machine} />
           </div>
 
           <Button href="#">
@@ -66,11 +87,11 @@ const MachineDetails = (props) => {
           md:w-3/5
           md:pl-4
         ">
-          <MachineContactForm machine={props.machine} />
+          {! queryParams.form && <img src="https://i.imgur.com/83Ovq2V.jpeg" />}
 
-          <img src="https://i.imgur.com/83Ovq2V.jpeg" />
+          {  queryParams.form && <MachineContactForm machine={machine} />}
 
-          <div className="my-8">
+          <div hidden className="my-8">
             <p>
               <b>Description:</b><br />
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.

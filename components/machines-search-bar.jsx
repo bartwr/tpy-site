@@ -11,13 +11,28 @@ import * as R from 'ramda';
 const FormInput = dynamic(() => import('./form-input.jsx'));
 
 const MachinesSearchBar = (props) => {
-  // const { something } = props;
+  const { onUpdate } = props;
+  const delay = 250;
+  let TO_delay;
+
+  const handleChange = (e) => {
+    if(TO_delay) clearTimeout(TO_delay);
+    TO_delay = setTimeout(x => {
+      // Save in localStorage
+      localStorage.setItem('TPY__machines_search_query', e.target.value);
+      // Update state
+      if(! onUpdate) return;
+      onUpdate(e.target.value);
+    }, delay)
+  }
+
+  const searchQueryFromLocalStorage = typeof window !== 'undefined' ? localStorage.getItem('TPY__machines_search_query') || '' : '';
 
   return <div className="MachinesSearchBar">
     <FormInput
       name="q"
-      value=""
-      onChange={(x) => {}}
+      defaultValue={searchQueryFromLocalStorage}
+      onChange={handleChange}
       placeholder="Search a machine"
       classes="bg-no-repeat"
       style={{
