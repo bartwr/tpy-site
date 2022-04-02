@@ -64,7 +64,8 @@
     "sitemap": "2.2.0",
     "styled-components": "^5.2.1",
     "styled-jsx": "5.0.2",
-    "swipe-js-iso": "2.1.5"
+    "swipe-js-iso": "2.1.5",
+    "webpack": "^5.71.0"
   },
   "engines": {
     "node": "14.15.4"

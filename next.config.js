@@ -65,6 +65,10 @@ module.exports = {
     // See https://stackoverflow.com/a/68511591
     if (! isServer) {
       config.resolve.fallback.fs = false;
+      // // don't resolve 'fs' module on the client to prevent this error on build --> Error: Can't resolve 'fs'
+      // config.resolve.fallback = {
+      //     fs: false
+      // }
     }
     return config;
   }
