@@ -4,6 +4,7 @@ import {
   useState
 } from 'react';
 import dynamic from 'next/dynamic';
+import config from "../config/config";
 // import * as R from 'ramda';
 // import moment from 'moment';
 
@@ -18,6 +19,15 @@ const Button = dynamic(() => import('./button.js'));
 const FormInput = dynamic(() => import('./form-input.jsx'));
 const FormSelect = dynamic(() => import('./form-select.jsx'));
 const SmallCapsTitle = dynamic(() => import('./small-caps-title.js'));
+
+const sendMachineAvailabilityEmail = (data) => {
+  console.log(data);
+  return fetch(`${config.apiUrl}/mail/machine-availability`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+}
 
 const PreferredDate = (props) => {
   const {
@@ -103,7 +113,10 @@ const MachineContactForm = (props) => {
     }
 
     // Now send email
-    // ..
+    sendMachineAvailabilityEmail(Object.assign({},
+      formState,
+      {machine: machine}
+    ));
     alert('Thank you for your request!')
 
     // Reset form
@@ -125,7 +138,7 @@ const MachineContactForm = (props) => {
       />
       <FormInput
         onChange={handleChange}
-        value={formState.value || ''}
+        value={formState.email || ''}
         type="email"
         name="email"
         required

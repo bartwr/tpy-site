@@ -101,7 +101,7 @@ const MachineDetails = (props) => {
 
           {queryParams.form && <>
             <p className="my-4">
-              <img src={machine.image} />
+              <img src={machine.image ? machine.image : ''} />
             </p>
             <Link href={{ pathname: '/machines-details', query: {id: machine.id}}}>
               <span className="text-base cursor-pointer">
