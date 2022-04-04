@@ -11,7 +11,7 @@ const Title = dynamic(() => import('../components/title.js'));
 const Pricing = dynamic(() => import('../components/pricing.jsx'));
 const NewsletterSubscribe = dynamic(() => import('../components/newsletter-subscribe.js'));
 const Footer = dynamic(() => import('../components/footer.js'));
-const MachinesOverview = dynamic(() => import('../components/machines-overview.tsx'));
+const MachinesOverview = dynamic(() => import('../components/machines-overview'));
 const MachinesFilter = dynamic(() => import('../components/machines-filter.js'));
 const MachinesSearchBar = dynamic(() => import('../components/machines-search-bar.jsx'));
 const MachineContactForm = dynamic(() => import('../components/machine-contact-form.jsx'));
@@ -19,7 +19,7 @@ const MachineSpecifications = dynamic(() => import('../components/machine-specif
 const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
 const SmallCapsTitle = dynamic(() => import('../components/small-caps-title.js'));
 const Button = dynamic(() => import('../components/button.js'));
-const MachineDetailsComponent = dynamic(() => import('../components/machine-details.tsx'));
+const MachineDetailsComponent = dynamic(() => import('../components/machine-details'));
 
 class MachineDetails extends Component {
   render() {

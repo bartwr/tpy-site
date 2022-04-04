@@ -1,6 +1,6 @@
-import CompanyModel from './Company.ts';
+import {CompanyModel} from './Company';
 
-type MachineModel = {
+export type MachineModel = {
   id: string;
   name: string;
   category?: string;
@@ -13,4 +13,21 @@ type MachineModel = {
   image?: string
 }
 
-export default MachineModel;
+export const MachineDefaultValues: MachineModel = {
+  id: '',
+  name: '',
+  category: '',
+  company: <CompanyModel>{
+    id: '',
+    name: '',
+    contactEmail: '',
+    contactPhone: '',
+    website: ''
+  },
+  description: '',
+  dimensions: '',
+  materials: '',
+  specstandard: '',
+  type: '',
+  image: ''
+}

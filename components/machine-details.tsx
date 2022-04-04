@@ -10,7 +10,7 @@ import { useRouter } from 'next/router'
 // import moment from 'moment';
 import {fetchMachines} from '../helpers/machines.js';
 
-import MachineModel from '../models/Machine.ts'
+import {MachineModel, MachineDefaultValues} from '../models/Machine'
 
 // Import helpers
 // import {getNews, getEvents} from '../helpers/localStorage.js';
@@ -21,7 +21,7 @@ import MachineModel from '../models/Machine.ts'
 const Title = dynamic(() => import('./title.js'));
 const Button = dynamic(() => import('./button.js'));
 const SmallCapsTitle = dynamic(() => import('../components/small-caps-title.js'));
-const MachinesOverview = dynamic(() => import('../components/machines-overview.tsx'));
+const MachinesOverview = dynamic(() => import('../components/machines-overview'));
 const MachinesFilter = dynamic(() => import('../components/machines-filter.js'));
 const MachinesSearchBar = dynamic(() => import('../components/machines-search-bar.jsx'));
 const MachineContactForm = dynamic(() => import('../components/machine-contact-form.jsx'));
@@ -29,9 +29,7 @@ const MachineSpecifications = dynamic(() => import('../components/machine-specif
 
 const MachineDetails = (props) => {
   const [machines, setMachines] = useState([])
-  const [machine, setMachine] = useState({
-    name: ''
-  })
+  const [machine, setMachine] = useState(MachineDefaultValues)
   const [searchQuery, setSearchQuery] = useState('');
 
   const router = useRouter()
@@ -49,11 +47,11 @@ const MachineDetails = (props) => {
     setMachine(currentMachine);
   }
 
-  useEffect(x => {
+  useEffect(() => {
     fetchMachinesAndStoreInState();
   }, [])
 
-  useEffect(x => {
+  useEffect(() => {
     fetchMachine(machines, queryParams.id);
   }, [machines, queryParams])
 
@@ -70,7 +68,7 @@ const MachineDetails = (props) => {
           {! queryParams.form && <>
             <div className="my-2">
               <SmallCapsTitle color="#14B586">
-                {machine.category ? machine.category : ''}
+                {machine && machine.category ? machine.category : ''}
               </SmallCapsTitle>
             </div>
           </>}
@@ -84,7 +82,7 @@ const MachineDetails = (props) => {
           </>}
           
           <Title>
-            {machine.name}
+            {machine ? machine.name : ''}
           </Title>
 
           {! queryParams.form && <>

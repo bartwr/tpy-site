@@ -10,7 +10,7 @@ import * as R from 'ramda';
 // import moment from 'moment';
 import {fetchMachines} from '../helpers/machines.js';
 
-import MachineModel from '../models/Machine.ts';
+import {MachineModel} from '../models/Machine';
 
 // Import helpers
 // import {getNews, getEvents} from '../helpers/localStorage.js';
@@ -24,11 +24,11 @@ const MachineSpecifications = dynamic(() => import('./machine-specifications.jsx
 
 type MachineQuickViewProps = {
   machine: MachineModel;
-  onClose?: func;
+  onClose?: Function;
 };
 
 const MachineQuickView = (props) => {
-  const {machine, onClose}: Props = props;
+  const {machine, onClose}: MachineQuickViewProps = props;
 
   const closeHandler = (e) => {
     e.preventDefault();
@@ -309,7 +309,7 @@ const MachinesOverview = (props) => {
     setMachines(machineObjects);
   }
 
-  useEffect(x => {
+  useEffect(() => {
     fetchMachinesAndStoreInState();
   }, [])
 

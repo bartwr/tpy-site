@@ -18,7 +18,6 @@ const FormInput = (props) => {
       defaultValue={defaultValue || ''}
       value={value || ''}
       placeholder={placeholder || ''}
-      value={value}
       onChange={onChange}
       className={classes}
       style={style}
