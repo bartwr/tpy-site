@@ -76,6 +76,27 @@ app.prepare().then(() => {
     res.end(JSON.stringify(mail, null, 3));
   });
 
+  // API: Mail
+  server.post('/api/mail/machine-availability', function(req, res){
+    let message = req.body.message + '<br /><br /><hr /><br />';
+    // Add extra fields, like company name, website, etc)
+    if(req.body.name) message += '' + req.body.name + '<br />';
+    if(req.body.company) message += '' + req.body.company + '<br />';
+    if(req.body.tel) message += '' + req.body.tel + '<br />';
+    if(req.body.website) message += '' + req.body.website + '<br />';
+    if(req.body.type) message += '<br />💬 I\'m interested in joining the community by ' + req.body.type + '<br />';
+
+    const mail = sendMailUsingMailgun({
+      name: req.body.name,
+      email: req.body.email,
+      tel: req.body.tel,
+      message: message
+    });
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.end(JSON.stringify(mail, null, 3));
+  });
+
   // API: Newsletter
   server.post('/api/newsletter/add', function(req, res){
     const callback = function(data) {
@@ -166,14 +187,14 @@ app.prepare().then(() => {
       res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
       res.end(JSON.stringify(machines, null, 3));
     }
-    // API: Machines item
-    else if (pathname.indexOf('/api/machines/') === 0) {
-      const slug = pathname.split('/machines/')[1];
-      let machinesItem = await fetchMachinesItem({ slug: slug });
-      res.setHeader('Content-Type', 'application/json');
-      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-      res.end(JSON.stringify(machinesItem, null, 3));
-    }
+    // // API: Machines item
+    // else if (pathname.indexOf('/api/machines/') === 0) {
+    //   const slug = pathname.split('/machines/')[1];
+    //   let machinesItem = await fetchMachinesItem({ slug: slug });
+    //   res.setHeader('Content-Type', 'application/json');
+    //   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    //   res.end(JSON.stringify(machinesItem, null, 3));
+    // }
     else {
       return handle(req, res, parsedUrl);
     }
