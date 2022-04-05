@@ -8,7 +8,6 @@ import Link from 'next/link';
 import { motion } from "framer-motion"
 import * as R from 'ramda';
 // import moment from 'moment';
-import {fetchMachines} from '../helpers/machines.js';
 
 import {MachineModel} from '../models/Machine';
 
@@ -104,13 +103,15 @@ const MachineQuickView = (props) => {
           </Title>
           <MachineSpecifications machine={machine} />
           <p className="my-2 mt-4">
-            <a href="/machines-details" className="
-              text-theme-orange
-              text-base
-              no-underline
-            ">
-              View full item
-            </a>
+            <Link href={{ pathname: '/machines-details', query: {id: machine ? machine.id : ''}}}>
+              <a className="
+                text-theme-orange
+                text-base
+                no-underline
+              " onClick={() => onClose}>
+                View full item
+              </a>
+            </Link>
           </p>
           <div className="
             flex
@@ -119,9 +120,11 @@ const MachineQuickView = (props) => {
             w-full
           ">
             <div>
-              <Button target="_blank" buttonLink={'#'}>
-                contact
-              </Button>
+              <Link href={{ pathname: '/machines-details', query: {id: machine ? machine.id : '', form: 1}}}>
+                <Button onClick={onClose}>
+                  contact
+                </Button>
+              </Link>
             </div>
             <div className="flex flex-col justify-center">
               <a href="#" onClick={closeHandler}>
@@ -263,7 +266,7 @@ const Machine = (props) => {
               flex-col
               justify-center
               h-11
-              text-orange
+              text-theme-orange
               cursor-pointer
             "
             whileHover={{ fontStyle: 'italic' }}
@@ -300,18 +303,7 @@ const Machine = (props) => {
 }
 
 const MachinesOverview = (props) => {
-  const { searchQuery } = props;
-
-  const [machines, setMachines] = useState([])
-
-  const fetchMachinesAndStoreInState = async () => {
-    const machineObjects = await fetchMachines();
-    setMachines(machineObjects);
-  }
-
-  useEffect(() => {
-    fetchMachinesAndStoreInState();
-  }, [])
+  const { searchQuery, machineType, machines } = props;
 
   const machinesFilteredOnSearchQuery =
     R.filter((machine: MachineModel) => {
@@ -329,7 +321,17 @@ const MachinesOverview = (props) => {
           || (machine.type && machine.type.toLowerCase().indexOf(q) > -1);
     })
 
-  const filteredMachines = machinesFilteredOnSearchQuery(machines);
+  const machinesFilteredOnMachineType =
+    R.filter((machine: MachineModel) => {
+      // If no machine type is given: return everything
+      if(machineType === 'All' || ! machineType) return true;
+      // If machine type is given: only return if relevant
+      return machine.category === machineType;
+    })
+
+  let filteredMachines = machines || [];
+  filteredMachines = machinesFilteredOnSearchQuery(filteredMachines);
+  filteredMachines = machinesFilteredOnMachineType(filteredMachines);
 
   return <div className="
     MachinesOverview

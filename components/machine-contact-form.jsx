@@ -180,9 +180,9 @@ const MachineContactForm = (props) => {
       <Button type="submit">
         send message
       </Button>
-      <p className="mt-20 mb-5 text-base">
-        Would you rather call someone right away? Burak Cakir +31 (0)6 1376 8909
-      </p>
+      {machine && machine.company && machine.company.contactPhone && <p className="mt-20 mb-5 text-base">
+        Would you rather call someone right away? <a href={`tel:${machine.company.contactPhone}`}>{machine.company.contactPhone}</a>
+      </p>}
     </form>
   )
 }

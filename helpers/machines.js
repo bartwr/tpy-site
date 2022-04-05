@@ -25,6 +25,16 @@ const fetchMachines = async () => {
   return machineObjects;
 }
 
+const fetchMachineTypes = (machines) => {
+  let categories = [];
+  machines.forEach(x => {
+    if(categories.indexOf(x.category) > -1) return;
+    categories.push(x.category);
+  })
+  return categories;
+}
+
 export {
-  fetchMachines
+  fetchMachines,
+  fetchMachineTypes
 }

@@ -56,7 +56,7 @@ const requestMachineAvailability = (data) => {
     message += `
         <div style="margin-bottom:40px;">
           <div><strong style="${valueStyle};font-weight:bold;margin-bottom:8px;">${data['preferredDate'+x]}</strong></div>
-          <span style="display:inline-block;margin-right:12px;"><img src="https://tpy-site.herokuapp.com/static/components/machine-details/checkbox.png" alt="X" /></span> 
+          <span style="display:inline-block;margin-right:12px;"><img src="https://tpy-site.herokuapp.com/static/components/machine-details/checkbox.png" alt="X" style="width: 30px;height:30px;margin-top:8px;" /></span> 
           <span style="${valueStyle};margin-right:12px;">${data['preferredDayPart'+x]}</span> 
           <span style="${valueStyle};width:120px;">${data['preferredDuration'+x]}</span> 
         </div>
@@ -72,7 +72,7 @@ const requestMachineAvailability = (data) => {
   if(data.message && data.message.length >= 2) {
     message += `
         <div>
-          <div style="${labelStyle};margin-bottom:40px;width:auto;">Message</div>
+          <div style="${labelStyle.replace('inline-block', 'block')};margin-bottom:24px;width:auto;">Message</div>
           <div style="${valueStyle}">${data.message ? data.message.replace("\n", "<br />") : ""}</div>
         </div>
     `;
@@ -80,13 +80,19 @@ const requestMachineAvailability = (data) => {
 
   message += '</div>';
 
-  const mail = sendMailUsingMailgun_noTemplate({
+  const mailToAdmin = sendMailUsingMailgun_noTemplate({
     to: 'bart@tuxion.nl',
     subject: `TPY Availability Check for ${data.machine.name}`,
     message: message
   });
 
-  return mail;
+  const mailToUser = sendMailUsingMailgun_noTemplate({
+    to: data.email,
+    subject: `Copy: TPY Availability for ${data.machine.name}`,
+    message: `<div align="center" style="margin-top:20px;margin-bottom:20px;">Below is a copy of your machine availability request.</div>${message}`
+  });
+
+  return mailToAdmin;
 } 
 
 module.exports = { requestMachineAvailability }

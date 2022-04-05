@@ -28,8 +28,12 @@ const MachineContactForm = dynamic(() => import('../components/machine-contact-f
 const MachineSpecifications = dynamic(() => import('../components/machine-specifications.jsx'));
 
 const MachineDetails = (props) => {
+  // Get machine type filter from localStorage
+  const machineTypeFilter = typeof window !== 'undefined' ? localStorage.getItem('TPY__machines_machine_type') : 'All';
+  // State definitions
   const [machines, setMachines] = useState([])
   const [machine, setMachine] = useState(MachineDefaultValues)
+  const [machineType, setMachineType] = useState(machineTypeFilter);
   const [searchQuery, setSearchQuery] = useState('');
 
   const router = useRouter()
@@ -54,6 +58,8 @@ const MachineDetails = (props) => {
   useEffect(() => {
     fetchMachine(machines, queryParams.id);
   }, [machines, queryParams])
+
+  if(! machine) return <></>
 
   return (
     <>
@@ -88,7 +94,7 @@ const MachineDetails = (props) => {
           {! queryParams.form && <>
             <div className="my-2">
               <p>
-                {machine.description ? machine.description : ''}
+                {machine && machine.description ? machine.description : ''}
               </p>
             </div>
             <div className="my-16">
@@ -133,6 +139,22 @@ const MachineDetails = (props) => {
       <div className="max-width px-4 md:px-0 md:mx-auto">
         <Title>More machines</Title>
         
+        <div className="flex flex-wrap md:flex-nowrap md:mx-4 mt-6 mb-16 max-width sm:mx-auto md:px-4">
+          <div className="
+            w-full
+            md:w-1/4
+          ">
+            <MachinesFilter machines={machines} machineType={machineType} onUpdate={setMachineType} />
+          </div>
+          <div className="
+            w-full
+            md:w-3/4
+          ">
+            <MachinesSearchBar onUpdate={setSearchQuery} />
+            <MachinesOverview machines={machines} searchQuery={searchQuery} machineType={machineType} />
+          </div>
+        </div>
+        {/*
         <div className="
           flex flex-wrap md:flex-nowrap mt-6 mb-16
           max-width sm:mx-auto
@@ -144,7 +166,7 @@ const MachineDetails = (props) => {
             <MachinesOverview searchQuery={searchQuery} />
           </div>
         </div>
-
+*/}
       </div>
     </>
   )
