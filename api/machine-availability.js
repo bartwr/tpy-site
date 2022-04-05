@@ -21,7 +21,7 @@ const requestMachineAvailability = (data) => {
   let message = `
     <div style="background:#F8F8F8;padding:56px 34px;">
       <div>
-        <a href="https://www.technologyparkypenburg.nl/" target="_blank"><img src="https://www.technologyparkypenburg.nl/static/components/logo/tpy-logo.svg" style="display:block;border:none;margin-bottom:62px;" /></a>
+        <a href="https://www.technologyparkypenburg.nl/" target="_blank"><img src="https://tpy-site.herokuapp.com/static/components/logo/tpy-logo.png" style="display:block;border:none;margin-bottom:62px;" /></a>
       </div>
       <div style="${headerStyle}">
         MACHINE REQUEST
@@ -56,7 +56,7 @@ const requestMachineAvailability = (data) => {
     message += `
         <div style="margin-bottom:40px;">
           <div><strong style="${valueStyle};font-weight:bold;margin-bottom:8px;">${data['preferredDate'+x]}</strong></div>
-          <span style="display:inline-block;margin-right:12px;"><img src="https://www.technologyparkypenburg.nl/static/components/machine-details/checkbox.png" alt="X" /></span> 
+          <span style="display:inline-block;margin-right:12px;"><img src="https://tpy-site.herokuapp.com/static/components/machine-details/checkbox.png" alt="X" /></span> 
           <span style="${valueStyle};margin-right:12px;">${data['preferredDayPart'+x]}</span> 
           <span style="${valueStyle};width:120px;">${data['preferredDuration'+x]}</span> 
         </div>
@@ -66,18 +66,23 @@ const requestMachineAvailability = (data) => {
 
   message += `
       </div>
-      <div>
-        <div style="${labelStyle};margin-bottom:40px;width:auto;">Message</div>
-        <div style="${valueStyle}">${data.message ? data.message.replace("\n", "<br />") : ""}</div>
-      </div>
-    </div>
   `;
-  // Add extra fields, like company name, website, etc)
-  if(data.name) message += '' + data.name + '<br />';
+
+
+  if(data.message && data.message.length >= 2) {
+    message += `
+        <div>
+          <div style="${labelStyle};margin-bottom:40px;width:auto;">Message</div>
+          <div style="${valueStyle}">${data.message ? data.message.replace("\n", "<br />") : ""}</div>
+        </div>
+    `;
+  }
+
+  message += '</div>';
 
   const mail = sendMailUsingMailgun_noTemplate({
     to: 'bart@tuxion.nl',
-    subject: 'Go for it',
+    subject: `TPY Availability Check for ${data.machine.name}`,
     message: message
   });
 
