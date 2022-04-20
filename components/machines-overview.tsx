@@ -155,7 +155,7 @@ const Machine = (props) => {
       md:my-5
     "
     style={{
-      minHeight: '500px'
+      height: '500px'
     }}
     >
       <motion.div
@@ -184,34 +184,37 @@ const Machine = (props) => {
         " style={{
           backgroundImage: `url('${data.image}')`
         }} />
-        <motion.div className="
-          Machine-quickView
-          uppercase
-          font-montserrat
-          text-md
-          text-white
-          opacity-90
-          inline-block
-          mx-auto
-          w-36
-          h-12
-          text-center
-          flex
-          flex-col
-          justify-center
-          cursor-pointer
-          -mt-6
-        " style={{
-          backgroundColor: '#BAB1A1'
-        }}
-        onClick={() => setDoShowQuickView(true)}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        >
-          quick view
-        </motion.div>
+        <div className="Machine-quickView-wrapper">
+          <motion.div className="
+            Machine-quickView
+            uppercase
+            font-montserrat
+            text-md
+            text-white
+            opacity-90
+            inline-block
+            mx-auto
+            w-36
+            h-12
+            text-center
+            flex
+            flex-col
+            justify-center
+            cursor-pointer
+            -mt-6
+          " style={{
+            backgroundColor: '#BAB1A1'
+          }}
+          onClick={() => setDoShowQuickView(true)}
+          whileHover={{ scale: 0.98 }}
+          whileTap={{ scale: 0.95 }}
+          >
+            quick view
+          </motion.div>
+        </div>
         <div className="
           Machine-body
+          h-72 overflow-hidden
           py-6
           px-10
         ">
@@ -269,8 +272,7 @@ const Machine = (props) => {
               text-theme-orange
               cursor-pointer
             "
-            whileHover={{ fontStyle: 'italic' }}
-            whileTap={{ fontStyle: 'italic' }}
+            whileHover={{ borderBottom: '8px solid rgb(255, 136, 80)' }}
             >
               more info
             </motion.a>
@@ -287,8 +289,9 @@ const Machine = (props) => {
               text-white
               cursor-pointer
             "
-            whileHover={{ fontStyle: 'italic' }}
-            whileTap={{ fontStyle: 'italic' }}
+            whileHover={{
+              borderBottom: '8px solid rgba(0, 0, 0, 0.1)'
+            }}
             >
               contact
             </motion.a>
@@ -318,7 +321,8 @@ const MachinesOverview = (props) => {
           || (machine.dimensions && machine.dimensions.toLowerCase().indexOf(q) > -1)
           || (machine.materials && machine.materials.toLowerCase().indexOf(q) > -1)
           || (machine.specstandard && machine.specstandard.toLowerCase().indexOf(q) > -1)
-          || (machine.type && machine.type.toLowerCase().indexOf(q) > -1);
+          || (machine.type && machine.type.toLowerCase().indexOf(q) > -1)
+          || (machine.company && machine.company.name && machine.company.name.toLowerCase().indexOf(q) > -1)
     })
 
   const machinesFilteredOnMachineType =

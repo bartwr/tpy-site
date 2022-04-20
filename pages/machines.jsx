@@ -19,7 +19,7 @@ const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
 
 function Machines() {
   // Get machine type filter from localStorage
-  const machineTypeFilter = typeof window !== 'undefined' ? localStorage.getItem('TPY__machines_machine_type') : 'All';
+  const machineTypeFilter = typeof window !== 'undefined' ? localStorage.getItem('TPY__machines_machine_type') : '';
   // State definitions
   const [searchQuery, setSearchQuery] = useState('');
   const [machineType, setMachineType] = useState(machineTypeFilter);
@@ -46,10 +46,10 @@ function Machines() {
       image="/static/pages/machines/hero-image.png"
       style={{backgroundPosition: 'center top'}}
       />
-    <div className="flex mx-4 max-width sm:mx-auto">
-      <div className="w-1/4">
+    <div className="flex flex-wrap sm:mx-4 max-width sm:mx-auto">
+      <div className="sm:w-1/4">
       </div>
-      <div className="w-3/4">
+      <div className="w-full w-5/6 sm:w-3/4">
         <IntroText style={{
           marginLeft: '1rem',
           marginRight: '1rem',
@@ -60,7 +60,7 @@ function Machines() {
         </IntroText>
       </div>
     </div>
-    <div className="flex flex-wrap md:flex-nowrap mx-4 mb-16 max-width sm:mx-auto px-4">
+    <div className="flex flex-wrap md:flex-nowrap sm:mx-4 mb-16 max-width sm:mx-auto px-4">
       <div className="
         w-full
         md:w-1/4

@@ -19,7 +19,7 @@ const fetchMachines = async () => {
       specstandard: x.fields.specstandard,
       name: x.fields.name,
       type: x.fields.type,
-      image: "https://i.imgur.com/83Ovq2V.jpeg"
+      image: x.fields.picture ? x.fields.picture.fields.file.url : 'https://i.imgur.com/83Ovq2V.jpeg'
     }
   })
   return machineObjects;

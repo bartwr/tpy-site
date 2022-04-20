@@ -56,7 +56,7 @@ const requestMachineAvailability = (data) => {
     message += `
         <div style="margin-bottom:40px;">
           <div><strong style="${valueStyle};font-weight:bold;margin-bottom:8px;">${data['preferredDate'+x]}</strong></div>
-          <span style="display:inline-block;margin-right:12px;"><img src="https://tpy-site.herokuapp.com/static/components/machine-details/checkbox.png" alt="X" style="width: 30px;height:30px;margin-top:8px;" /></span> 
+          <span style="display:inline-block;margin-right:12px;"><img src="https://tpy-site.herokuapp.com/static/components/machine-details/checkbox.png" alt="X" style="width: 30px;height:30px;position:relative;top:8px;" /></span> 
           <span style="${valueStyle};margin-right:12px;">${data['preferredDayPart'+x]}</span> 
           <span style="${valueStyle};width:120px;">${data['preferredDuration'+x]}</span> 
         </div>

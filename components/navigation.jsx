@@ -155,6 +155,10 @@ class Navigation extends Component {
         href: '/pricing'
       },
       {
+        title: 'Machine Portal',
+        href: '/machines'
+      },
+      {
         title: 'About',
         items: [{
           title: 'Contact details',
@@ -253,7 +257,7 @@ class Navigation extends Component {
         }
         .Navigation > .max-width {
         }
-        @media(max-width: 1100px) {
+        @media(max-width: 1200px) {
           .Navigation {
             background: rgba(255,255,255,0.95);
           }
@@ -265,7 +269,7 @@ class Navigation extends Component {
         .Navigation.nav-up,
         .Navigation.nav-up .toggle-nav {
           transition: top 0.4s ease-in-out;
-          top: -107px;
+          top: -131px;
         }
         .Navigation.is-active,
         .Navigation.is-active .toggle-nav {
@@ -288,7 +292,7 @@ class Navigation extends Component {
           background-position: center center;
         }
 
-        @media (min-width: 1100px) {
+        @media (min-width: 1200px) {
           .Navigation .secundary-nav-item .icon {
             align-self: center;
           }
@@ -327,7 +331,7 @@ class Navigation extends Component {
           position: relative;
           justify-content: flex-start;
         }
-        @media(min-width: 1100px) {
+        @media(min-width: 1200px) {
           .main-nav {
             display: flex;
             margin-top: 0;
@@ -347,7 +351,7 @@ class Navigation extends Component {
           min-height: 16rem;
           width: 100%;
         }
-        @media(min-width: 1100px) {
+        @media(min-width: 1200px) {
           ul {
             height: auto;
             min-height: auto;
@@ -394,7 +398,7 @@ class Navigation extends Component {
         .secundary-nav-link {
           margin-right: 0;
         }
-        @media(min-width: 1100px) {
+        @media(min-width: 1200px) {
           nav a {
             padding: 10px 8px
           }
@@ -425,7 +429,7 @@ class Navigation extends Component {
           margin-right: 10px;
           display: block;
         }
-        @media(min-width: 1100px) {
+        @media(min-width: 1200px) {
           nav a {
             margin-bottom: 0;
             text-align: center;
@@ -438,13 +442,13 @@ class Navigation extends Component {
         .primary-nav-item {
           left: -1rem;
         }
-        @media(min-width: 1100px) {
+        @media(min-width: 1200px) {
           .primary-nav-item {
             left: 0;
           }
         }
 
-        @media(min-width: 1100px) {
+        @media(min-width: 1200px) {
           .primary-nav-item {
             position: static;
             left: 0;
@@ -473,7 +477,7 @@ class Navigation extends Component {
         .secundary-nav-link.is-active {
           background: #FF8850;
         }
-        @media(min-width: 1100px) {
+        @media(min-width: 1200px) {
           nav .primary-nav-link:hover,
           nav .primary-nav-link:focus,
           nav .primary-nav-link:active,
@@ -536,7 +540,7 @@ class Navigation extends Component {
           background-size: 24px;
           background-image: url(/static/components/navigation/hamburger.svg);
         }
-        @media(min-width: 1100px) {
+        @media(min-width: 1200px) {
           .toggle-nav {
             display: none;
           }
@@ -641,7 +645,7 @@ class Navigation extends Component {
           }
         }
 
-        @media(min-width: 1100px) {
+        @media(min-width: 1200px) {
           .primary-nav-item {
           }
           .secundary-nav-link {

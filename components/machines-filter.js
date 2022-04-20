@@ -21,14 +21,13 @@ const MachinesFilterItem = (props) => {
     mb-2
     cursor-pointer
   " onClick={() => handleClick(title)}>
-    <motion.span className="inline-block" style={{
+    <span className="inline-block" style={{
       color: isActive ? '#144372' : '#14437280',
       borderBottom: isActive ? 'solid #FF8850 8px' : 'solid transparent 8px'
     }}
-    whileHover={{ color: '#144372' }}
     >
       {title}
-    </motion.span>
+    </span>
   </a>
 }
 

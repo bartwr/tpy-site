@@ -26,6 +26,7 @@ const MachinesFilter = dynamic(() => import('../components/machines-filter.js'))
 const MachinesSearchBar = dynamic(() => import('../components/machines-search-bar.jsx'));
 const MachineContactForm = dynamic(() => import('../components/machine-contact-form.jsx'));
 const MachineSpecifications = dynamic(() => import('../components/machine-specifications.jsx'));
+const Breadcrumbs = dynamic(() => import('../components/breadcrumbs.jsx'));
 
 const MachineDetails = (props) => {
   // Get machine type filter from localStorage
@@ -60,16 +61,47 @@ const MachineDetails = (props) => {
   }, [machines, queryParams])
 
   if(! machine) return <></>
-
+    console.log(machine);
   return (
     <>
-      <div className="flex flex-wrap md:flex-nowrap px-4 mb-16 max-width sm:mx-auto">
+      <div className="lg:mt-32 px-4 max-width sm:mx-auto">
+        <div className="
+          mb-12
+        ">
+          {queryParams.form && <Breadcrumbs crumbs={[{
+              title: 'Home',
+              href: '/'
+            }, {
+              title: 'Machine Portal',
+              href: '/machines'
+            }, {
+              title: machine.name,
+              href: `/machines-details?id=${machine.id}`
+            }, {
+              title: 'Check availability',
+              isActive: true
+            }]} />
+          }
+          {! queryParams.form && <Breadcrumbs crumbs={[{
+              title: 'Home',
+              href: '/'
+            }, {
+              title: 'Machine Portal',
+              href: '/machines'
+            }, {
+              title: machine.name,
+              isActive: true
+            }]} />
+          }
+        </div>
+      </div>
+      <div className="flex flex-wrap md:flex-nowrap px-4 max-width sm:mx-auto">
+
         <div className="
           w-full
           md:w-2/5
           md:pr-4
         ">
-
           {/* Show category */}
           {! queryParams.form && <>
             <div className="my-2">
@@ -91,6 +123,31 @@ const MachineDetails = (props) => {
             {machine ? machine.name : ''}
           </Title>
 
+          {queryParams.form && <>
+            <p className="my-6">
+              <img src={machine.image ? machine.image : ''} />
+            </p>
+          </>}
+
+        </div>
+
+        <div className="
+          mt-8
+          md:mt-8
+          w-full
+          md:w-3/5
+          md:pl-4
+        ">
+          {  queryParams.form && <MachineContactForm machine={machine} />}
+        </div>
+
+      </div>
+      <div className="flex flex-wrap md:flex-nowrap px-4 mb-16 max-width sm:mx-auto">
+        <div className="
+          w-full
+          md:w-2/5
+          md:pr-4
+        ">
           {! queryParams.form && <>
             <div className="my-2">
               <p>
@@ -105,28 +162,15 @@ const MachineDetails = (props) => {
             </Button>
           </>}
 
-          {queryParams.form && <>
-            <p className="my-4">
-              <img src={machine.image ? machine.image : ''} />
-            </p>
-            <Link href={{ pathname: '/machines-details', query: {id: machine.id}}}>
-              <span className="text-base cursor-pointer">
-                &laquo; Machine details
-              </span>
-            </Link>
-          </>}
-
         </div>
         <div className="
-          mt-8
-          md:mt-8
+          mt-4
+          md:mt-4
           w-full
           md:w-3/5
           md:pl-4
         ">
-          {! queryParams.form && <img src="https://i.imgur.com/83Ovq2V.jpeg" />}
-
-          {  queryParams.form && <MachineContactForm machine={machine} />}
+          {! queryParams.form && <img src={machine.image ? machine.image : 'https://i.imgur.com/83Ovq2V.jpeg'} />}
 
           <div hidden className="my-8">
             <p>
@@ -139,7 +183,7 @@ const MachineDetails = (props) => {
       <div className="max-width px-4 md:px-0 md:mx-auto">
         <Title>More machines</Title>
         
-        <div className="flex flex-wrap md:flex-nowrap md:mx-4 mt-6 mb-16 max-width sm:mx-auto md:px-4">
+        <div className="flex flex-wrap md:flex-nowrap md:mx-0 mt-6 mb-16 max-width sm:mx-auto md:px-4">
           <div className="
             w-full
             md:w-1/4
@@ -166,7 +210,7 @@ const MachineDetails = (props) => {
             <MachinesOverview searchQuery={searchQuery} />
           </div>
         </div>
-*/}
+        */}
       </div>
     </>
   )

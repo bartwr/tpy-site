@@ -21,7 +21,6 @@ const FormSelect = dynamic(() => import('./form-select.jsx'));
 const SmallCapsTitle = dynamic(() => import('./small-caps-title.js'));
 
 const sendMachineAvailabilityEmail = (data) => {
-  console.log(data);
   return fetch(`${config.apiUrl}/mail/machine-availability`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

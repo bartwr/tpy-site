@@ -31,6 +31,7 @@ const MachinesSearchBar = (props) => {
   return <div className="MachinesSearchBar">
     <FormInput
       name="q"
+      type="search"
       defaultValue={searchQueryFromLocalStorage}
       onChange={handleChange}
       placeholder="Search a machine"
