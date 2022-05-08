@@ -20,8 +20,9 @@ const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
 function Machines() {
   // Get machine type filter from localStorage
   const machineTypeFilter = typeof window !== 'undefined' ? localStorage.getItem('TPY__machines_machine_type') : '';
+  const machineTypeSearchQuery = typeof window !== 'undefined' ? localStorage.getItem('TPY__machines_search_query') : '';
   // State definitions
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(machineTypeSearchQuery);
   const [machineType, setMachineType] = useState(machineTypeFilter);
   const [machines, setMachines] = useState([])
 

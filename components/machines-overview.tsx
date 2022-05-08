@@ -20,128 +20,37 @@ import {MachineModel} from '../models/Machine';
 const Title = dynamic(() => import('./title.js'));
 const Button = dynamic(() => import('./button.js'));
 const MachineSpecifications = dynamic(() => import('./machine-specifications.jsx'));
+const MachineQuickView = dynamic(() => import('./machine-quickview.tsx'));
 
-type MachineQuickViewProps = {
-  machine: MachineModel;
-  onClose?: Function;
-};
-
-const MachineQuickView = (props) => {
-  const {machine, onClose}: MachineQuickViewProps = props;
-
-  const closeHandler = (e) => {
-    e.preventDefault();
-    onClose ? onClose() : ''
+function getPreviousMachine(allMachines, theActiveMachine){   
+  let foundIndex;
+  for(let index in allMachines){
+    const machine = allMachines[index];
+    const machineId = machine.id;
+    if(machineId === theActiveMachine.id) {
+      foundIndex = parseInt(index);
+    }
   }
-
-  return <div className="
-    fixed
-    top-0
-    right-0
-    bottom-0
-    left-0
-    flex
-    flex-col
-    justify-center
-    z-10
-    max-h-full
-    overflow-auto
-  "
-  >
-    <motion.div className="
-      absolute
-      top-0
-      right-0
-      bottom-0
-      left-0
-    " style={{
-      backgroundColor: 'rgba(241, 239, 236, 0.8)'
-    }}
-    onClick={closeHandler}
-    animate={{ opacity: 1 }}
-    initial={{ opacity: 0 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 0.2 }}
-    />
-    <motion.div
-      animate={{ opacity:1, scale:1 }}
-      initial={{ opacity:0.6, scale:0.6 }}
-      exit={{ opacity:0 }}
-      transition={{ duration: 0.2 }}
-      className="
-        MachineQuickView-inner
-        relative
-        bg-white
-        mt-10
-        md:mt-0
-        p-6
-        mx:p-10
-        mx-auto
-        flex
-        flex-wrap
-        md:flex-nowrap
-      " style={{
-        maxWidth: '872px',
-        width: '100%'
-      }}
-    >
-      <div className="
-        w-full
-        md:w-2/5
-        mb-8
-        md:mb-0
-      ">
-        <img src="https://i.imgur.com/83Ovq2V.jpeg" />
-      </div>
-      <div className="
-        w-full
-        md:w-3/5
-      ">
-        <div className="pl-4 pr-4 md:pl-14">
-          <Title style={{marginBottom: '20px'}}>
-            {machine.name}
-          </Title>
-          <MachineSpecifications machine={machine} />
-          <p className="my-2 mt-4">
-            <Link href={{ pathname: '/machines-details', query: {id: machine ? machine.id : ''}}}>
-              <a className="
-                text-theme-orange
-                text-base
-                no-underline
-              " onClick={() => onClose}>
-                View full item
-              </a>
-            </Link>
-          </p>
-          <div className="
-            flex
-            justify-between
-            mt-12
-            w-full
-          ">
-            <div>
-              <Link href={{ pathname: '/machines-details', query: {id: machine ? machine.id : '', form: 1}}}>
-                <Button onClick={onClose}>
-                  contact
-                </Button>
-              </Link>
-            </div>
-            <div className="flex flex-col justify-center">
-              <a href="#" onClick={closeHandler}>
-                Sluiten
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  </div>
+  if(foundIndex > -1 && allMachines[foundIndex-1]) return allMachines[foundIndex-1];
+  else if(foundIndex > -1 && ! allMachines[foundIndex-1]) return allMachines[allMachines.length-1];
+  else if(! foundIndex) return theActiveMachine;
 }
 
-const Machine = (props) => {
-  const {data} = props;
+function getNextMachine(allMachines, theActiveMachine){   
+  let foundIndex;
+  for(let index in allMachines){
+    const machine = allMachines[index];
+    const machineId = machine.id;
+    if(machineId === theActiveMachine.id) {
+      foundIndex = parseInt(index);
+    }
+  }
+  if(foundIndex > -1 && allMachines[foundIndex+1]) return allMachines[foundIndex+1];
+  else if(foundIndex > -1 && ! allMachines[foundIndex+1]) return allMachines[0];
+  else if(! foundIndex) return theActiveMachine;
+}
 
-  const [doShowQuickView, setDoShowQuickView] = useState(false)
+const Machine = ({data, activeMachine, setActiveMachine}) => {
 
   return (
     <div
@@ -205,7 +114,7 @@ const Machine = (props) => {
           " style={{
             backgroundColor: '#BAB1A1'
           }}
-          onClick={() => setDoShowQuickView(true)}
+          onClick={() => setActiveMachine(data)}
           whileHover={{ scale: 0.98 }}
           whileTap={{ scale: 0.95 }}
           >
@@ -298,8 +207,8 @@ const Machine = (props) => {
           </Link>
         </footer>
       </motion.div>
-      {doShowQuickView && <MachineQuickView onClose={
-        () => {setDoShowQuickView(false)}
+      {(activeMachine && data.id === activeMachine.id) && <MachineQuickView onClose={
+        () => {setActiveMachine({})}
       } machine={data} />}
     </div>
   )
@@ -307,6 +216,8 @@ const Machine = (props) => {
 
 const MachinesOverview = (props) => {
   const { searchQuery, machineType, machines } = props;
+
+  const [activeMachine, setActiveMachine] = useState({});
 
   const machinesFilteredOnSearchQuery =
     R.filter((machine: MachineModel) => {
@@ -333,9 +244,30 @@ const MachinesOverview = (props) => {
       return machine.category === machineType;
     })
 
-  let filteredMachines = machines || [];
-  filteredMachines = machinesFilteredOnSearchQuery(filteredMachines);
-  filteredMachines = machinesFilteredOnMachineType(filteredMachines);
+  const getFilteredMachines = (allMachines) => {
+    let filteredMachines = allMachines || [];
+    filteredMachines = machinesFilteredOnSearchQuery(filteredMachines);
+    filteredMachines = machinesFilteredOnMachineType(filteredMachines);
+    return filteredMachines;
+  }
+
+  let filteredMachines = getFilteredMachines(machines);
+
+  useEffect(() => {
+    const handler = (e) => {
+      let filteredMachines = getFilteredMachines(machines);
+      let machineToMakeActive;
+      const direction = e.detail.direction;
+      if(direction === 'left') {
+        machineToMakeActive = getPreviousMachine(filteredMachines, e.detail.currentMachine);
+      } else if(direction === 'right') {
+        machineToMakeActive = getNextMachine(filteredMachines, e.detail.currentMachine);
+      }
+      setActiveMachine(machineToMakeActive);
+    }
+    document.addEventListener('clickPrevOrNextMachine', handler);
+    return () => document.removeEventListener('clickPrevOrNextMachine', handler);
+  }, [machines, searchQuery, machineType])
 
   return <div className="
     MachinesOverview
@@ -344,7 +276,7 @@ const MachinesOverview = (props) => {
     md:-mx-4
   ">
     {filteredMachines.map(x => {
-      return <Machine key={x.id} data={x} />
+      return <Machine key={x.id} data={x} activeMachine={activeMachine} setActiveMachine={setActiveMachine} />
     })}
   </div>
 }
