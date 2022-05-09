@@ -80,7 +80,7 @@ const requestMachineAvailability = (data) => {
 
   if(data.machine && data.machine.company && data.machine.company.contactPhone) {
     message += `
-      <div style="${labelStyle)};margin-bottom:24px;width:auto;">Contact info</div>
+      <div style="${labelStyle};margin-bottom:24px;width:auto;">Contact info</div>
       Rather call someone right away? <a href="tel:${data.machine.company.contactPhone}">${data.machine.company.contactPhone}</a>
     `;
   }
