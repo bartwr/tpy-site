@@ -52,6 +52,32 @@ function getNextMachine(allMachines, theActiveMachine){
 
 const Machine = ({data, activeMachine, setActiveMachine}) => {
 
+  const clickMachine = (e) => {
+    if(! e || ! e.target) return;
+
+    // Check if user clicked a button that has a priority action
+    const isButton = e.target && e.target.className.indexOf('Machine-quickView') > -1
+      || e.target.className.indexOf('Machine-link') > -1;
+
+    console.log(e.target.className);
+    // Check if user clicked the card
+    const cardClasses = ['Machine-image', 'Machine-body', 'Machine-title', 'Machine-description'];
+    let isCard = false;
+    e.target.className.split(' ').map(x => {
+      if(cardClasses.indexOf(x) > -1) isCard = true;
+    });
+
+    if(e.target && isButton) {
+      // do nothing, just execute the default action
+      console.log('do nothing')
+      return;
+    }
+    // If clicked anywhere else on the card: open machine
+    if(e.target && isCard) {
+      setActiveMachine(data);
+    }
+  }
+
   return (
     <div
     className="
@@ -66,6 +92,7 @@ const Machine = ({data, activeMachine, setActiveMachine}) => {
     style={{
       height: '500px'
     }}
+    onClick={clickMachine}
     >
       <motion.div
       whileHover={{
@@ -148,6 +175,7 @@ const Machine = ({data, activeMachine, setActiveMachine}) => {
             {data.name}
           </h1>
           <div className="
+            Machine-description
             text-theme-black
           ">
             {data.description}
@@ -171,6 +199,7 @@ const Machine = ({data, activeMachine, setActiveMachine}) => {
           />
           <Link href={{ pathname: '/machines-details', query: {id: data.id}}}>
             <motion.a className="
+              Machine-link
               flex-1
               bg-white
               text-center
@@ -188,6 +217,7 @@ const Machine = ({data, activeMachine, setActiveMachine}) => {
           </Link>
           <Link href={{ pathname: '/machines-details', query: {id: data.id, form: 1}}}>
             <motion.a className="
+              Machine-link
               flex-1
               bg-theme-orange
               text-center
