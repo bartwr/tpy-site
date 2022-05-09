@@ -36,6 +36,7 @@ const MachinesSearchBar = (props) => {
       onChange={handleChange}
       placeholder="Search a machine"
       classes="bg-no-repeat"
+      autocomplete="off"
       style={{
         marginTop: 0,
         marginBottom: '20px',
