@@ -22,6 +22,31 @@ type MachineQuickViewProps = {
 const MachineQuickView = (props) => {
   const {machine, onClose}: MachineQuickViewProps = props;
 
+  useEffect(() => {
+    const keyPressed = (e) => {
+      e = e || window.event
+      // left arrow
+      if(e.keyCode === 37) {
+        navigateHandler('left', machine);
+      }
+      // right arrow
+      else if(e.keyCode === 39) {
+        navigateHandler('right', machine);
+      }
+      // escape key
+      else if(e.keyCode === 27) {
+        onClose();
+      }
+    }
+    const initNavigationShortcuts = () => {
+      document.onkeydown = keyPressed;
+    };
+    initNavigationShortcuts();
+    return () => {
+      document.onkeydown = null;
+    }
+  }, [props.machine]);
+
   const closeHandler = (e) => {
     e.preventDefault();
     onClose ? onClose() : ''
