@@ -26,17 +26,14 @@ const MachineQuickView = (props) => {
     const keyPressed = (e) => {
       e = e || window.event
       // left arrow
-      if(e.keyCode === 37) {
+      if(e.keyCode === 37)
         navigateHandler('left', machine);
-      }
       // right arrow
-      else if(e.keyCode === 39) {
+      else if(e.keyCode === 39)
         navigateHandler('right', machine);
-      }
       // escape key
-      else if(e.keyCode === 27) {
+      else if(e.keyCode === 27)
         onClose();
-      }
     }
     const initNavigationShortcuts = () => {
       document.onkeydown = keyPressed;
@@ -96,6 +93,7 @@ const MachineQuickView = (props) => {
         button-previous
         fixed
         left-10
+        cursor-pointer
       "
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
@@ -110,6 +108,7 @@ const MachineQuickView = (props) => {
         button-next
         fixed
         right-10
+        cursor-pointer
       "
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}

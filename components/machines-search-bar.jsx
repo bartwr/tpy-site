@@ -45,7 +45,9 @@ const MachinesSearchBar = (props) => {
         backgroundImage: `url('/static/components/machines-filter/icon-search.png')`
       }}
     />
-
+    {searchQueryFromLocalStorage && searchQueryFromLocalStorage !== '' && <div className="mt-2 text-xl font-montserrat">
+      Je hebt gezocht op <span className="font-semibold">{searchQueryFromLocalStorage}</span>
+    </div>}
   </div>
 }
 
