@@ -20,7 +20,7 @@ import {MachineModel} from '../models/Machine';
 const Title = dynamic(() => import('./title.js'));
 const Button = dynamic(() => import('./button.js'));
 const MachineSpecifications = dynamic(() => import('./machine-specifications.jsx'));
-const MachineQuickView = dynamic(() => import('./machine-quickview.tsx'));
+const MachineQuickView = dynamic(() => import('./machine-quickview'));
 
 function getPreviousMachine(allMachines, theActiveMachine){   
   let foundIndex;
