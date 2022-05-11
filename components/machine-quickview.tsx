@@ -153,9 +153,9 @@ const MachineQuickView = (props) => {
         md:w-3/5
       ">
         <div className="pl-4 pr-4 md:pl-14">
-          <Title style={{marginBottom: '20px'}}>
+          {Title && <Title style={{marginBottom: '20px'}}>
             {machine.name}
-          </Title>
+          </Title>}
           <MachineSpecifications machine={machine} />
           <p className="my-2 mt-4">
             <Link href={{ pathname: '/machines-details', query: {id: machine ? machine.id : ''}}}>

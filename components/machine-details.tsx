@@ -61,7 +61,7 @@ const MachineDetails = (props) => {
   }, [machines, queryParams])
 
   if(! machine) return <></>
-    console.log(machine);
+
   return (
     <>
       <div className="lg:mt-32 px-4 max-width sm:mx-auto">
@@ -129,6 +129,10 @@ const MachineDetails = (props) => {
             </p>
           </>}
 
+          {! queryParams.form && <div className="pt-6 block sm:hidden">
+            <img src={machine.image ? machine.image : 'https://i.imgur.com/83Ovq2V.jpeg'} />
+          </div>}
+
         </div>
 
         <div className="
@@ -170,7 +174,9 @@ const MachineDetails = (props) => {
           md:w-3/5
           md:pl-4
         ">
-          {! queryParams.form && <img src={machine.image ? machine.image : 'https://i.imgur.com/83Ovq2V.jpeg'} />}
+          {! queryParams.form && <div className="hidden sm:block">
+            <img src={machine.image ? machine.image : 'https://i.imgur.com/83Ovq2V.jpeg'} />
+          </div>}
 
           <div hidden className="my-8">
             <p>
