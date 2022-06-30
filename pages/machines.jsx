@@ -12,7 +12,7 @@ const Title = dynamic(() => import('../components/title.js'));
 const Pricing = dynamic(() => import('../components/pricing.jsx'));
 const NewsletterSubscribe = dynamic(() => import('../components/newsletter-subscribe.js'));
 const Footer = dynamic(() => import('../components/footer.js'));
-const MachinesOverview = dynamic(() => import('../components/machines-overview'));
+const MachinesOverview = dynamic(() => import('../components/machines-overview.tsx'));
 const MachinesFilter = dynamic(() => import('../components/machines-filter.js'));
 const MachinesSearchBar = dynamic(() => import('../components/machines-search-bar.jsx'));
 const FooterBanner = dynamic(() => import('../components/footer-banner.js'));
@@ -57,7 +57,15 @@ function Machines() {
           paddingLeft: 0,
           paddingRight: 0
         }}>
-          Introduction text about the machine portal.
+          <p>
+            Technology Park Ypenburg and its members offer a wide range of machinery and facilities to help you build your prototypes, products or testing. The overview below shows you all the machines at TPY that are available to third parties, which are in need of these facilities. These machines can be rented and booked through this machine portal. Cost includes use of the machine, operators and/or programming staff, and if applicable materials. After filling out an inquiry, you will receive a fitting quotation.
+          </p>
+          <p>
+            Most of the machines and facilities are focussed on composites and high-tech manufacturing and include an automation & digitalisation lab, large autoclaves, CNC milling machines and various testing equipment. All facilities are easily reachable and available for high tech manufacturing at TPY.
+          </p>
+          <p>
+            Please feel free to inquire about the possibilities and a quotation through this machine portal. 
+          </p>
         </IntroText>
       </div>
     </div>
