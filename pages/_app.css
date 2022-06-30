@@ -41,3 +41,10 @@
     transition: opacity 0.4s;
   }
 }
+
+@media (max-width: 768px) {
+  /* Because of minifier does move CSS around I cannot use w-full */
+  .MachinesOverview .Machine {
+    width: 100%;
+  }
+}
