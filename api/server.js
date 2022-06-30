@@ -77,7 +77,7 @@ app.prepare().then(() => {
     res.end(JSON.stringify(mail, null, 3));
   });
 
-  // API: Mail
+  // API: Machine availability
   server.post('/api/mail/machine-availability', (req, res) => {
     const mail = requestMachineAvailability(req.body);
     res.setHeader('Content-Type', 'application/json');

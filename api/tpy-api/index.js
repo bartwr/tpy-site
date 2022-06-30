@@ -1,3 +1,5 @@
+const {requestMachineAvailability} = require('../machine-availability.js');
+
 module.exports = async function (context, req) {
     const contentType = context.bindingData.contentType;
     const slug = context.bindingData.slug;
@@ -14,6 +16,16 @@ module.exports = async function (context, req) {
     const accessControlAllowOriginUrl = 'http://localhost:3000';
 
     switch (contentType) {
+        case 'mail/machine-availability':
+            const mail = requestMachineAvailability(req.body);
+            context.res = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': accessControlAllowOriginUrl
+                },
+                body: JSON.stringify(mail, null, 3)
+            }
+            break;
         case 'mail':
             if (slug === 'contact') {
                 let message = req.body.message + '<br /><br /><hr /><br />';
